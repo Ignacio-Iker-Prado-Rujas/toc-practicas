@@ -5,7 +5,7 @@
 -- Create Date:    19:08:21 10/15/2013 
 -- Design Name: 
 -- Module Name:    munyeca - Behavioral 
--- Project Name: 
+-- Project Name: Practica 2
 -- Target Devices: 
 -- Tool versions: 
 -- Description: Maquina de estados (simulacion de una munyeca)
@@ -30,8 +30,8 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity munyeca is
-	port (reloj, rst, R, C: in	std_logic;
-			G, L: out std_logic);
+	port (reloj, rst, R, C: in	std_logic;
+			G, L: out std_logic);
 end munyeca;
 
 architecture Behavioral of munyeca is
@@ -41,15 +41,21 @@ architecture Behavioral of munyeca is
 
 begin
 
+--process para el reloj
 relojito: process(reloj, rst)
+	
 	begin
+	
 	if rst = '1' then 
 		estado_actual <= tranquila;
 	elsif reloj'event and reloj = '1' then 
 		estado_actual <= estado_sig;
+	
 	end if;
+
 end process relojito;
 
+--process para actualizar el estado de la munyeca
 actualizar_sig_estado: process(R, C, estado_actual)
 	begin
 	case estado_actual is
@@ -80,6 +86,23 @@ actualizar_sig_estado: process(R, C, estado_actual)
 		when others => estado_sig <= estado_actual;
 	end case;
 end process actualizar_sig_estado;
---process con las salidas en función de los estados
+
+--process para actualizar las salidas en funcion del estado
+actualizar_salidas: process(estado_actual)
+	begin
+	case estado_actual is
+		when habla =>
+			G <= '1';
+			L <= '0';
+		when asustada =>
+			L <= '1';
+			G <= '0';
+		when others =>
+			G <= '0';
+			L <= '0';
+	end case;
+	
+end process actualizar_salidas;
+
 end Behavioral;
 

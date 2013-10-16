@@ -101,7 +101,6 @@ actualizar_salidas: process(estado_actual)
 			G <= '0';
 			L <= '0';
 	end case;
-	
 end process actualizar_salidas;
 
 end Behavioral;

@@ -4,7 +4,7 @@ Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.08 secs
+Total CPU time to Xst completion: 0.07 secs
  
 --> Parameter xsthdpdir set to xst
 
@@ -104,9 +104,9 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Compilation                              *
 =========================================================================
-Compiling vhdl file "C:/hlocal/Pr2/divisor.vhd" in Library work.
+Compiling vhdl file "C:/hlocal/TOC/Practica2/divisor.vhd" in Library work.
 Architecture divisor_arch of Entity divisor is up to date.
-Compiling vhdl file "C:/hlocal/Pr2/munyeca.vhd" in Library work.
+Compiling vhdl file "C:/hlocal/TOC/Practica2/munyeca.vhd" in Library work.
 Architecture behavioral of Entity munyeca is up to date.
 
 =========================================================================
@@ -134,7 +134,7 @@ Entity <divisor> analyzed. Unit <divisor> generated.
 Performing bidirectional port resolution...
 
 Synthesizing Unit <divisor>.
-    Related source file is "C:/hlocal/Pr2/divisor.vhd".
+    Related source file is "C:/hlocal/TOC/Practica2/divisor.vhd".
     Found 1-bit register for signal <clk_aux>.
     Found 28-bit up counter for signal <cuenta>.
     Summary:
@@ -144,16 +144,14 @@ Unit <divisor> synthesized.
 
 
 Synthesizing Unit <munyeca>.
-    Related source file is "C:/hlocal/Pr2/munyeca.vhd".
-WARNING:Xst:646 - Signal <clk> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:646 - Signal <actual_state> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Related source file is "C:/hlocal/TOC/Practica2/munyeca.vhd".
     Found finite state machine <FSM_0> for signal <estado_actual>.
     -----------------------------------------------------------------------
     | States             | 4                                              |
-    | Transitions        | 10                                             |
+    | Transitions        | 11                                             |
     | Inputs             | 2                                              |
-    | Outputs            | 2                                              |
-    | Clock              | reloj                     (rising_edge)        |
+    | Outputs            | 4                                              |
+    | Clock              | clk                       (rising_edge)        |
     | Reset              | rst                       (positive)           |
     | Reset type         | asynchronous                                   |
     | Reset State        | tranquila                                      |
@@ -191,8 +189,6 @@ Optimizing FSM <estado_actual/FSM> on signal <estado_actual[1:2]> with sequentia
  dormida   | 10
  habla     | 01
 -----------------------
-WARNING:Xst:1290 - Hierarchical block <Nuevo_reloj> is unconnected in block <munyeca>.
-   It will be removed from the design.
 
 =========================================================================
 Advanced HDL Synthesis Report
@@ -209,7 +205,6 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-WARNING:Xst:2677 - Node <Nuevo_reloj/clk_aux> of sequential type is unconnected in block <munyeca>.
 
 Optimizing unit <munyeca> ...
 
@@ -223,8 +218,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 2
- Flip-Flops                                            : 2
+# Registers                                            : 31
+ Flip-Flops                                            : 31
 
 =========================================================================
 
@@ -250,19 +245,26 @@ Optimization Goal                  : Speed
 Keep Hierarchy                     : No
 
 Design Statistics
-# IOs                              : 6
+# IOs                              : 10
 
 Cell Usage :
-# BELS                             : 4
-#      LUT2                        : 2
-#      LUT4                        : 2
-# FlipFlops/Latches                : 2
-#      FDC                         : 2
+# BELS                             : 135
+#      GND                         : 1
+#      INV                         : 2
+#      LUT1                        : 27
+#      LUT2                        : 33
+#      LUT4                        : 9
+#      MUXCY                       : 34
+#      VCC                         : 1
+#      XORCY                       : 28
+# FlipFlops/Latches                : 31
+#      FDC                         : 30
+#      FDE                         : 1
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 5
+# IO Buffers                       : 9
 #      IBUF                        : 3
-#      OBUF                        : 2
+#      OBUF                        : 6
 =========================================================================
 
 Device utilization summary:
@@ -270,11 +272,11 @@ Device utilization summary:
 
 Selected Device : 3s1000ft256-5 
 
- Number of Slices:                        2  out of   7680     0%  
- Number of Slice Flip Flops:              2  out of  15360     0%  
- Number of 4 input LUTs:                  4  out of  15360     0%  
- Number of IOs:                           6
- Number of bonded IOBs:                   6  out of    173     3%  
+ Number of Slices:                       38  out of   7680     0%  
+ Number of Slice Flip Flops:             31  out of  15360     0%  
+ Number of 4 input LUTs:                 71  out of  15360     0%  
+ Number of IOs:                          10
+ Number of bonded IOBs:                  10  out of    173     5%  
  Number of GCLKs:                         1  out of      8    12%  
 
 ---------------------------
@@ -295,27 +297,29 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
------------------------------------+------------------------+-------+
-Clock Signal                       | Clock buffer(FF name)  | Load  |
------------------------------------+------------------------+-------+
-reloj                              | BUFGP                  | 2     |
------------------------------------+------------------------+-------+
+-----------------------------------+-----------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)       | Load  |
+-----------------------------------+-----------------------------+-------+
+reloj                              | BUFGP                       | 29    |
+Nuevo_reloj/clk_aux                | NONE(estado_actual_FSM_FFd1)| 2     |
+-----------------------------------+-----------------------------+-------+
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 
 Asynchronous Control Signals Information:
 ----------------------------------------
 -----------------------------------+------------------------+-------+
 Control Signal                     | Buffer(FF name)        | Load  |
 -----------------------------------+------------------------+-------+
-rst                                | IBUF                   | 2     |
+rst                                | IBUF                   | 30    |
 -----------------------------------+------------------------+-------+
 
 Timing Summary:
 ---------------
 Speed Grade: -5
 
-   Minimum period: 2.119ns (Maximum Frequency: 471.820MHz)
-   Minimum input arrival time before clock: 2.410ns
-   Maximum output required time after clock: 7.769ns
+   Minimum period: 6.537ns (Maximum Frequency: 152.979MHz)
+   Minimum input arrival time before clock: 4.264ns
+   Maximum output required time after clock: 7.907ns
    Maximum combinational path delay: No path found
 
 Timing Detail:
@@ -324,77 +328,127 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'reloj'
-  Clock period: 2.119ns (frequency: 471.820MHz)
-  Total number of paths / destination ports: 4 / 2
+  Clock period: 6.537ns (frequency: 152.979MHz)
+  Total number of paths / destination ports: 1219 / 30
 -------------------------------------------------------------------------
-Delay:               2.119ns (Levels of Logic = 1)
-  Source:            estado_actual_FSM_FFd2 (FF)
-  Destination:       estado_actual_FSM_FFd1 (FF)
+Delay:               6.537ns (Levels of Logic = 9)
+  Source:            Nuevo_reloj/cuenta_7 (FF)
+  Destination:       Nuevo_reloj/clk_aux (FF)
   Source Clock:      reloj rising
   Destination Clock: reloj rising
 
-  Data Path: estado_actual_FSM_FFd2 to estado_actual_FSM_FFd1
+  Data Path: Nuevo_reloj/cuenta_7 to Nuevo_reloj/clk_aux
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q              4   0.626   0.838  estado_actual_FSM_FFd2 (estado_actual_FSM_FFd2)
-     LUT4:I2->O            1   0.479   0.000  estado_actual_FSM_FFd1-In1 (estado_actual_FSM_FFd1-In)
+     FDC:C->Q              2   0.626   1.040  Nuevo_reloj/cuenta_7 (Nuevo_reloj/cuenta_7)
+     LUT4:I0->O            1   0.479   0.000  Nuevo_reloj/cuenta_cmp_eq0000_wg_lut<0> (Nuevo_reloj/cuenta_cmp_eq0000_wg_lut<0>)
+     MUXCY:S->O            1   0.435   0.000  Nuevo_reloj/cuenta_cmp_eq0000_wg_cy<0> (Nuevo_reloj/cuenta_cmp_eq0000_wg_cy<0>)
+     MUXCY:CI->O           1   0.056   0.000  Nuevo_reloj/cuenta_cmp_eq0000_wg_cy<1> (Nuevo_reloj/cuenta_cmp_eq0000_wg_cy<1>)
+     MUXCY:CI->O           1   0.056   0.000  Nuevo_reloj/cuenta_cmp_eq0000_wg_cy<2> (Nuevo_reloj/cuenta_cmp_eq0000_wg_cy<2>)
+     MUXCY:CI->O           1   0.056   0.000  Nuevo_reloj/cuenta_cmp_eq0000_wg_cy<3> (Nuevo_reloj/cuenta_cmp_eq0000_wg_cy<3>)
+     MUXCY:CI->O           1   0.056   0.000  Nuevo_reloj/cuenta_cmp_eq0000_wg_cy<4> (Nuevo_reloj/cuenta_cmp_eq0000_wg_cy<4>)
+     MUXCY:CI->O           1   0.056   0.000  Nuevo_reloj/cuenta_cmp_eq0000_wg_cy<5> (Nuevo_reloj/cuenta_cmp_eq0000_wg_cy<5>)
+     MUXCY:CI->O          29   0.264   1.731  Nuevo_reloj/cuenta_cmp_eq0000_wg_cy<6> (Nuevo_reloj/cuenta_cmp_eq0000)
+     LUT2:I1->O            1   0.479   0.681  Nuevo_reloj/clk_aux_and00001 (Nuevo_reloj/clk_aux_and0000)
+     FDE:CE                    0.524          Nuevo_reloj/clk_aux
+    ----------------------------------------
+    Total                      6.537ns (3.085ns logic, 3.452ns route)
+                                       (47.2% logic, 52.8% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'Nuevo_reloj/clk_aux'
+  Clock period: 2.429ns (frequency: 411.768MHz)
+  Total number of paths / destination ports: 4 / 2
+-------------------------------------------------------------------------
+Delay:               2.429ns (Levels of Logic = 1)
+  Source:            estado_actual_FSM_FFd1 (FF)
+  Destination:       estado_actual_FSM_FFd1 (FF)
+  Source Clock:      Nuevo_reloj/clk_aux rising
+  Destination Clock: Nuevo_reloj/clk_aux rising
+
+  Data Path: estado_actual_FSM_FFd1 to estado_actual_FSM_FFd1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              6   0.626   1.148  estado_actual_FSM_FFd1 (estado_actual_FSM_FFd1)
+     LUT4:I0->O            1   0.479   0.000  estado_actual_FSM_FFd1-In1 (estado_actual_FSM_FFd1-In)
      FDC:D                     0.176          estado_actual_FSM_FFd1
     ----------------------------------------
-    Total                      2.119ns (1.281ns logic, 0.838ns route)
-                                       (60.4% logic, 39.6% route)
+    Total                      2.429ns (1.281ns logic, 1.148ns route)
+                                       (52.7% logic, 47.3% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'reloj'
-  Total number of paths / destination ports: 4 / 2
+  Total number of paths / destination ports: 1 / 1
 -------------------------------------------------------------------------
-Offset:              2.410ns (Levels of Logic = 2)
-  Source:            C (PAD)
-  Destination:       estado_actual_FSM_FFd1 (FF)
+Offset:              4.264ns (Levels of Logic = 2)
+  Source:            rst (PAD)
+  Destination:       Nuevo_reloj/clk_aux (FF)
   Destination Clock: reloj rising
 
-  Data Path: C to estado_actual_FSM_FFd1
+  Data Path: rst to Nuevo_reloj/clk_aux
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             2   0.715   1.040  C_IBUF (C_IBUF)
-     LUT4:I0->O            1   0.479   0.000  estado_actual_FSM_FFd1-In1 (estado_actual_FSM_FFd1-In)
-     FDC:D                     0.176          estado_actual_FSM_FFd1
+     IBUF:I->O            31   0.715   1.865  rst_IBUF (rst_IBUF)
+     LUT2:I0->O            1   0.479   0.681  Nuevo_reloj/clk_aux_and00001 (Nuevo_reloj/clk_aux_and0000)
+     FDE:CE                    0.524          Nuevo_reloj/clk_aux
+    ----------------------------------------
+    Total                      4.264ns (1.718ns logic, 2.546ns route)
+                                       (40.3% logic, 59.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'Nuevo_reloj/clk_aux'
+  Total number of paths / destination ports: 4 / 2
+-------------------------------------------------------------------------
+Offset:              2.410ns (Levels of Logic = 2)
+  Source:            R (PAD)
+  Destination:       estado_actual_FSM_FFd2 (FF)
+  Destination Clock: Nuevo_reloj/clk_aux rising
+
+  Data Path: R to estado_actual_FSM_FFd2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             2   0.715   1.040  R_IBUF (R_IBUF)
+     LUT4:I0->O            1   0.479   0.000  estado_actual_FSM_FFd2-In1 (estado_actual_FSM_FFd2-In)
+     FDC:D                     0.176          estado_actual_FSM_FFd2
     ----------------------------------------
     Total                      2.410ns (1.370ns logic, 1.040ns route)
                                        (56.8% logic, 43.2% route)
 
 =========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'reloj'
-  Total number of paths / destination ports: 4 / 2
+Timing constraint: Default OFFSET OUT AFTER for Clock 'Nuevo_reloj/clk_aux'
+  Total number of paths / destination ports: 12 / 6
 -------------------------------------------------------------------------
-Offset:              7.769ns (Levels of Logic = 2)
-  Source:            estado_actual_FSM_FFd2 (FF)
+Offset:              7.907ns (Levels of Logic = 2)
+  Source:            estado_actual_FSM_FFd1 (FF)
   Destination:       G (PAD)
-  Source Clock:      reloj rising
+  Source Clock:      Nuevo_reloj/clk_aux rising
 
-  Data Path: estado_actual_FSM_FFd2 to G
+  Data Path: estado_actual_FSM_FFd1 to G
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q              4   0.626   1.074  estado_actual_FSM_FFd2 (estado_actual_FSM_FFd2)
-     LUT2:I0->O            1   0.479   0.681  estado_actual_FSM_Out11 (L_OBUF)
-     OBUF:I->O                 4.909          L_OBUF (L)
+     FDC:C->Q              6   0.626   1.148  estado_actual_FSM_FFd1 (estado_actual_FSM_FFd1)
+     LUT2:I0->O            2   0.479   0.745  estado_actual_FSM_Out01 (actual_state_1_OBUF)
+     OBUF:I->O                 4.909          G_OBUF (G)
     ----------------------------------------
-    Total                      7.769ns (6.014ns logic, 1.755ns route)
-                                       (77.4% logic, 22.6% route)
+    Total                      7.907ns (6.014ns logic, 1.893ns route)
+                                       (76.1% logic, 23.9% route)
 
 =========================================================================
 
 
 Total REAL time to Xst completion: 4.00 secs
-Total CPU time to Xst completion: 4.00 secs
+Total CPU time to Xst completion: 3.87 secs
  
 --> 
 
 Total memory usage is 253656 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    4 (   0 filtered)
-Number of infos    :    0 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
 

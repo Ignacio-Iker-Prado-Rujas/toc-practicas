@@ -28,8 +28,9 @@ end divisor;
   
   begin
 
-clk<=clk_entrada; 
-clk_salida<=clk_aux;
+clk <= clk_entrada; 
+clk_salida <= clk_aux;
+
   contador:
   PROCESS(reset, clk)
   BEGIN

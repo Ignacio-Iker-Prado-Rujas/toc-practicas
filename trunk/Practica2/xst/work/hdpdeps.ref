@@ -1,10 +1,13 @@
-V3 7
+V3 9
 FL C:/hlocal/Pr2/divisor.vhd 2013/10/14.14:22:52 P.15xf
-EN work/divisor 1382014893 FL C:/hlocal/Pr2/divisor.vhd PB ieee/std_logic_1164 1335251622 \
-      PB ieee/STD_LOGIC_UNSIGNED 1335251625
-AR work/divisor/divisor_arch 1382014894 \
-      FL C:/hlocal/Pr2/divisor.vhd EN work/divisor 1382014893
 FL C:/hlocal/Pr2/munyeca.vhd 2013/10/17.14:42:36 P.15xf
-EN work/munyeca 1382014895 FL C:/hlocal/Pr2/munyeca.vhd PB ieee/std_logic_1164 1335251622
-AR work/munyeca/Behavioral 1382014896 \
-      FL C:/hlocal/Pr2/munyeca.vhd EN work/munyeca 1382014895 CP divisor
+FL C:/hlocal/TOC/Practica2/divisor.vhd 2013/10/17.17:36:58 P.15xf
+EN work/divisor 1382025196 FL C:/hlocal/TOC/Practica2/divisor.vhd \
+      PB ieee/std_logic_1164 1335251622 PB ieee/STD_LOGIC_UNSIGNED 1335251625
+AR work/divisor/divisor_arch 1382025197 \
+      FL C:/hlocal/TOC/Practica2/divisor.vhd EN work/divisor 1382025196
+FL C:/hlocal/TOC/Practica2/munyeca.vhd 2013/10/17.17:35:51 P.15xf
+EN work/munyeca 1382025198 FL C:/hlocal/TOC/Practica2/munyeca.vhd \
+      PB ieee/std_logic_1164 1335251622
+AR work/munyeca/Behavioral 1382025199 \
+      FL C:/hlocal/TOC/Practica2/munyeca.vhd EN work/munyeca 1382025198 CP divisor

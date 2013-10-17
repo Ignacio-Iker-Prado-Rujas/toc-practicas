@@ -45,36 +45,26 @@ Setup/Hold to clock reloj
             |Max Setup to|Max Hold to |                  | Clock  |
 Source      | clk (edge) | clk (edge) |Internal Clock(s) | Phase  |
 ------------+------------+------------+------------------+--------+
-C           |    3.008(R)|   -1.406(R)|reloj_BUFGP       |   0.000|
-R           |    1.258(R)|    0.057(R)|reloj_BUFGP       |   0.000|
+rst         |    4.057(R)|   -2.177(R)|reloj_BUFGP       |   0.000|
 ------------+------------+------------+------------------+--------+
-
-Clock reloj to Pad
-------------+------------+------------------+--------+
-            | clk (edge) |                  | Clock  |
-Destination |   to PAD   |Internal Clock(s) | Phase  |
-------------+------------+------------------+--------+
-G           |    9.386(R)|reloj_BUFGP       |   0.000|
-L           |    9.491(R)|reloj_BUFGP       |   0.000|
-------------+------------+------------------+--------+
 
 Clock to Setup on destination clock reloj
 ---------------+---------+---------+---------+---------+
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-reloj          |    1.651|         |         |         |
+reloj          |    5.013|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
-Analysis completed Thu Oct 17 14:57:15 2013 
+Analysis completed Thu Oct 17 17:53:36 2013 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 153 MB
+Peak Memory Usage: 155 MB
 
 
 

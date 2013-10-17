@@ -1,7 +1,7 @@
 Release 14.1 par P.15xf (nt64)
 Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 
-PTO1010::  Thu Oct 17 14:57:08 2013
+PTO1006::  Thu Oct 17 17:53:30 2013
 
 par -w -intstyle ise -ol high -t 1 munyeca_map.ncd munyeca.ncd munyeca.pcf 
 
@@ -41,10 +41,10 @@ Device speed data version:  "PRODUCTION 1.39 2012-04-23".
 Device Utilization Summary:
 
    Number of BUFGMUXs                        1 out of 8      12%
-   Number of External IOBs                   6 out of 173     3%
-      Number of LOCed IOBs                   5 out of 6      83%
+   Number of External IOBs                  10 out of 173     5%
+      Number of LOCed IOBs                  10 out of 10    100%
 
-   Number of Slices                          2 out of 7680    1%
+   Number of Slices                         37 out of 7680    1%
       Number of SLICEMs                      0 out of 3840    0%
 
 
@@ -63,42 +63,34 @@ Total REAL time at the beginning of Placer: 1 secs
 Total CPU  time at the beginning of Placer: 0 secs 
 
 Phase 1.1  Initial Placement Analysis
-Phase 1.1  Initial Placement Analysis (Checksum:1513a7b0) REAL time: 1 secs 
+Phase 1.1  Initial Placement Analysis (Checksum:be81a5ab) REAL time: 1 secs 
 
 Phase 2.7  Design Feasibility Check
-INFO:Place:834 - Only a subset of IOs are locked. Out of 6 IOs, 5 are locked and 1 are not locked. If you would like to
-   print the names of these IOs, please set the environment variable XIL_PAR_DESIGN_CHECK_VERBOSE to 1. 
-Phase 2.7  Design Feasibility Check (Checksum:1513a7b0) REAL time: 1 secs 
+Phase 2.7  Design Feasibility Check (Checksum:be81a5ab) REAL time: 1 secs 
 
 Phase 3.31  Local Placement Optimization
-Phase 3.31  Local Placement Optimization (Checksum:1513a7b0) REAL time: 1 secs 
+Phase 3.31  Local Placement Optimization (Checksum:be81a5ab) REAL time: 1 secs 
 
 Phase 4.2  Initial Clock and IO Placement
-..........
-Phase 4.2  Initial Clock and IO Placement (Checksum:24120f80) REAL time: 1 secs 
+
+Phase 4.2  Initial Clock and IO Placement (Checksum:47a34cb) REAL time: 1 secs 
 
 Phase 5.36  Local Placement Optimization
-Phase 5.36  Local Placement Optimization (Checksum:24120f80) REAL time: 1 secs 
+Phase 5.36  Local Placement Optimization (Checksum:47a34cb) REAL time: 1 secs 
 
-Phase 6.3  Local Placement Optimization
-...........
-Phase 6.3  Local Placement Optimization (Checksum:241806b0) REAL time: 1 secs 
+Phase 6.8  Global Placement
+..
+..
+Phase 6.8  Global Placement (Checksum:f1801737) REAL time: 2 secs 
 
 Phase 7.5  Local Placement Optimization
-Phase 7.5  Local Placement Optimization (Checksum:241806b0) REAL time: 1 secs 
+Phase 7.5  Local Placement Optimization (Checksum:f1801737) REAL time: 2 secs 
 
-Phase 8.8  Global Placement
-..
-Phase 8.8  Global Placement (Checksum:28abeb21) REAL time: 2 secs 
+Phase 8.18  Placement Optimization
+Phase 8.18  Placement Optimization (Checksum:a94b7f96) REAL time: 2 secs 
 
 Phase 9.5  Local Placement Optimization
-Phase 9.5  Local Placement Optimization (Checksum:28abeb21) REAL time: 2 secs 
-
-Phase 10.18  Placement Optimization
-Phase 10.18  Placement Optimization (Checksum:2771abf9) REAL time: 2 secs 
-
-Phase 11.5  Local Placement Optimization
-Phase 11.5  Local Placement Optimization (Checksum:2771abf9) REAL time: 2 secs 
+Phase 9.5  Local Placement Optimization (Checksum:a94b7f96) REAL time: 2 secs 
 
 Total REAL time to Placer completion: 2 secs 
 Total CPU  time to Placer completion: 2 secs 
@@ -109,13 +101,13 @@ Writing design to file munyeca.ncd
 Starting Router
 
 
-Phase  1  : 18 unrouted;      REAL time: 2 secs 
+Phase  1  : 189 unrouted;      REAL time: 2 secs 
 
-Phase  2  : 16 unrouted;      REAL time: 2 secs 
+Phase  2  : 173 unrouted;      REAL time: 2 secs 
 
-Phase  3  : 0 unrouted;      REAL time: 2 secs 
+Phase  3  : 11 unrouted;      REAL time: 2 secs 
 
-Phase  4  : 9 unrouted; (Par is working to improve performance)     REAL time: 3 secs 
+Phase  4  : 23 unrouted; (Par is working to improve performance)     REAL time: 3 secs 
 
 Phase  5  : 0 unrouted; (Par is working to improve performance)     REAL time: 3 secs 
 
@@ -130,9 +122,11 @@ Phase  8  : 0 unrouted; (Par is working to improve performance)     REAL time: 3
 Phase  9  : 0 unrouted; (Par is working to improve performance)     REAL time: 3 secs 
 
 Phase 10  : 0 unrouted; (Par is working to improve performance)     REAL time: 3 secs 
+WARNING:Route:455 - CLK Net:Nuevo_reloj/clk_aux may have excessive skew because 
+      1 CLK pins and 1 NON_CLK pins failed to route using a CLK template.
 
 Total REAL time to Router completion: 3 secs 
-Total CPU time to Router completion: 2 secs 
+Total CPU time to Router completion: 3 secs 
 
 Partition Implementation Status
 -------------------------------
@@ -150,7 +144,9 @@ Generating Clock Report
 +---------------------+--------------+------+------+------------+-------------+
 |        Clock Net    |   Resource   |Locked|Fanout|Net Skew(ns)|Max Delay(ns)|
 +---------------------+--------------+------+------+------------+-------------+
-|         reloj_BUFGP |      BUFGMUX0| No   |    1 |  0.000     |  0.675      |
+|         reloj_BUFGP |      BUFGMUX0| No   |   15 |  0.181     |  0.858      |
++---------------------+--------------+------+------+------------+-------------+
+| Nuevo_reloj/clk_aux |         Local|      |    2 |  0.000     |  2.388      |
 +---------------------+--------------+------+------+------------+-------------+
 
 * Net Skew is the difference between the minimum and maximum routing
@@ -170,8 +166,11 @@ Asterisk (*) preceding a constraint indicates it was not met.
   Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
                                             |             |    Slack   | Achievable | Errors |    Score   
 ----------------------------------------------------------------------------------------------------------
-  Autotimespec constraint for clock net rel | SETUP       |         N/A|     1.651ns|     N/A|           0
-  oj_BUFGP                                  | HOLD        |     0.871ns|            |       0|           0
+  Autotimespec constraint for clock net rel | SETUP       |         N/A|     5.013ns|     N/A|           0
+  oj_BUFGP                                  | HOLD        |     0.785ns|            |       0|           0
+----------------------------------------------------------------------------------------------------------
+  Autotimespec constraint for clock net Nue | SETUP       |         N/A|     1.759ns|     N/A|           0
+  vo_reloj/clk_aux                          | HOLD        |     0.869ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
 
 
@@ -190,14 +189,14 @@ All signals are completely routed.
 Total REAL time to PAR completion: 3 secs 
 Total CPU time to PAR completion: 3 secs 
 
-Peak Memory Usage:  267 MB
+Peak Memory Usage:  268 MB
 
 Placement: Completed - No errors found.
 Routing: Completed - No errors found.
 
 Number of error messages: 0
-Number of warning messages: 0
-Number of info messages: 2
+Number of warning messages: 1
+Number of info messages: 1
 
 Writing design to file munyeca.ncd
 

@@ -31,7 +31,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity munyeca is
 	port (reloj, rst, R, C: in	std_logic;
-			G, L: out std_logic);
+			G, L: out std_logic; actual_state : out std_logic_vector(3 downto 0));
 end munyeca;
 
 architecture Behavioral of munyeca is
@@ -46,7 +46,6 @@ architecture Behavioral of munyeca is
 
 	type estado is(tranquila, asustada, dormida, habla);
 	signal estado_actual, estado_sig: estado;
-	signal actual_state: std_logic_vector(3 downto 0);
 
 begin
 
@@ -55,15 +54,15 @@ begin
 	clk_100M<=reloj;
 	clk<=clk_1;
 -- Comentar para la implementacion
--- clk <= reloj;
+	--clk <= reloj;
 
 --process para el reloj
-relojito: process(reloj, rst)
+relojito: process(clk, rst)
 	
 	begin
 	if rst = '1' then 
 		estado_actual <= tranquila;
-	elsif reloj'event and reloj = '1' then 
+	elsif clk'event and clk = '1' then 
 		estado_actual <= estado_sig;
 	end if;
 
@@ -78,21 +77,21 @@ actualizar_sig_estado: process(R, C, estado_actual)
 			actual_state <= "0001"; 	--tranquila
 			if C = '0' and R = '1' then
 				estado_sig <= habla;
-			elsif R = '1' and C = '0' then
+			elsif C = '1' and R = '0' then
 				estado_sig <=	dormida;
-			else estado_sig <= estado_actual;
+			else estado_sig <= tranquila;
 			end if;
 		when habla =>
 			actual_state <= "0010"; --habla
 			if C = '1' then
 				estado_sig <= dormida;
-			else estado_sig <= estado_actual;
+			else estado_sig <= habla;
 			end if;
 		when dormida =>
 			actual_state <= "0100"; --dormida
 			if R = '1' then
 				estado_sig <= asustada;
-			else estado_sig <= estado_actual;
+			else estado_sig <= dormida;
 			end if;
 		when asustada => 
 			actual_state <= "1000"; --asustada
@@ -100,9 +99,9 @@ actualizar_sig_estado: process(R, C, estado_actual)
 				estado_sig <= dormida;
 			elsif	C = '0' and R = '0' then
 				estado_sig <= tranquila;
-			else estado_sig <= estado_actual;
+			else estado_sig <= asustada;
 			end if;
-		when others => estado_sig <= estado_actual;
+		when others => estado_sig <= tranquila;
 	end case;
 	
 end process actualizar_sig_estado;
@@ -110,14 +109,14 @@ end process actualizar_sig_estado;
 --process para actualizar las salidas en funcion del estado
 actualizar_salidas: process(estado_actual)
 
-	begin
+begin
 	case estado_actual is
 		when habla =>
 			G <= '1';
 			L <= '0';
 		when asustada =>
-			L <= '1';
 			G <= '0';
+			L <= '1';
 		when others =>
 			G <= '0';
 			L <= '0';

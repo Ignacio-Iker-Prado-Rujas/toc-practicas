@@ -8,18 +8,18 @@ NET reloj LOC=T9;
 #NET SW<1> LOC=K4;
 #NET SW<2> LOC=K3;
 #NET SW<3> LOC=K2;
-#NET SW<4> LOC=J4;
+NET rst LOC=J4;
 
 	#switches placa extendida
 
-NET rst LOC=P12;
-NET R LOC=J1;
-NET C LOC=H1;
+NET R LOC=P12;
+#NET R LOC=J1;
+#NET C LOC=H1;
 #NET SW<4> LOC=H3;
 #NET SW<5> LOC=G2;
 #NET SW<6> LOC=K15;
 #NET SW<7> LOC=K16;
-#NET SW<8> LOC=F15;
+NET C LOC=F15;
 
 #
 	#push buttons placa superior
@@ -36,15 +36,15 @@ NET C LOC=H1;
 #barra de leds placa extendida
 
 NET G LOC=L5;
-NET R LOC=N2;
-#NET leds<3> LOC=M3;
-#NET leds<4> LOC=N1;
-#NET leds<5> LOC=T13;
-#NET leds<6> LOC=L15;
-#NET actual_state<0> LOC=J13;
-#NET actual_state<1> LOC=H15;
-#NET estado_actual<0> LOC=J16;
-#NET estado_actual<1> LOC=J14;
+NET L LOC=N2;
+#NET actual_state<0> LOC=M3;
+#NET actual_state<0> LOC=N1;
+#NET actual_state<0> LOC=T13;
+#NET actual_state<0> LOC=L15;
+NET actual_state<3> LOC=J13;
+NET actual_state<2> LOC=H15;
+NET actual_state<1> LOC=J16;
+NET actual_state<0> LOC=J14;
 
  
 

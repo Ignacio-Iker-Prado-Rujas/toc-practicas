@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\hlocal\Pr2\munyeca.ncd
+OUTFILE=C:\hlocal\Pr2\munyeca.bit
+FAMILY=Spartan3
+PART=xc3s1000-5ft256
+WORKINGDIR=C:\hlocal\Pr2
+LICENSE=WebPack
+USER_INFO=210699396_1777489394_210552810_807

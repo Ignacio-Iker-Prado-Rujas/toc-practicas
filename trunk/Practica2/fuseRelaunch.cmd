@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -o "C:/hlocal/Pr2/simulation_isim_beh.exe" -prj "C:/hlocal/Pr2/simulation_beh.prj" "work.simulation" 

@@ -1,0 +1,3 @@
+vhdl work "divisor.vhd"
+vhdl work "munyeca.vhd"
+vhdl work "sim_muneca.vhd"

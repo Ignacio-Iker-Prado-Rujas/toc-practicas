@@ -1,0 +1,3 @@
+vhdl isim_temp "divisor.vhd"
+vhdl isim_temp "munyeca.vhd"
+vhdl isim_temp "sim_muneca.vhd"

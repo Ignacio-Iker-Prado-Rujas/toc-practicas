@@ -1,1 +1,1 @@
--intstyle "ise" -incremental -o "C:/hlocal/Pr2/simulation_isim_beh.exe" -prj "C:/hlocal/Pr2/simulation_beh.prj" "work.simulation" 
+-intstyle "ise" -incremental -o "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica2/sim_munyeca_isim_beh.exe" -prj "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica2/sim_munyeca_beh.prj" "work.sim_munyeca" 

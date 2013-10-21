@@ -46,8 +46,8 @@ ARCHITECTURE behavior OF sim_munyeca IS
          R : IN  std_logic;
          C : IN  std_logic;
          G : OUT  std_logic;
-         L : OUT  std_logic;
-			actual_state : OUT  std_logic_vector(3 downto 0)
+         L : OUT  std_logic
+			--actual_state : OUT  std_logic_vector(3 downto 0)
         );
     END COMPONENT;
     
@@ -61,7 +61,7 @@ ARCHITECTURE behavior OF sim_munyeca IS
  	--Outputs
    signal G : std_logic;
    signal L : std_logic;
-	signal actual_state : std_logic_vector(3 downto 0);
+	--signal actual_state : std_logic_vector(3 downto 0);
    -- Clock period definitions
    constant clk_period : time := 10 ns;
  
@@ -74,8 +74,8 @@ BEGIN
           R => R,
           C => C,
           G => G,
-          L => L,
-			 actual_state => actual_state
+          L => L
+			 --actual_state => actual_state
         );
 
    -- Clock process definitions
@@ -131,6 +131,8 @@ BEGIN
 		rst<='0';
 		R<='0';
 		C<='0';
+		wait for 10 ns;
+		C<='1';
  --     wait for clk_period*10;
 
       -- insert stimulus here 

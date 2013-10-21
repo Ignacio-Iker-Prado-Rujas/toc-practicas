@@ -1,23 +1,22 @@
-Running: C:\Xilinx\14.1\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -o C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica2/sim_munyeca_isim_beh.exe -prj C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica2/sim_munyeca_beh.prj work.sim_munyeca 
+Running: fuse.exe -relaunch -intstyle "ise" -incremental -o "C:/hlocal/TOC/Practica2/sim_munyeca_isim_beh.exe" -prj "C:/hlocal/TOC/Practica2/sim_munyeca_beh.prj" "work.sim_munyeca" 
 ISim P.15xf (signature 0xc3576ebc)
-Number of CPUs detected in this system: 4
-Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Number of CPUs detected in this system: 8
+Turning on mult-threading, number of parallel sub-compilation jobs: 16 
 Determining compilation order of HDL files
-Parsing VHDL file "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica2/divisor.vhd" into library work
-Parsing VHDL file "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica2/munyeca.vhd" into library work
-Parsing VHDL file "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica2/sim_muneca.vhd" into library work
+Parsing VHDL file "C:/hlocal/TOC/Practica2/../contador_v3.vhd" into library work
+Parsing VHDL file "C:/hlocal/TOC/Practica2/munyeca.vhd" into library work
+Parsing VHDL file "C:/hlocal/TOC/Practica2/sim_muneca.vhd" into library work
 Starting static elaboration
 Completed static elaboration
 Compiling package standard
 Compiling package std_logic_1164
 Compiling package std_logic_arith
 Compiling package std_logic_unsigned
-Compiling architecture divisor_arch of entity divisor [divisor_default]
+Compiling architecture behavioral of entity contador [contador_default]
 Compiling architecture behavioral of entity munyeca [munyeca_default]
 Compiling architecture behavior of entity sim_munyeca
 Time Resolution for simulation is 1ps.
-Waiting for 2 sub-compilation(s) to finish...
 Compiled 9 VHDL Units
-Built simulation executable C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica2/sim_munyeca_isim_beh.exe
-Fuse Memory Usage: 32592 KB
-Fuse CPU Usage: 514 ms
+Built simulation executable C:/hlocal/TOC/Practica2/sim_munyeca_isim_beh.exe
+Fuse Memory Usage: 33964 KB
+Fuse CPU Usage: 373 ms

@@ -1,2 +1,2 @@
-vhdl work "divisor.vhd"
+vhdl work "../contador_v3.vhd"
 vhdl work "munyeca.vhd"

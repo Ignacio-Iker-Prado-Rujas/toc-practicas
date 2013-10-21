@@ -1,15 +1,11 @@
 //! **************************************************************************
-// Written by: Map P.15xf on Thu Oct 17 17:53:27 2013
+// Written by: Map P.15xf on Mon Oct 21 15:08:10 2013
 //! **************************************************************************
 
 SCHEMATIC START;
 COMP "reloj" LOCATE = SITE "T9" LEVEL 1;
 COMP "C" LOCATE = SITE "F15" LEVEL 1;
-COMP "actual_state<0>" LOCATE = SITE "J14" LEVEL 1;
-COMP "actual_state<1>" LOCATE = SITE "J16" LEVEL 1;
 COMP "G" LOCATE = SITE "L5" LEVEL 1;
-COMP "actual_state<2>" LOCATE = SITE "H15" LEVEL 1;
-COMP "actual_state<3>" LOCATE = SITE "J13" LEVEL 1;
 COMP "L" LOCATE = SITE "N2" LEVEL 1;
 COMP "R" LOCATE = SITE "P12" LEVEL 1;
 COMP "rst" LOCATE = SITE "J4" LEVEL 1;

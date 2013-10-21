@@ -41,10 +41,10 @@ NET L LOC=N2;
 #NET actual_state<0> LOC=N1;
 #NET actual_state<0> LOC=T13;
 #NET actual_state<0> LOC=L15;
-NET actual_state<3> LOC=J13;
-NET actual_state<2> LOC=H15;
-NET actual_state<1> LOC=J16;
-NET actual_state<0> LOC=J14;
+#NET actual_state<3> LOC=J13;
+#NET actual_state<2> LOC=H15;
+#NET actual_state<1> LOC=J16;
+#NET actual_state<0> LOC=J14;
 
  
 

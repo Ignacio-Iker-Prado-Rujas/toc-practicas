@@ -1,4 +1,6 @@
-EN divisor NULL C:/hlocal/TOC/Practica2/divisor.vhd sub00/vhpl02 1382025196
-EN munyeca NULL C:/hlocal/TOC/Practica2/munyeca.vhd sub00/vhpl00 1382025198
-AR divisor divisor_arch C:/hlocal/TOC/Practica2/divisor.vhd sub00/vhpl03 1382025197
-AR munyeca behavioral C:/hlocal/TOC/Practica2/munyeca.vhd sub00/vhpl01 1382025199
+EN divisor NULL C:/hlocal/TOC/Practica2/divisor.vhd sub00/vhpl02 1382357742
+EN munyeca NULL C:/hlocal/TOC/Practica2/munyeca.vhd sub00/vhpl00 1382360566
+AR divisor divisor_arch C:/hlocal/TOC/Practica2/divisor.vhd sub00/vhpl03 1382357743
+EN contador NULL C:/hlocal/TOC/contador_v3.vhd sub00/vhpl04 1382360564
+AR munyeca behavioral C:/hlocal/TOC/Practica2/munyeca.vhd sub00/vhpl01 1382360567
+AR contador behavioral C:/hlocal/TOC/contador_v3.vhd sub00/vhpl05 1382360565

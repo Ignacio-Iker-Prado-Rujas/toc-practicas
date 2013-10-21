@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2013-10-20T18:07:36</DateModified>
+  <DateModified>2013-10-21T15:07:52</DateModified>
   <ModuleName>munyeca</ModuleName>
-  <SummaryTimeStamp>2013-10-17T14:17:27</SummaryTimeStamp>
-  <SavedFilePath>C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica2/iseconfig/munyeca.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica2\</ImplementationReportsDirectory>
+  <SummaryTimeStamp>2013-10-21T14:27:49</SummaryTimeStamp>
+  <SavedFilePath>C:/hlocal/TOC/Practica2/iseconfig/munyeca.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>C:/hlocal/TOC/Practica2\</ImplementationReportsDirectory>
   <DateInitialized>2013-10-17T12:54:05</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

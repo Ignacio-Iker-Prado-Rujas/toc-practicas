@@ -4,13 +4,13 @@ Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.08 secs
+Total CPU time to Xst completion: 0.07 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.08 secs
+Total CPU time to Xst completion: 0.07 secs
  
 --> Reading design: multiplicador.prj
 
@@ -104,6 +104,8 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Compilation                              *
 =========================================================================
+Compiling vhdl file "C:/hlocal/toc/Practica3/Pr3/celda.vhd" in Library work.
+Architecture circuito of Entity celda is up to date.
 Compiling vhdl file "C:/hlocal/toc/Practica3/Pr3/multiplicador.vhd" in Library work.
 Entity <multiplicador> compiled.
 Entity <multiplicador> (Architecture <behavioral>) compiled.
@@ -114,6 +116,8 @@ Entity <multiplicador> (Architecture <behavioral>) compiled.
 Analyzing hierarchy for entity <multiplicador> in library <work> (architecture <behavioral>) with generics.
 	N = 5
 
+Analyzing hierarchy for entity <celda> in library <work> (architecture <circuito>).
+
 
 =========================================================================
 *                            HDL Analysis                               *
@@ -122,6 +126,9 @@ Analyzing generic Entity <multiplicador> in library <work> (Architecture <behavi
 	N = 5
 Entity <multiplicador> analyzed. Unit <multiplicador> generated.
 
+Analyzing Entity <celda> in library <work> (Architecture <circuito>).
+Entity <celda> analyzed. Unit <celda> generated.
+
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -129,17 +136,45 @@ Entity <multiplicador> analyzed. Unit <multiplicador> generated.
 
 Performing bidirectional port resolution...
 
+Synthesizing Unit <celda>.
+    Related source file is "C:/hlocal/toc/Practica3/Pr3/celda.vhd".
+    Found 1-bit xor3 for signal <suma_o>.
+    Summary:
+	inferred   1 Xor(s).
+Unit <celda> synthesized.
+
+
 Synthesizing Unit <multiplicador>.
     Related source file is "C:/hlocal/toc/Practica3/Pr3/multiplicador.vhd".
-WARNING:Xst:647 - Input <a> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <x> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:1780 - Signal <suma<0><9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <suma<1><9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <suma<2><9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <suma<3><9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <suma<4><9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <suma<5>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <mult<0><9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <mult<1><9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <mult<2><9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <mult<3><9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <mult<4><9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:653 - Signal <mult<4><0>> is used but never assigned. This sourceless signal will be automatically connected to value 0.
+WARNING:Xst:1780 - Signal <mult<5>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <acarreo<0><9>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <acarreo<1><9>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <acarreo<2><9>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <acarreo<3><9>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <acarreo<4><9>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <acarreo<5>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
 Unit <multiplicador> synthesized.
 
 
 =========================================================================
 HDL Synthesis Report
 
-Found no macro
+Macro Statistics
+# Xors                                                 : 45
+ 1-bit xor3                                            : 45
+
 =========================================================================
 
 =========================================================================
@@ -150,12 +185,16 @@ Found no macro
 =========================================================================
 Advanced HDL Synthesis Report
 
-Found no macro
+Macro Statistics
+# Xors                                                 : 45
+ 1-bit xor3                                            : 45
+
 =========================================================================
 
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
+WARNING:Xst:1989 - Unit <multiplicador>: instances <Filas[0].Columnas[6].celdaNormal>, <Filas[0].Columnas[7].celdaNormal> of unit <celda> are equivalent, second instance is removed
 
 Optimizing unit <multiplicador> ...
 
@@ -196,10 +235,12 @@ Design Statistics
 # IOs                              : 20
 
 Cell Usage :
-# BELS                             : 2
-#      GND                         : 1
-#      VCC                         : 1
-# IO Buffers                       : 10
+# BELS                             : 52
+#      LUT2                        : 17
+#      LUT3                        : 4
+#      LUT4                        : 31
+# IO Buffers                       : 20
+#      IBUF                        : 10
 #      OBUF                        : 10
 =========================================================================
 
@@ -208,9 +249,10 @@ Device utilization summary:
 
 Selected Device : 3s1000ft256-5 
 
- Number of Slices:                        0  out of   7680     0%  
+ Number of Slices:                       30  out of   7680     0%  
+ Number of 4 input LUTs:                 52  out of  15360     0%  
  Number of IOs:                          20
- Number of bonded IOBs:                  10  out of    173     5%  
+ Number of bonded IOBs:                  20  out of    173    11%  
 
 ---------------------------
 Partition Resource Summary:
@@ -243,23 +285,49 @@ Speed Grade: -5
    Minimum period: No path found
    Minimum input arrival time before clock: No path found
    Maximum output required time after clock: No path found
-   Maximum combinational path delay: No path found
+   Maximum combinational path delay: 18.207ns
 
 Timing Detail:
 --------------
 All values displayed in nanoseconds (ns)
 
 =========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 1032 / 10
+-------------------------------------------------------------------------
+Delay:               18.207ns (Levels of Logic = 10)
+  Source:            x<2> (PAD)
+  Destination:       p<8> (PAD)
+
+  Data Path: x<2> to p<8>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             6   0.715   1.148  x_2_IBUF (x_2_IBUF)
+     LUT2:I0->O            2   0.479   1.040  _and00111 (mult<1><3>)
+     LUT4:I0->O            2   0.479   1.040  Filas[1].Columnas[3].celdaNormal/acarreo_o1 (acarreo<2><4>)
+     LUT4:I0->O            2   0.479   0.915  Filas[2].Columnas[4].celdaNormal/acarreo_o1 (acarreo<3><5>)
+     LUT4:I1->O            2   0.479   1.040  Filas[3].Columnas[5].celdaNormal/Mxor_suma_o_xo<0>1 (suma<4><5>)
+     LUT4:I0->O            2   0.479   1.040  FilaUltima[5].celdaFilaUltima/acarreo_o_and00011 (FilaUltima[5].celdaFilaUltima/acarreo_o_and0001)
+     LUT3:I0->O            2   0.479   1.040  FilaUltima[6].celdaFilaUltima/acarreo_o1 (mult<4><7>)
+     LUT3:I0->O            2   0.479   0.804  FilaUltima[7].celdaFilaUltima/acarreo_o1 (mult<4><8>)
+     LUT4:I2->O            1   0.479   0.681  celdaCasillaUltima/Mxor_suma_o_xo<0>1 (p_8_OBUF)
+     OBUF:I->O                 4.909          p_8_OBUF (p<8>)
+    ----------------------------------------
+    Total                     18.207ns (9.456ns logic, 8.751ns route)
+                                       (51.9% logic, 48.1% route)
+
+=========================================================================
 
 
-Total REAL time to Xst completion: 4.00 secs
-Total CPU time to Xst completion: 3.78 secs
+Total REAL time to Xst completion: 5.00 secs
+Total CPU time to Xst completion: 4.62 secs
  
 --> 
 
-Total memory usage is 252632 kilobytes
+Total memory usage is 254104 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    2 (   0 filtered)
+Number of warnings :   20 (   0 filtered)
 Number of infos    :    0 (   0 filtered)
 

@@ -6,14 +6,61 @@ Determining compilation order of HDL files
 Parsing VHDL file "C:/hlocal/toc/Practica3/Pr3/multiplicador.vhd" into library work
 Parsing VHDL file "C:/hlocal/toc/Practica3/Pr3/test1.vhd" into library work
 Starting static elaboration
+WARNING:HDLCompiler:89 - "C:/hlocal/toc/Practica3/Pr3/multiplicador.vhd" Line 76: <celda> remains a black-box since it has no binding entity.
+WARNING:HDLCompiler:89 - "C:/hlocal/toc/Practica3/Pr3/multiplicador.vhd" Line 81: <celda> remains a black-box since it has no binding entity.
+WARNING:HDLCompiler:89 - "C:/hlocal/toc/Practica3/Pr3/multiplicador.vhd" Line 84: <celda> remains a black-box since it has no binding entity.
 Completed static elaboration
+WARNING:Simulator:648 - "C:/hlocal/toc/Practica3/Pr3/multiplicador.vhd" Line 76. Instance celda is unbound
+WARNING:Simulator:648 - "C:/hlocal/toc/Practica3/Pr3/multiplicador.vhd" Line 76. Instance celda is unbound
+WARNING:Simulator:648 - "C:/hlocal/toc/Practica3/Pr3/multiplicador.vhd" Line 76. Instance celda is unbound
+WARNING:Simulator:648 - "C:/hlocal/toc/Practica3/Pr3/multiplicador.vhd" Line 76. Instance celda is unbound
+WARNING:Simulator:648 - "C:/hlocal/toc/Practica3/Pr3/multiplicador.vhd" Line 76. Instance celda is unbound
+WARNING:Simulator:648 - "C:/hlocal/toc/Practica3/Pr3/multiplicador.vhd" Line 76. Instance celda is unbound
+WARNING:Simulator:648 - "C:/hlocal/toc/Practica3/Pr3/multiplicador.vhd" Line 76. Instance celda is unbound
+WARNING:Simulator:648 - "C:/hlocal/toc/Practica3/Pr3/multiplicador.vhd" Line 76. Instance celda is unbound
+WARNING:Simulator:648 - "C:/hlocal/toc/Practica3/Pr3/multiplicador.vhd" Line 76. Instance celda is unbound
+WARNING:Simulator:648 - "C:/hlocal/toc/Practica3/Pr3/multiplicador.vhd" Line 76. Instance celda is unbound
+WARNING:Simulator:648 - "C:/hlocal/toc/Practica3/Pr3/multiplicador.vhd" Line 76. Instance celda is unbound
+WARNING:Simulator:648 - "C:/hlocal/toc/Practica3/Pr3/multiplicador.vhd" Line 76. Instance celda is unbound
+WARNING:Simulator:648 - "C:/hlocal/toc/Practica3/Pr3/multiplicador.vhd" Line 76. Instance celda is unbound
+WARNING:Simulator:648 - "C:/hlocal/toc/Practica3/Pr3/multiplicador.vhd" Line 76. Instance celda is unbound
+WARNING:Simulator:648 - "C:/hlocal/toc/Practica3/Pr3/multiplicador.vhd" Line 76. Instance celda is unbound
+WARNING:Simulator:648 - "C:/hlocal/toc/Practica3/Pr3/multiplicador.vhd" Line 76. Instance celda is unbound
+WARNING:Simulator:648 - "C:/hlocal/toc/Practica3/Pr3/multiplicador.vhd" Line 76. Instance celda is unbound
+WARNING:Simulator:648 - "C:/hlocal/toc/Practica3/Pr3/multiplicador.vhd" Line 76. Instance celda is unbound
+WARNING:Simulator:648 - "C:/hlocal/toc/Practica3/Pr3/multiplicador.vhd" Line 76. Instance celda is unbound
+WARNING:Simulator:648 - "C:/hlocal/toc/Practica3/Pr3/multiplicador.vhd" Line 76. Instance celda is unbound
+WARNING:Simulator:648 - "C:/hlocal/toc/Practica3/Pr3/multiplicador.vhd" Line 76. Instance celda is unbound
+WARNING:Simulator:648 - "C:/hlocal/toc/Practica3/Pr3/multiplicador.vhd" Line 76. Instance celda is unbound
+WARNING:Simulator:648 - "C:/hlocal/toc/Practica3/Pr3/multiplicador.vhd" Line 76. Instance celda is unbound
+WARNING:Simulator:648 - "C:/hlocal/toc/Practica3/Pr3/multiplicador.vhd" Line 76. Instance celda is unbound
+WARNING:Simulator:648 - "C:/hlocal/toc/Practica3/Pr3/multiplicador.vhd" Line 76. Instance celda is unbound
+WARNING:Simulator:648 - "C:/hlocal/toc/Practica3/Pr3/multiplicador.vhd" Line 76. Instance celda is unbound
+WARNING:Simulator:648 - "C:/hlocal/toc/Practica3/Pr3/multiplicador.vhd" Line 76. Instance celda is unbound
+WARNING:Simulator:648 - "C:/hlocal/toc/Practica3/Pr3/multiplicador.vhd" Line 76. Instance celda is unbound
+WARNING:Simulator:648 - "C:/hlocal/toc/Practica3/Pr3/multiplicador.vhd" Line 76. Instance celda is unbound
+WARNING:Simulator:648 - "C:/hlocal/toc/Practica3/Pr3/multiplicador.vhd" Line 76. Instance celda is unbound
+WARNING:Simulator:648 - "C:/hlocal/toc/Practica3/Pr3/multiplicador.vhd" Line 76. Instance celda is unbound
+WARNING:Simulator:648 - "C:/hlocal/toc/Practica3/Pr3/multiplicador.vhd" Line 76. Instance celda is unbound
+WARNING:Simulator:648 - "C:/hlocal/toc/Practica3/Pr3/multiplicador.vhd" Line 76. Instance celda is unbound
+WARNING:Simulator:648 - "C:/hlocal/toc/Practica3/Pr3/multiplicador.vhd" Line 76. Instance celda is unbound
+WARNING:Simulator:648 - "C:/hlocal/toc/Practica3/Pr3/multiplicador.vhd" Line 76. Instance celda is unbound
+WARNING:Simulator:648 - "C:/hlocal/toc/Practica3/Pr3/multiplicador.vhd" Line 76. Instance celda is unbound
+WARNING:Simulator:648 - "C:/hlocal/toc/Practica3/Pr3/multiplicador.vhd" Line 81. Instance celda is unbound
+WARNING:Simulator:648 - "C:/hlocal/toc/Practica3/Pr3/multiplicador.vhd" Line 81. Instance celda is unbound
+WARNING:Simulator:648 - "C:/hlocal/toc/Practica3/Pr3/multiplicador.vhd" Line 81. Instance celda is unbound
+WARNING:Simulator:648 - "C:/hlocal/toc/Practica3/Pr3/multiplicador.vhd" Line 81. Instance celda is unbound
+WARNING:Simulator:648 - "C:/hlocal/toc/Practica3/Pr3/multiplicador.vhd" Line 81. Instance celda is unbound
+WARNING:Simulator:648 - "C:/hlocal/toc/Practica3/Pr3/multiplicador.vhd" Line 81. Instance celda is unbound
+WARNING:Simulator:648 - "C:/hlocal/toc/Practica3/Pr3/multiplicador.vhd" Line 81. Instance celda is unbound
+WARNING:Simulator:648 - "C:/hlocal/toc/Practica3/Pr3/multiplicador.vhd" Line 81. Instance celda is unbound
+WARNING:Simulator:648 - "C:/hlocal/toc/Practica3/Pr3/multiplicador.vhd" Line 84. Instance celda is unbound
 Compiling package standard
 Compiling package std_logic_1164
 Compiling architecture behavioral of entity multiplicador [\multiplicador(5)\]
 Compiling architecture behavior of entity test1
 Time Resolution for simulation is 1ps.
-Waiting for 1 sub-compilation(s) to finish...
 Compiled 5 VHDL Units
 Built simulation executable C:/hlocal/toc/Practica3/Pr3/test1_isim_beh.exe
-Fuse Memory Usage: 29420 KB
-Fuse CPU Usage: 327 ms
+Fuse Memory Usage: 29792 KB
+Fuse CPU Usage: 374 ms

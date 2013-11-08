@@ -36,7 +36,6 @@ entity multiplicador is
 end multiplicador;
 
 architecture Behavioral of multiplicador is
-begin
 
 component celda is
 	port(suma_i, acarreo_i, mult: in std_logic;

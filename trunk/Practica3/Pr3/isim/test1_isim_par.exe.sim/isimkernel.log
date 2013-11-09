@@ -1,0 +1,31 @@
+Command line:
+   test1_isim_par.exe
+     -simmode  gui
+     -sdfmax  /uut/=netgen/par/multiplicador_timesim.sdf
+     -sdfroot  /uut
+     -simrunnum  0
+     -socket  50582
+
+Sat Nov 09 16:27:48 2013
+
+
+ Elaboration Time: 0.046801 sec
+
+ Current Memory Usage: 509.759 Meg
+
+ Total Signals          : 376
+ Total Nets             : 218
+ Total Signal Drivers   : 191
+ Total Blocks           : 119
+ Total Primitive Blocks : 63
+ Total Processes        : 190
+ Total Traceable Variables  : 561
+ Total Scalar Nets and Variables : 6418
+Total Line Count : 690
+
+ Total Simulation Time: 0.062401 sec
+
+ Current Memory Usage: 509.759 Meg
+
+Sat Nov 09 16:28:09 2013
+

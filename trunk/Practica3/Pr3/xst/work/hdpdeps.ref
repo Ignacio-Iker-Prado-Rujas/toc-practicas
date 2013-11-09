@@ -1,12 +1,17 @@
-V3 10
+V3 9
 FL C:/hlocal/toc/Practica3/Pr3/celda.vhd 2013/11/08.17:29:38 P.15xf
-EN work/celda 1383939223 FL C:/hlocal/toc/Practica3/Pr3/celda.vhd \
-      PB ieee/std_logic_1164 1335251622
-AR work/celda/circuito 1383939224 \
-      FL C:/hlocal/toc/Practica3/Pr3/celda.vhd EN work/celda 1383939223
 FL C:/hlocal/toc/Practica3/Pr3/multiplicador.vhd 2013/11/08.20:33:40 P.15xf
-EN work/multiplicador 1383939225 FL C:/hlocal/toc/Practica3/Pr3/multiplicador.vhd \
+FL "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica3/Pr3/celda.vhd" 2013/11/09.15:42:56 P.15xf
+EN work/celda 1384010623 \
+      FL "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica3/Pr3/celda.vhd" \
       PB ieee/std_logic_1164 1335251622
-AR work/multiplicador/Behavioral 1383939226 \
-      FL C:/hlocal/toc/Practica3/Pr3/multiplicador.vhd EN work/multiplicador 1383939225 \
-      CP celda
+AR work/celda/circuito 1384010624 \
+      FL "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica3/Pr3/celda.vhd" \
+      EN work/celda 1384010623
+FL "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica3/Pr3/multiplicador.vhd" 2013/11/09.16:13:05 P.15xf
+EN work/multiplicador 1384010625 \
+      FL "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica3/Pr3/multiplicador.vhd" \
+      PB ieee/std_logic_1164 1335251622
+AR work/multiplicador/Behavioral 1384010626 \
+      FL "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica3/Pr3/multiplicador.vhd" \
+      EN work/multiplicador 1384010625 CP celda

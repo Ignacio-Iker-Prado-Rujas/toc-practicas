@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2013-11-08T20:30:40</DateModified>
+  <DateModified>2013-11-09T15:45:13</DateModified>
   <ModuleName>multiplicador</ModuleName>
   <SummaryTimeStamp>2013-11-08T20:24:44</SummaryTimeStamp>
-  <SavedFilePath>C:/hlocal/toc/Practica3/Pr3/iseconfig/multiplicador.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>C:/hlocal/toc/Practica3/Pr3</ImplementationReportsDirectory>
+  <SavedFilePath>C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica3/Pr3/iseconfig/multiplicador.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica3/Pr3\</ImplementationReportsDirectory>
   <DateInitialized>2013-11-08T16:53:22</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

@@ -4,8 +4,8 @@
      changes made to this file may result in unpredictable
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
-<DeviceUsageSummary rev="5">
-<DesignStatistics TimeStamp="Fri Nov 08 20:33:59 2013"><group name="NetStatistics">
+<DeviceUsageSummary rev="9">
+<DesignStatistics TimeStamp="Sat Nov 09 16:23:57 2013"><group name="NetStatistics">
 <item name="NumNets_Active" rev="3">
 <attrib name="value" value="77"/></item>
 <item name="NumNodesOfType_Active_DOUBLE" rev="3">
@@ -36,18 +36,18 @@
 <attrib name="value" value="14"/></item>
 </group>
 <group name="MiscellaneousStatistics">
-<item name="AGG_BONDED_IO" rev="5">
-<attrib name="value" value="20"/></item>
-<item name="AGG_IO" rev="5">
-<attrib name="value" value="20"/></item>
-<item name="AGG_SLICE" rev="5">
-<attrib name="value" value="29"/></item>
-<item name="NUM_4_INPUT_LUT" rev="5">
-<attrib name="value" value="52"/></item>
-<item name="NUM_BONDED_IOB" rev="5">
-<attrib name="value" value="20"/></item>
-<item name="NUM_SLICEL" rev="5">
-<attrib name="value" value="29"/></item>
+<item name="AGG_BONDED_IO" rev="9">
+<attrib name="value" value="12"/></item>
+<item name="AGG_IO" rev="9">
+<attrib name="value" value="12"/></item>
+<item name="AGG_SLICE" rev="9">
+<attrib name="value" value="10"/></item>
+<item name="NUM_4_INPUT_LUT" rev="9">
+<attrib name="value" value="18"/></item>
+<item name="NUM_BONDED_IOB" rev="9">
+<attrib name="value" value="12"/></item>
+<item name="NUM_SLICEL" rev="9">
+<attrib name="value" value="10"/></item>
 </group>
 </DesignStatistics>
 <ReportConfigData TimeStamp="Fri Nov 08 19:52:48 2013"><group name="IOB_OUTBUF">

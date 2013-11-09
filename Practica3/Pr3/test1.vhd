@@ -33,6 +33,7 @@ USE ieee.std_logic_1164.ALL;
 --USE ieee.numeric_std.ALL;
  
 ENTITY test1 IS
+		 generic (N: integer := 3);
 END test1;
  
 ARCHITECTURE behavior OF test1 IS 
@@ -41,23 +42,19 @@ ARCHITECTURE behavior OF test1 IS
  
     COMPONENT multiplicador
     PORT(
-         a : IN  std_logic_vector(4 downto 0);
-         x : IN  std_logic_vector(4 downto 0);
-         p : OUT  std_logic_vector(9 downto 0)
+         a : IN  std_logic_vector(N-1 downto 0);
+         x : IN  std_logic_vector(N-1 downto 0);
+         p : OUT  std_logic_vector(2*N-1 downto 0)
         );
     END COMPONENT;
     
 
    --Inputs
-   signal a : std_logic_vector(4 downto 0) := (others => '0');
-   signal x : std_logic_vector(4 downto 0) := (others => '0');
+   signal a : std_logic_vector(N-1 downto 0) := (others => '0');
+   signal x : std_logic_vector(N-1 downto 0) := (others => '0');
 
  	--Outputs
-   signal p : std_logic_vector(9 downto 0);
-   -- No clocks detected in port list. Replace clock below with 
-   -- appropriate port name 
- 
-   constant clock_period : time := 10 ns;
+   signal p : std_logic_vector(2*N-1 downto 0);
  
 BEGIN
  
@@ -71,16 +68,10 @@ BEGIN
  
 
    -- Stimulus process
-   stim_proc: process
+	stim_proc: process
    begin		
-      a <= "10101";
-		x <= "11011";
-      wait for 100 ns;	
-		a <= "11101";
-		x <= "11010";
-		wait for 100 ns;
-		a <= "10101";
-		x <= "01011";
+      a <= "110";
+		x <= "101";
       wait;
    end process;
 

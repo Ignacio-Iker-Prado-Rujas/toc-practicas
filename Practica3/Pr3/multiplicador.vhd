@@ -30,7 +30,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity multiplicador is
-	generic (N: integer := 5);
+	generic (N: integer := 3);
 	port (a, x: in std_logic_vector(N-1 downto 0);
 		p: out std_logic_vector((2*N)-1 downto 0)); 
 end multiplicador;

@@ -1,0 +1,3 @@
+vhdl work "celda.vhd"
+vhdl work "multiplicador.vhd"
+vhdl work "../teclado.vhd"

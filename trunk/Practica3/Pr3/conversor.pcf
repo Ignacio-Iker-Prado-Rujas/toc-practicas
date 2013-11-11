@@ -1,0 +1,29 @@
+//! **************************************************************************
+// Written by: Map P.15xf on Mon Nov 11 14:49:36 2013
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "displayi<0>" LOCATE = SITE "H14" LEVEL 1;
+COMP "displayi<1>" LOCATE = SITE "M4" LEVEL 1;
+COMP "displayi<2>" LOCATE = SITE "P1" LEVEL 1;
+COMP "displayi<3>" LOCATE = SITE "N3" LEVEL 1;
+COMP "displayi<4>" LOCATE = SITE "M15" LEVEL 1;
+COMP "displayi<5>" LOCATE = SITE "H13" LEVEL 1;
+COMP "displayi<6>" LOCATE = SITE "G16" LEVEL 1;
+COMP "x<0>" LOCATE = SITE "G2" LEVEL 1;
+COMP "x<1>" LOCATE = SITE "K15" LEVEL 1;
+COMP "x<2>" LOCATE = SITE "K16" LEVEL 1;
+COMP "x<3>" LOCATE = SITE "F15" LEVEL 1;
+COMP "a<0>" LOCATE = SITE "P12" LEVEL 1;
+COMP "a<1>" LOCATE = SITE "J1" LEVEL 1;
+COMP "a<2>" LOCATE = SITE "H1" LEVEL 1;
+COMP "a<3>" LOCATE = SITE "H3" LEVEL 1;
+COMP "displayd<0>" LOCATE = SITE "E2" LEVEL 1;
+COMP "displayd<1>" LOCATE = SITE "E1" LEVEL 1;
+COMP "displayd<2>" LOCATE = SITE "F3" LEVEL 1;
+COMP "displayd<3>" LOCATE = SITE "F2" LEVEL 1;
+COMP "displayd<4>" LOCATE = SITE "G4" LEVEL 1;
+COMP "displayd<5>" LOCATE = SITE "G3" LEVEL 1;
+COMP "displayd<6>" LOCATE = SITE "G1" LEVEL 1;
+SCHEMATIC END;
+

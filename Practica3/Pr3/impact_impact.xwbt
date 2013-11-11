@@ -1,0 +1,8 @@
+INTSTYLE=impact
+INFILE=C:\hlocal\toc-practicas\Practica3\Pr3\impact.xsl
+OUTFILE=C:\hlocal\toc-practicas\Practica3\Pr3\impact.xsl
+FAMILY=Single
+PART=Single
+WORKINGDIR=C:\hlocal\toc-practicas\Practica3\Pr3
+LICENSE=iMPACT
+USER_INFO=iMPACT

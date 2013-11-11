@@ -1,0 +1,357 @@
+Release 14.1 - xst P.15xf (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.07 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.07 secs
+ 
+--> Reading design: conversor.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "conversor.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "conversor"
+Output Format                      : NGC
+Target Device                      : xc3s1000-5-ft256
+
+---- Source Options
+Top Module Name                    : conversor
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 8
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "C:/hlocal/toc-practicas/Practica3/Pr3/celda.vhd" in Library work.
+Architecture circuito of Entity celda is up to date.
+Compiling vhdl file "C:/hlocal/toc-practicas/Practica3/Pr3/multiplicador.vhd" in Library work.
+Architecture behavioral of Entity multiplicador is up to date.
+Compiling vhdl file "C:/hlocal/toc-practicas/Practica3/teclado.vhd" in Library work.
+Entity <conversor> compiled.
+Entity <conversor> (Architecture <Behavioral>) compiled.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <conversor> in library <work> (architecture <Behavioral>) with generics.
+	N = 4
+
+Analyzing hierarchy for entity <multiplicador> in library <work> (architecture <behavioral>) with generics.
+	N = 4
+
+Analyzing hierarchy for entity <celda> in library <work> (architecture <circuito>).
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing generic Entity <conversor> in library <work> (Architecture <Behavioral>).
+	N = 4
+Entity <conversor> analyzed. Unit <conversor> generated.
+
+Analyzing generic Entity <multiplicador> in library <work> (Architecture <behavioral>).
+	N = 4
+Entity <multiplicador> analyzed. Unit <multiplicador> generated.
+
+Analyzing Entity <celda> in library <work> (Architecture <circuito>).
+Entity <celda> analyzed. Unit <celda> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <celda>.
+    Related source file is "C:/hlocal/toc-practicas/Practica3/Pr3/celda.vhd".
+    Found 1-bit xor3 for signal <suma_o>.
+    Summary:
+	inferred   1 Xor(s).
+Unit <celda> synthesized.
+
+
+Synthesizing Unit <multiplicador>.
+    Related source file is "C:/hlocal/toc-practicas/Practica3/Pr3/multiplicador.vhd".
+WARNING:Xst:1780 - Signal <suma<0><7>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <suma<1><7>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <suma<2><7>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <suma<3><7>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <suma<4>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <mult<0><7>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <mult<1><7>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <mult<2><7>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <mult<3><7>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:653 - Signal <mult<3><0>> is used but never assigned. This sourceless signal will be automatically connected to value 0.
+WARNING:Xst:1780 - Signal <mult<4>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <acarreo<0><7>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <acarreo<1><7>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <acarreo<2><7>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:646 - Signal <acarreo<3><7>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <acarreo<4>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+Unit <multiplicador> synthesized.
+
+
+Synthesizing Unit <conversor>.
+    Related source file is "C:/hlocal/toc-practicas/Practica3/teclado.vhd".
+    Found 128x12-bit ROM for signal <$rom0000>.
+    Summary:
+	inferred   1 ROM(s).
+Unit <conversor> synthesized.
+
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 1
+ 128x12-bit ROM                                        : 1
+# Xors                                                 : 28
+ 1-bit xor3                                            : 28
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 1
+ 128x12-bit ROM                                        : 1
+# Xors                                                 : 28
+ 1-bit xor3                                            : 28
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <conversor> ...
+
+Optimizing unit <multiplicador> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block conversor, actual ratio is 1.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : conversor.ngr
+Top Level Output File Name         : conversor
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 22
+
+Cell Usage :
+# BELS                             : 159
+#      LUT2                        : 25
+#      LUT3                        : 29
+#      LUT4                        : 78
+#      MUXF5                       : 20
+#      MUXF6                       : 7
+# IO Buffers                       : 22
+#      IBUF                        : 8
+#      OBUF                        : 14
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s1000ft256-5 
+
+ Number of Slices:                       73  out of   7680     0%  
+ Number of 4 input LUTs:                132  out of  15360     0%  
+ Number of IOs:                          22
+ Number of bonded IOBs:                  22  out of    173    12%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+No clock signals found in this design
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: No path found
+   Minimum input arrival time before clock: No path found
+   Maximum output required time after clock: No path found
+   Maximum combinational path delay: 22.304ns
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 9604 / 14
+-------------------------------------------------------------------------
+Delay:               22.304ns (Levels of Logic = 13)
+  Source:            x<1> (PAD)
+  Destination:       displayd<4> (PAD)
+
+  Data Path: x<1> to displayd<4>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             8   0.715   1.216  x_1_IBUF (x_1_IBUF)
+     LUT2:I0->O            2   0.479   1.040  mult/_and00031 (mult/mult<0><4>)
+     LUT4:I0->O            2   0.479   0.915  mult/Filas[1].Columnas[4].celdaNormal/Mxor_suma_o_xo<0>1 (mult/suma<2><4>)
+     LUT4:I1->O            2   0.479   1.040  mult/Filas[2].Columnas[4].celdaNormal/Mxor_suma_o_xo<0>1 (mult/suma<3><4>)
+     LUT4:I0->O            2   0.479   1.040  mult/FilaUltima[4].celdaFilaUltima/acarreo_o_and00011 (mult/FilaUltima[4].celdaFilaUltima/acarreo_o_and0001)
+     LUT3:I0->O            2   0.479   0.915  mult/FilaUltima[5].celdaFilaUltima/acarreo_o1 (mult/mult<3><6>)
+     LUT4:I1->O           19   0.479   1.292  mult/celdaCasillaUltima/Mxor_suma_o_xo<0>1 (var<6>)
+     LUT3:I2->O            1   0.479   0.704  displayd_4_mux00085 (displayd_4_mux00085)
+     LUT4:I3->O            1   0.479   0.976  displayd_4_mux000842 (displayd_4_mux000842)
+     LUT4:I0->O            1   0.479   0.851  displayd_4_mux0008245_SW0 (N6)
+     LUT4:I1->O            1   0.479   0.740  displayd_4_mux0008245_SW1 (N20)
+     LUT4:I2->O            1   0.479   0.681  displayd_4_mux0008245 (displayd_4_OBUF)
+     OBUF:I->O                 4.909          displayd_4_OBUF (displayd<4>)
+    ----------------------------------------
+    Total                     22.304ns (10.893ns logic, 11.411ns route)
+                                       (48.8% logic, 51.2% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 5.79 secs
+ 
+--> 
+
+Total memory usage is 262040 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   16 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

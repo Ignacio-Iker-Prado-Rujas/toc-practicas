@@ -1,4 +1,6 @@
-AR celda circuito "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica3/Pr3/celda.vhd" sub00/vhpl01 1384010624
-EN celda NULL "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica3/Pr3/celda.vhd" sub00/vhpl00 1384010623
-EN multiplicador NULL "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica3/Pr3/multiplicador.vhd" sub00/vhpl02 1384010625
-AR multiplicador behavioral "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica3/Pr3/multiplicador.vhd" sub00/vhpl03 1384010626
+AR celda circuito C:/hlocal/toc-practicas/Practica3/Pr3/celda.vhd sub00/vhpl01 1384177756
+EN celda NULL C:/hlocal/toc-practicas/Practica3/Pr3/celda.vhd sub00/vhpl00 1384177755
+EN multiplicador NULL C:/hlocal/toc-practicas/Practica3/Pr3/multiplicador.vhd sub00/vhpl02 1384177757
+AR multiplicador behavioral C:/hlocal/toc-practicas/Practica3/Pr3/multiplicador.vhd sub00/vhpl03 1384177758
+EN conversor NULL C:/hlocal/toc-practicas/Practica3/teclado.vhd sub00/vhpl04 1384177759
+AR conversor behavioral C:/hlocal/toc-practicas/Practica3/teclado.vhd sub00/vhpl05 1384177760

@@ -1,0 +1,491 @@
+Release 14.1 - xst P.15xf (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> Reading design: maquina_divisor.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "maquina_divisor.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "maquina_divisor"
+Output Format                      : NGC
+Target Device                      : xc3s1000-5-ft256
+
+---- Source Options
+Top Module Name                    : maquina_divisor
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 8
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file "C:/hlocal/toc-practicas/Practica4/maquina_divisor.vhd" in Library work.
+Entity <maquina_divisor> compiled.
+Entity <maquina_divisor> (Architecture <behavioral>) compiled.
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for entity <maquina_divisor> in library <work> (architecture <behavioral>) with generics.
+	M = 3
+	N = 6
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing generic Entity <maquina_divisor> in library <work> (Architecture <behavioral>).
+	M = 3
+	N = 6
+WARNING:Xst:819 - "C:/hlocal/toc-practicas/Practica4/maquina_divisor.vhd" line 60: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <reset>
+WARNING:Xst:819 - "C:/hlocal/toc-practicas/Practica4/maquina_divisor.vhd" line 76: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <dividendo>, <divisor>
+Entity <maquina_divisor> analyzed. Unit <maquina_divisor> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <maquina_divisor>.
+    Related source file is "C:/hlocal/toc-practicas/Practica4/maquina_divisor.vhd".
+    Found finite state machine <FSM_0> for signal <estado_actual>.
+    -----------------------------------------------------------------------
+    | States             | 8                                              |
+    | Transitions        | 11                                             |
+    | Inputs             | 3                                              |
+    | Outputs            | 8                                              |
+    | Clock              | clock                     (rising_edge)        |
+    | Reset              | reset                     (positive)           |
+    | Reset type         | asynchronous                                   |
+    | Reset State        | estado_inicial                                 |
+    | Power Up State     | estado_inicial                                 |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+WARNING:Xst:737 - Found 7-bit latch for signal <rdnd_aux>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:737 - Found 7-bit latch for signal <rdsor_aux>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:737 - Found 6-bit latch for signal <rc_aux>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+WARNING:Xst:737 - Found 3-bit latch for signal <rk_aux>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
+    Found 4-bit comparator less for signal <estado_actual$cmp_lt0000> created at line 133.
+    Found 6-bit register for signal <rc>.
+    Found 7-bit register for signal <rdnd>.
+    Found 7-bit addsub for signal <rdnd_aux$addsub0000>.
+    Found 7-bit register for signal <rdsor>.
+    Found 3-bit register for signal <rk>.
+    Found 3-bit adder for signal <rk_aux$addsub0000> created at line 128.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred  23 D-type flip-flop(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred   1 Comparator(s).
+Unit <maquina_divisor> synthesized.
+
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 2
+ 3-bit adder                                           : 1
+ 7-bit addsub                                          : 1
+# Registers                                            : 4
+ 3-bit register                                        : 1
+ 6-bit register                                        : 1
+ 7-bit register                                        : 2
+# Latches                                              : 4
+ 3-bit latch                                           : 1
+ 6-bit latch                                           : 1
+ 7-bit latch                                           : 2
+# Comparators                                          : 1
+ 4-bit comparator less                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <estado_actual/FSM> on signal <estado_actual[1:8]> with one-hot encoding.
+----------------------------
+ State          | Encoding
+----------------------------
+ estado_inicial | 00000001
+ estado2        | 00000010
+ estado3        | 00000100
+ estado4        | 00001000
+ estado5        | 00010000
+ estado6        | 00100000
+ estado7        | 01000000
+ estado8        | 10000000
+----------------------------
+WARNING:Xst:1710 - FF/Latch <0> (without init value) has a constant value of 0 in block <6>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <rdsor_6> (without init value) has a constant value of 0 in block <maquina_divisor>. This FF/Latch will be trimmed during the optimization process.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 1
+# Adders/Subtractors                                   : 2
+ 3-bit adder                                           : 1
+ 7-bit addsub                                          : 1
+# Registers                                            : 23
+ Flip-Flops                                            : 23
+# Latches                                              : 4
+ 3-bit latch                                           : 1
+ 6-bit latch                                           : 1
+ 7-bit latch                                           : 2
+# Comparators                                          : 1
+ 4-bit comparator less                                 : 1
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1710 - FF/Latch <rdsor_aux_6> (without init value) has a constant value of 0 in block <maquina_divisor>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <rdsor_6> (without init value) has a constant value of 0 in block <maquina_divisor>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <maquina_divisor> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block maquina_divisor, actual ratio is 0.
+FlipFlop rc_4 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop rc_3 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop rc_2 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop rc_1 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop rc_0 has been replicated 1 time(s) to handle iob=true attribute.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 35
+ Flip-Flops                                            : 35
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : maquina_divisor.ngr
+Top Level Output File Name         : maquina_divisor
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 19
+
+Cell Usage :
+# BELS                             : 56
+#      INV                         : 1
+#      LUT2                        : 11
+#      LUT3                        : 15
+#      LUT4                        : 13
+#      MUXCY                       : 6
+#      MUXF5                       : 2
+#      VCC                         : 1
+#      XORCY                       : 7
+# FlipFlops/Latches                : 57
+#      FDC                         : 7
+#      FDE                         : 27
+#      FDP                         : 1
+#      LD_1                        : 22
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 18
+#      IBUF                        : 11
+#      OBUF                        : 7
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s1000ft256-5 
+
+ Number of Slices:                       35  out of   7680     0%  
+ Number of Slice Flip Flops:             51  out of  15360     0%  
+ Number of 4 input LUTs:                 40  out of  15360     0%  
+ Number of IOs:                          19
+ Number of bonded IOBs:                  19  out of    173    10%  
+    IOB Flip Flops:                       6
+ Number of GCLKs:                         1  out of      8    12%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-------------------------------------+------------------------+-------+
+Clock Signal                         | Clock buffer(FF name)  | Load  |
+-------------------------------------+------------------------+-------+
+clock                                | BUFGP                  | 35    |
+rdsor_aux_or0000(rdsor_aux_or0000:O) | NONE(*)(rk_aux_0)      | 9     |
+rc_aux_or0000(rc_aux_or0000_f5:O)    | NONE(*)(rc_aux_0)      | 6     |
+rdnd_aux_or0000(rdnd_aux_or0000_f5:O)| NONE(*)(rdnd_aux_0)    | 7     |
+-------------------------------------+------------------------+-------+
+(*) These 3 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+-----------------------------------+------------------------+-------+
+Control Signal                     | Buffer(FF name)        | Load  |
+-----------------------------------+------------------------+-------+
+reset                              | IBUF                   | 8     |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: 2.531ns (Maximum Frequency: 395.038MHz)
+   Minimum input arrival time before clock: 4.224ns
+   Maximum output required time after clock: 6.388ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clock'
+  Clock period: 2.531ns (frequency: 395.038MHz)
+  Total number of paths / destination ports: 15 / 8
+-------------------------------------------------------------------------
+Delay:               2.531ns (Levels of Logic = 1)
+  Source:            estado_actual_FSM_FFd3 (FF)
+  Destination:       estado_actual_FSM_FFd2 (FF)
+  Source Clock:      clock rising
+  Destination Clock: clock rising
+
+  Data Path: estado_actual_FSM_FFd3 to estado_actual_FSM_FFd2
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDC:C->Q              9   0.626   1.250  estado_actual_FSM_FFd3 (estado_actual_FSM_FFd3)
+     LUT2:I0->O            1   0.479   0.000  estado_actual_FSM_FFd2-In1 (estado_actual_FSM_FFd2-In)
+     FDC:D                     0.176          estado_actual_FSM_FFd2
+    ----------------------------------------
+    Total                      2.531ns (1.281ns logic, 1.250ns route)
+                                       (50.6% logic, 49.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clock'
+  Total number of paths / destination ports: 29 / 29
+-------------------------------------------------------------------------
+Offset:              4.224ns (Levels of Logic = 2)
+  Source:            reset (PAD)
+  Destination:       rdsor_0 (FF)
+  Destination Clock: clock rising
+
+  Data Path: reset to rdsor_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             9   0.715   0.955  reset_IBUF (reset_IBUF)
+     INV:I->O             27   0.479   1.551  reset_inv1_INV_0 (reset_inv)
+     FDE:CE                    0.524          rdsor_0
+    ----------------------------------------
+    Total                      4.224ns (1.718ns logic, 2.506ns route)
+                                       (40.7% logic, 59.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'rdsor_aux_or0000'
+  Total number of paths / destination ports: 3 / 3
+-------------------------------------------------------------------------
+Offset:              2.221ns (Levels of Logic = 2)
+  Source:            divisor<0> (PAD)
+  Destination:       rdsor_aux_3 (LATCH)
+  Destination Clock: rdsor_aux_or0000 rising
+
+  Data Path: divisor<0> to rdsor_aux_3
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   0.715   0.851  divisor_0_IBUF (divisor_0_IBUF)
+     LUT4:I1->O            1   0.479   0.000  rdsor_aux_mux0000<3>1 (rdsor_aux_mux0000<3>)
+     LD_1:D                    0.176          rdsor_aux_3
+    ----------------------------------------
+    Total                      2.221ns (1.370ns logic, 0.851ns route)
+                                       (61.7% logic, 38.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'rdnd_aux_or0000'
+  Total number of paths / destination ports: 6 / 6
+-------------------------------------------------------------------------
+Offset:              2.221ns (Levels of Logic = 2)
+  Source:            dividendo<0> (PAD)
+  Destination:       rdnd_aux_0 (LATCH)
+  Destination Clock: rdnd_aux_or0000 rising
+
+  Data Path: dividendo<0> to rdnd_aux_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   0.715   0.851  dividendo_0_IBUF (dividendo_0_IBUF)
+     LUT4:I1->O            1   0.479   0.000  rdnd_aux_mux0001<0>1 (rdnd_aux_mux0001<0>)
+     LD_1:D                    0.176          rdnd_aux_0
+    ----------------------------------------
+    Total                      2.221ns (1.370ns logic, 0.851ns route)
+                                       (61.7% logic, 38.3% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clock'
+  Total number of paths / destination ports: 7 / 7
+-------------------------------------------------------------------------
+Offset:              6.388ns (Levels of Logic = 1)
+  Source:            estado_actual_FSM_FFd8 (FF)
+  Destination:       ready (PAD)
+  Source Clock:      clock rising
+
+  Data Path: estado_actual_FSM_FFd8 to ready
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDP:C->Q              6   0.626   0.853  estado_actual_FSM_FFd8 (estado_actual_FSM_FFd8)
+     OBUF:I->O                 4.909          ready_OBUF (ready)
+    ----------------------------------------
+    Total                      6.388ns (5.535ns logic, 0.853ns route)
+                                       (86.7% logic, 13.3% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 4.00 secs
+Total CPU time to Xst completion: 4.04 secs
+ 
+--> 
+
+Total memory usage is 254680 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   10 (   0 filtered)
+Number of infos    :    6 (   0 filtered)
+

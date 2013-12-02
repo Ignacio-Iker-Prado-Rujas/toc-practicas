@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "C:/hlocal/toc-practicas/Practica4/prueba1.vhd";
+static const char *ng0 = "C:/hlocal/tocpracticas/Practica4/prueba1.vhd";
 
 
 
@@ -122,22 +122,22 @@ LAB6:    *((char **)t1) = &&LAB7;
 
 LAB1:    return;
 LAB4:    xsi_set_current_line(98, ng0);
-    t2 = (t0 + 6296);
+    t2 = (t0 + 6300);
     t5 = (t0 + 3968);
     t6 = (t5 + 56U);
     t7 = *((char **)t6);
     t8 = (t7 + 56U);
     t9 = *((char **)t8);
-    memcpy(t9, t2, 6U);
+    memcpy(t9, t2, 16U);
     xsi_driver_first_trans_fast(t5);
     xsi_set_current_line(99, ng0);
-    t2 = (t0 + 6302);
+    t2 = (t0 + 6316);
     t5 = (t0 + 4032);
     t6 = (t5 + 56U);
     t7 = *((char **)t6);
     t8 = (t7 + 56U);
     t9 = *((char **)t8);
-    memcpy(t9, t2, 3U);
+    memcpy(t9, t2, 8U);
     xsi_driver_first_trans_fast(t5);
     xsi_set_current_line(101, ng0);
     t2 = (t0 + 2288U);

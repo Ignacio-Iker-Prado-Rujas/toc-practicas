@@ -6,7 +6,7 @@ C:\software\electronica\xilinx\14.1\ISE_DS\ISE\bin\nt64\unwrapped\ngdbuild.exe
 -intstyle ise -dd _ngo -nt timestamp -i -p xc3s1000-ft256-5 maquina_divisor.ngc
 maquina_divisor.ngd
 
-Reading NGO file "C:/hlocal/toc-practicas/Practica4/maquina_divisor.ngc" ...
+Reading NGO file "C:/hlocal/tocpracticas/Practica4/maquina_divisor.ngc" ...
 Gathering constraint information from source properties...
 Done.
 
@@ -27,10 +27,10 @@ NGDBUILD Design Results Summary:
   Number of errors:     0
   Number of warnings:   0
 
-Total memory usage is 150344 kilobytes
+Total memory usage is 149832 kilobytes
 
 Writing NGD file "maquina_divisor.ngd" ...
-Total REAL time to NGDBUILD completion:  3 sec
+Total REAL time to NGDBUILD completion:  2 sec
 Total CPU time to NGDBUILD completion:   2 sec
 
 Writing NGDBUILD log file "maquina_divisor.bld"...

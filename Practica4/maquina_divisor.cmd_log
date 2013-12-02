@@ -25,3 +25,28 @@ xst -intstyle ise -ifn "C:/hlocal/toc-practicas/Practica4/maquina_divisor.xst" -
 xst -intstyle ise -ifn "C:/hlocal/toc-practicas/Practica4/maquina_divisor.xst" -ofn "C:/hlocal/toc-practicas/Practica4/maquina_divisor.syr" 
 xst -intstyle ise -ifn "C:/hlocal/toc-practicas/Practica4/maquina_divisor.xst" -ofn "C:/hlocal/toc-practicas/Practica4/maquina_divisor.syr" 
 xst -intstyle ise -ifn "C:/hlocal/toc-practicas/Practica4/maquina_divisor.xst" -ofn "C:/hlocal/toc-practicas/Practica4/maquina_divisor.syr" 
+xst -intstyle ise -ifn "C:/hlocal/tocpracticas/Practica4/maquina_divisor.xst" -ofn "C:/hlocal/tocpracticas/Practica4/maquina_divisor.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s1000-ft256-5 maquina_divisor.ngc maquina_divisor.ngd  
+map -intstyle ise -p xc3s1000-ft256-5 -cm area -ir off -pr off -c 100 -o maquina_divisor_map.ncd maquina_divisor.ngd maquina_divisor.pcf 
+par -w -intstyle ise -ol high -t 1 maquina_divisor_map.ncd maquina_divisor.ncd maquina_divisor.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml maquina_divisor.twx maquina_divisor.ncd -o maquina_divisor.twr maquina_divisor.pcf 
+bitgen -intstyle ise -f maquina_divisor.ut maquina_divisor.ncd 
+xst -intstyle ise -ifn "C:/hlocal/tocpracticas/Practica4/maquina_divisor.xst" -ofn "C:/hlocal/tocpracticas/Practica4/maquina_divisor.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc3s1000-ft256-5 maquina_divisor.ngc maquina_divisor.ngd  
+map -intstyle ise -p xc3s1000-ft256-5 -cm area -ir off -pr off -c 100 -o maquina_divisor_map.ncd maquina_divisor.ngd maquina_divisor.pcf 
+par -w -intstyle ise -ol high -t 1 maquina_divisor_map.ncd maquina_divisor.ncd maquina_divisor.pcf 
+trce -intstyle ise -v 3 -s 5 -n 3 -fastpaths -xml maquina_divisor.twx maquina_divisor.ncd -o maquina_divisor.twr maquina_divisor.pcf 
+bitgen -intstyle ise -f maquina_divisor.ut maquina_divisor.ncd 
+xst -intstyle ise -ifn "C:/hlocal/tocpracticas/Practica4/maquina_divisor.xst" -ofn "C:/hlocal/tocpracticas/Practica4/maquina_divisor.syr" 
+xst -intstyle ise -ifn "C:/hlocal/tocpracticas/Practica4/maquina_divisor.xst" -ofn "C:/hlocal/tocpracticas/Practica4/maquina_divisor.syr" 
+xst -intstyle ise -ifn "C:/hlocal/tocpracticas/Practica4/maquina_divisor.xst" -ofn "C:/hlocal/tocpracticas/Practica4/maquina_divisor.syr" 
+xst -intstyle ise -ifn "C:/hlocal/tocpracticas/Practica4/maquina_divisor.xst" -ofn "C:/hlocal/tocpracticas/Practica4/maquina_divisor.syr" 
+xst -intstyle ise -ifn "C:/hlocal/tocpracticas/Practica4/maquina_divisor.xst" -ofn "C:/hlocal/tocpracticas/Practica4/maquina_divisor.syr" 
+xst -intstyle ise -ifn "C:/hlocal/tocpracticas/Practica4/maquina_divisor.xst" -ofn "C:/hlocal/tocpracticas/Practica4/maquina_divisor.syr" 
+xst -intstyle ise -ifn "C:/hlocal/tocpracticas/Practica4/maquina_divisor.xst" -ofn "C:/hlocal/tocpracticas/Practica4/maquina_divisor.syr" 
+xst -intstyle ise -ifn "C:/hlocal/tocpracticas/Practica4/maquina_divisor.xst" -ofn "C:/hlocal/tocpracticas/Practica4/maquina_divisor.syr" 
+xst -intstyle ise -ifn "C:/hlocal/tocpracticas/Practica4/maquina_divisor.xst" -ofn "C:/hlocal/tocpracticas/Practica4/maquina_divisor.syr" 
+xst -intstyle ise -ifn "C:/hlocal/tocpracticas/Practica4/maquina_divisor.xst" -ofn "C:/hlocal/tocpracticas/Practica4/maquina_divisor.syr" 
+xst -intstyle ise -ifn "C:/hlocal/tocpracticas/Practica4/maquina_divisor.xst" -ofn "C:/hlocal/tocpracticas/Practica4/maquina_divisor.syr" 
+xst -intstyle ise -ifn "C:/hlocal/tocpracticas/Practica4/maquina_divisor.xst" -ofn "C:/hlocal/tocpracticas/Practica4/maquina_divisor.syr" 
+xst -intstyle ise -ifn "C:/hlocal/tocpracticas/Practica4/maquina_divisor.xst" -ofn "C:/hlocal/tocpracticas/Practica4/maquina_divisor.syr" 

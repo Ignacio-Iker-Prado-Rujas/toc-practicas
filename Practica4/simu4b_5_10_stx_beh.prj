@@ -1,0 +1,2 @@
+vhdl isim_temp "maquina_divisor.vhd"
+vhdl isim_temp "simu4b_5_10.vhd"

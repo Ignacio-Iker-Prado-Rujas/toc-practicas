@@ -41,36 +41,36 @@ ARCHITECTURE behavior OF prueba1 IS
  
     COMPONENT maquina_divisor
     PORT(
-         clock : IN  std_logic;
+         clk : IN  std_logic;
          reset : IN  std_logic;
-         divisor : IN  std_logic_vector(2 downto 0);
-         dividendo : IN  std_logic_vector(5 downto 0);
+         divisor : IN  std_logic_vector(7 downto 0);
+         dividendo : IN  std_logic_vector(15 downto 0);
          inicio : IN  std_logic;
          ready : OUT  std_logic;
-         cociente : OUT  std_logic_vector(5 downto 0)
+         cociente : OUT  std_logic_vector(15 downto 0)
         );
     END COMPONENT;
     
 
    --Inputs
-   signal clock : std_logic := '0';
+   signal clk : std_logic := '0';
    signal reset : std_logic := '0';
-   signal divisor : std_logic_vector(2 downto 0) := (others => '0');
-   signal dividendo : std_logic_vector(5 downto 0) := (others => '0');
+   signal divisor : std_logic_vector(7 downto 0) := (others => '0');
+   signal dividendo : std_logic_vector(15 downto 0) := (others => '0');
    signal inicio : std_logic := '0';
 
  	--Outputs
    signal ready : std_logic;
-   signal cociente : std_logic_vector(5 downto 0);
+   signal cociente : std_logic_vector(15 downto 0);
 
-   -- Clock period definitions
-   constant clock_period : time := 10 ns;
+   -- clk period definitions
+   constant clk_period : time := 10 ns;
  
 BEGIN
  
 	-- Instantiate the Unit Under Test (UUT)
    uut: maquina_divisor PORT MAP (
-          clock => clock,
+          clk => clk,
           reset => reset,
           divisor => divisor,
           dividendo => dividendo,
@@ -79,13 +79,13 @@ BEGIN
           cociente => cociente
         );
 
-   -- Clock process definitions
-   clock_process :process
+   -- clk process definitions
+   clk_process :process
    begin
-		clock <= '0';
-		wait for clock_period/2;
-		clock <= '1';
-		wait for clock_period/2;
+		clk <= '0';
+		wait for clk_period/2;
+		clk <= '1';
+		wait for clk_period/2;
    end process;
  
 
@@ -95,10 +95,10 @@ BEGIN
       -- hold reset state for 100 ns.
       wait for 100 ns;	
 		
-		dividendo <= "101101";
-		divisor <= "101";
+		dividendo <= "1011010110101010";
+		divisor <= "10101001";
 		
-      wait for clock_period*10;
+      wait for clk_period*10;
 		
 		inicio <= '1';
 		

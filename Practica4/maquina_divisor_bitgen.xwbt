@@ -1,8 +1,8 @@
 INTSTYLE=ise
-INFILE=C:\hlocal\toc-practicas\Practica4\maquina_divisor.ncd
-OUTFILE=C:\hlocal\toc-practicas\Practica4\maquina_divisor.bit
+INFILE=C:\hlocal\tocpracticas\Practica4\maquina_divisor.ncd
+OUTFILE=C:\hlocal\tocpracticas\Practica4\maquina_divisor.bit
 FAMILY=Spartan3
 PART=xc3s1000-5ft256
-WORKINGDIR=C:\hlocal\toc-practicas\Practica4
+WORKINGDIR=C:\hlocal\tocpracticas\Practica4
 LICENSE=WebPack
 USER_INFO=210699396_1777489394_210552810_807

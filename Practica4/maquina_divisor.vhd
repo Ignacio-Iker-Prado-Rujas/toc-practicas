@@ -32,37 +32,35 @@ use IEEE.std_logic_unsigned.ALL;
 --use UNISIM.VComponents.all;
 
 entity maquina_divisor is
-	generic (N: integer := 6; -- Numero de cifras del dividendo
-				M: integer := 3); -- Numero de cifras del divisor
-	port (clock, reset: in std_logic;
-			divisor: in std_logic_vector(M-1 downto 0);
-			dividendo: in std_logic_vector(N-1 downto 0);
+	port (clk, reset: in std_logic;
+			divisor: in std_logic_vector(7 downto 0);
+			dividendo: in std_logic_vector(15 downto 0);
 			inicio: in std_logic;
 			ready: out std_logic;
-			cociente: out std_logic_vector(N-1 downto 0));
+			cociente: out std_logic_vector(15 downto 0));
 end maquina_divisor;
 
 
 architecture Behavioral of maquina_divisor is
 
-	type estado is(estado_inicial, estado2, estado3, estado4, estado5, estado6, estado7, estado8);
+	type estado is(estado_inicial, estado2, estado3, estado4, estado5, estado6);
 
 	signal estado_actual, estado_siguiente: estado;
 
-	signal rdnd, rdnd_aux, rdsor, rdsor_aux: std_logic_vector(N downto 0);
+	signal rdnd, rdnd_aux, rdsor, rdsor_aux: std_logic_vector(16 downto 0);
 	
-	signal rc, rc_aux: std_logic_vector(N-1 downto 0);
+	signal rc, rc_aux: std_logic_vector(15 downto 0);
 
-	signal rk, rk_aux: std_logic_vector(N-M-1 downto 0);
+	signal rk, rk_aux: std_logic_vector(3 downto 0);
 
 begin
 
-reloj: process(clock)
+reloj: process(clk)
 begin
 	
 	if reset = '1' then
 		estado_actual <= estado_inicial;
-	elsif clock'event and clock = '1' then
+	elsif clk'event and clk = '1' then
 		estado_actual <= estado_siguiente;
 		rdnd <= rdnd_aux;
 		rdsor <= rdsor_aux;
@@ -75,7 +73,13 @@ end process reloj;
 
 divide: process(estado_actual, inicio, rdnd, rdsor, rc, rk)
 begin
-
+	
+	ready <= '0';
+	rdnd_aux <= rdnd;
+	rdsor_aux <= rdsor;
+	rc_aux <= rc;
+	rk_aux <= rk;
+	
 	case estado_actual is
 	
 		when estado_inicial => 
@@ -90,47 +94,34 @@ begin
 		
 		when estado2 =>
 			rdnd_aux <= '0' & dividendo;
-			rdsor_aux <= '0' & divisor & conv_std_logic_vector(0, N-M);
+			rdsor_aux <= '0' & divisor & conv_std_logic_vector(0, 8);
 			rc_aux <= (others => '0');
 			rk_aux <= (others => '0');
-			ready <= '0';
 			estado_siguiente <= estado3;
 			
 		when estado3 =>
 			rdnd_aux <= rdnd - rdsor;
-			ready <= '0';
 			estado_siguiente <= estado4;
 		
 		when estado4 =>
-			ready <= '0';
-			if rdnd(N) = '1' then
-				estado_siguiente <= estado5;
-			elsif rdnd(N) = '0' then
-				estado_siguiente <= estado6;
-			else 
-				estado_siguiente <= estado4;
-			end if;
+			rk_aux <= rk + 1;
+			estado_siguiente <= estado5;
 		
 		when estado5 =>
-			ready <= '0';
-			rc_aux <= rc(N-2 downto 0) & '0';
-			rdnd_aux <= rdnd + rdsor;
-			estado_siguiente <= estado7;
-
+			if rdnd(16) = '1' then
+				rc_aux <= rc(14 downto 0) & '0';
+				rdnd_aux <= rdnd + rdsor;
+			elsif rdnd(16) = '0' then
+				rc_aux <= rc(14 downto 0) & '1';
+			else 
+				estado_siguiente <= estado5;
+			end if;
+			
+			estado_siguiente <= estado6;
+		
 		when estado6 =>
-			ready <= '0';
-			rc_aux <= rc(N-2 downto 0) & '1';
-			estado_siguiente <= estado7;
-		
-		when estado7 =>
-			ready <= '0';
-			rdsor_aux <= '0' & rdsor(N downto 1);
-			rk_aux <= rk + 1;
-			estado_siguiente <= estado8;
-		
-		when estado8 =>
-			ready <= '0';
-			if rk < N-M+1 then
+			rdsor_aux <= '0' & rdsor(16 downto 1);
+			if rk < 9 then
 				estado_siguiente <= estado3;
 			else 
 				estado_siguiente <= estado_inicial;

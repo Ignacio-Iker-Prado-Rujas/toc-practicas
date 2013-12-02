@@ -1,5 +1,5 @@
 ISim log file
-Running: C:\hlocal\toc-practicas\Practica4\prueba1_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb C:/hlocal/toc-practicas/Practica4/prueba1_isim_beh.wdb 
+Running: C:\hlocal\tocpracticas\Practica4\prueba1_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb C:/hlocal/tocpracticas/Practica4/prueba1_isim_beh.wdb 
 ISim P.15xf (signature 0xc3576ebc)
 ----------------------------------------------------------------------
 INFO:Security:50 - The XILINXD_LICENSE_FILE environment variable is set to 'C:\software\electronica\xilinx\14.1\ISE_DS\common\licenses\xilinx.lic'.
@@ -9,7 +9,7 @@ WARNING:Security:44 - Since no license file was found,
        please run the Xilinx License Configuration Manager
        (xlcm or "Manage Xilinx Licenses")
        to assist in obtaining a license.
-WARNING:Security:42 - Your license support version '2013.12' for ISIM expires in 1 day after which you will not qualify for Xilinx software updates or new releases.
+WARNING:Security:42 - Your software subscription period has lapsed. Your current version of Xilinx tools will continue to function, but you no longer qualify for Xilinx software updates or new releases.
 
 
 ----------------------------------------------------------------------
@@ -20,3 +20,18 @@ Time resolution is 1 ps
 # run 1000 ns
 Simulator is doing circuit initialization process.
 Finished circuit initialization process.
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us
+# run 1.00us

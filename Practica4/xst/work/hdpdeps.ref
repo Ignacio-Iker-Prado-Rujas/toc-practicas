@@ -1,10 +1,11 @@
-V3 4
+V3 5
 FL C:/hlocal/toc-practicas/Practica4/divisor.vhd 2013/11/29.17:26:20 P.15xf
 FL C:/hlocal/toc-practicas/Practica4/maquina_divisor.vhd 2013/11/29.20:12:44 P.15xf
-EN work/maquina_divisor 1385752367 \
-      FL C:/hlocal/toc-practicas/Practica4/maquina_divisor.vhd \
+FL C:/hlocal/tocpracticas/Practica4/maquina_divisor.vhd 2013/12/02.15:25:08 P.15xf
+EN work/maquina_divisor 1385994311 \
+      FL C:/hlocal/tocpracticas/Practica4/maquina_divisor.vhd \
       PB ieee/std_logic_1164 1335251622 PB ieee/std_logic_arith 1335251623 \
       PB ieee/STD_LOGIC_UNSIGNED 1335251625
-AR work/maquina_divisor/Behavioral 1385752368 \
-      FL C:/hlocal/toc-practicas/Practica4/maquina_divisor.vhd \
-      EN work/maquina_divisor 1385752367
+AR work/maquina_divisor/Behavioral 1385994312 \
+      FL C:/hlocal/tocpracticas/Practica4/maquina_divisor.vhd \
+      EN work/maquina_divisor 1385994311

@@ -61,7 +61,7 @@ type estado is(estado_inicial, bucle_i, bucle_j, comprueba, swap_aux, swap, swap
 signal i, j, aux_i, aux_j: std_logic_vector(5 downto 0);
 signal wenable: std_logic;
 signal addr1, addr2: std_logic_vector(4 downto 0);
-signal din, dout1, dout2, aux: std_logic_vector(3 downto 0);
+signal din, dout1, dout2, aux, n_aux: std_logic_vector(3 downto 0);
 signal estado_actual, estado_siguiente: estado;
 
 
@@ -77,7 +77,7 @@ begin
 		estado_actual <= estado_siguiente;
 		i <= aux_i;
 		j <= aux_j;
-		aux <= dout1;
+		aux <= n_aux;
 	end if;
 	
 end process reloj;
@@ -88,7 +88,7 @@ begin
 	dato_debug <= "0000";
 	wenable <= '0';
 	fin <= '0';
-
+	n_aux <= dout1;
 	case estado_actual is
 	
 		when estado_inicial => 
@@ -149,7 +149,6 @@ begin
 
 end process burbuja;
 
--- Mostrar vector ordenado
 
 end Behavioral;
 

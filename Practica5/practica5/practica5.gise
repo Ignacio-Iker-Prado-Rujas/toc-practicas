@@ -52,7 +52,7 @@
     <transform xil_pn:end_ts="1386961619" xil_pn:name="TRAN_copyInitialToAbstractSimulation" xil_pn:start_ts="1386961619">
       <status xil_pn:value="SuccessfullyRun"/>
     </transform>
-    <transform xil_pn:end_ts="1386963569" xil_pn:in_ck="2566262705413671410" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1386963569">
+    <transform xil_pn:end_ts="1386964420" xil_pn:in_ck="2566262705413671410" xil_pn:name="TRAN_copyAbstractToPostAbstractSimulation" xil_pn:start_ts="1386964420">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="mem_2.vhd"/>
@@ -71,14 +71,14 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1386963569" xil_pn:in_ck="2566262705413671410" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1386963569">
+    <transform xil_pn:end_ts="1386964420" xil_pn:in_ck="2566262705413671410" xil_pn:name="TRAN_copyPostAbstractToPreSimulation" xil_pn:start_ts="1386964420">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="mem_2.vhd"/>
       <outfile xil_pn:name="miTest.vhd"/>
       <outfile xil_pn:name="practica5.vhd"/>
     </transform>
-    <transform xil_pn:end_ts="1386963572" xil_pn:in_ck="2566262705413671410" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-6365595209427343563" xil_pn:start_ts="1386963569">
+    <transform xil_pn:end_ts="1386964423" xil_pn:in_ck="2566262705413671410" xil_pn:name="TRAN_ISimulateBehavioralModelRunFuse" xil_pn:prop_ck="-6365595209427343563" xil_pn:start_ts="1386964420">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="fuse.log"/>
@@ -88,7 +88,7 @@
       <outfile xil_pn:name="miTest_isim_beh.exe"/>
       <outfile xil_pn:name="xilinxsim.ini"/>
     </transform>
-    <transform xil_pn:end_ts="1386963572" xil_pn:in_ck="2083905246849672709" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-664451384562119134" xil_pn:start_ts="1386963572">
+    <transform xil_pn:end_ts="1386964424" xil_pn:in_ck="2083905246849672709" xil_pn:name="TRAN_ISimulateBehavioralModel" xil_pn:prop_ck="-664451384562119134" xil_pn:start_ts="1386964423">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
       <outfile xil_pn:name="isim.cmd"/>
@@ -122,7 +122,7 @@
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="ReadyToRun"/>
     </transform>
-    <transform xil_pn:end_ts="1386963558" xil_pn:in_ck="8332955769359787468" xil_pn:name="TRANEXT_xstsynthesize_spartan3" xil_pn:prop_ck="-4526369699278253827" xil_pn:start_ts="1386963551">
+    <transform xil_pn:end_ts="1386964412" xil_pn:in_ck="8332955769359787468" xil_pn:name="TRANEXT_xstsynthesize_spartan3" xil_pn:prop_ck="-4526369699278253827" xil_pn:start_ts="1386964406">
       <status xil_pn:value="SuccessfullyRun"/>
       <status xil_pn:value="WarningsGenerated"/>
       <status xil_pn:value="ReadyToRun"/>

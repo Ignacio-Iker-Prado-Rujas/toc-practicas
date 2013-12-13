@@ -1,0 +1,14 @@
+V3 7
+FL C:/hlocal/toc/Practica5/practica5/mem_2.vhd 2013/12/13.16:16:05 P.15xf
+EN work/rams_2p 1386963553 FL C:/hlocal/toc/Practica5/practica5/mem_2.vhd \
+      PB ieee/std_logic_1164 1335251622 PB ieee/STD_LOGIC_UNSIGNED 1335251625 \
+      PB ieee/std_logic_arith 1335251623
+AR work/rams_2p/circuito 1386963554 \
+      FL C:/hlocal/toc/Practica5/practica5/mem_2.vhd EN work/rams_2p 1386963553
+FL C:/hlocal/toc/Practica5/practica5/practica5.vhd 2013/12/13.20:39:09 P.15xf
+EN work/practica5 1386963555 FL C:/hlocal/toc/Practica5/practica5/practica5.vhd \
+      PB ieee/std_logic_1164 1335251622 PB ieee/STD_LOGIC_UNSIGNED 1335251625 \
+      PB ieee/NUMERIC_STD 1335251627
+AR work/practica5/Behavioral 1386963556 \
+      FL C:/hlocal/toc/Practica5/practica5/practica5.vhd EN work/practica5 1386963555 \
+      CP rams_2p

@@ -20,5 +20,5 @@ Time Resolution for simulation is 1ps.
 Waiting for 1 sub-compilation(s) to finish...
 Compiled 10 VHDL Units
 Built simulation executable C:/hlocal/toc/Practica5/practica5/miTest_isim_beh.exe
-Fuse Memory Usage: 36916 KB
-Fuse CPU Usage: 390 ms
+Fuse Memory Usage: 36928 KB
+Fuse CPU Usage: 451 ms

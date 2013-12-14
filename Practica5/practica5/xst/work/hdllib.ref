@@ -1,4 +1,4 @@
-AR rams_2p circuito C:/hlocal/toc/Practica5/practica5/mem_2.vhd sub00/vhpl03 1386964408
-EN rams_2p NULL C:/hlocal/toc/Practica5/practica5/mem_2.vhd sub00/vhpl02 1386964407
-EN practica5 NULL C:/hlocal/toc/Practica5/practica5/practica5.vhd sub00/vhpl00 1386964409
-AR practica5 behavioral C:/hlocal/toc/Practica5/practica5/practica5.vhd sub00/vhpl01 1386964410
+AR rams_2p circuito "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica5/practica5/mem_2.vhd" sub00/vhpl03 1387034720
+EN rams_2p NULL "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica5/practica5/mem_2.vhd" sub00/vhpl02 1387034719
+EN practica5 NULL "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica5/practica5/practica5.vhd" sub00/vhpl00 1387034721
+AR practica5 behavioral "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica5/practica5/practica5.vhd" sub00/vhpl01 1387034722

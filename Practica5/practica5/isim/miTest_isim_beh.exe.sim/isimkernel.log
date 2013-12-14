@@ -2,9 +2,9 @@ Command line:
    miTest_isim_beh.exe
      -simmode  gui
      -simrunnum  0
-     -socket  1758
+     -socket  52834
 
-Fri Dec 13 20:53:57 2013
+Sat Dec 14 16:28:55 2013
 
 
  Elaboration Time: 0.0312 sec

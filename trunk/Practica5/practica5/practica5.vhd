@@ -122,13 +122,13 @@ begin
 			end if;
 		
 		when swap_dirs =>
-			--Hemos avanzado la j, as’ que cargamos mem(j-1) y mem(j)
+			-- Hemos avanzado la j, as’ que cargamos mem(j-1) y mem(j)
 			addr1 <= j(4 downto 0) - 1;
 			addr2 <= j(4 downto 0);
 			estado_siguiente <= comprueba;
 			
 		when comprueba =>
-			--Solo cambiamos si el nœmero es menor que el siguiente
+			-- Solo cambiamos si el nœmero es menor que el siguiente
 			if dout1 < dout2 then
 				estado_siguiente <= swap_primero;
 			else 
@@ -136,18 +136,20 @@ begin
 			end if; 
 				 
 		when swap_primero => 
-			--Guardamos mem(j) en mem(j-1)
+			-- En n_aux ahora tenemos el contenido de addr1
+			-- Guardamos mem(j) en mem(j-1)
 			din <= dout2;
 			wenable <= '1';
 			estado_siguiente <= swap_aux;
 			
 		when swap_aux =>
+			-- Lo que hab’a en n_aux (el contenido de addr1) pasa a aux
 			--Vamos a guardar en mem(j)
 			addr1 <= j(4 downto 0);
 			estado_siguiente <= swap_segundo;	
 			
 		when swap_segundo =>
-			--Guardamos lo que hab’a en mem(j-1) en mem(j)
+			--Guardamos lo que hab’a en mem(j-1) en mem(j), que estaba en aux
 			din <= aux;
 			wenable <= '1';
 			estado_siguiente <= bucle_j;	

@@ -1,6 +1,6 @@
 ----------------------------------------------------------------------------------
 -- Company: 
--- Engineer: 
+-- Engineer: Enrique Ballesteros e Iker Prado
 -- 
 -- Create Date:    16:50:43 12/13/2013 
 -- Design Name: 
@@ -8,7 +8,7 @@
 -- Project Name: 
 -- Target Devices: 
 -- Tool versions: 
--- Description: 
+-- Description: Ordenaci—n mediante burbuja
 --
 -- Dependencies: 
 --

@@ -1,11 +1,11 @@
-Running: fuse.exe -relaunch -intstyle "ise" -incremental -o "C:/hlocal/toc/Practica5/practica5/miTest_isim_beh.exe" -prj "C:/hlocal/toc/Practica5/practica5/miTest_beh.prj" "work.miTest" 
+Running: fuse.exe -relaunch -intstyle "ise" -incremental -o "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica5/practica5/miTest_isim_beh.exe" -prj "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica5/practica5/miTest_beh.prj" "work.miTest" 
 ISim P.15xf (signature 0xc3576ebc)
-Number of CPUs detected in this system: 8
-Turning on mult-threading, number of parallel sub-compilation jobs: 16 
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
 Determining compilation order of HDL files
-Parsing VHDL file "C:/hlocal/toc/Practica5/practica5/mem_2.vhd" into library work
-Parsing VHDL file "C:/hlocal/toc/Practica5/practica5/practica5.vhd" into library work
-Parsing VHDL file "C:/hlocal/toc/Practica5/practica5/miTest.vhd" into library work
+Parsing VHDL file "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica5/practica5/mem_2.vhd" into library work
+Parsing VHDL file "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica5/practica5/practica5.vhd" into library work
+Parsing VHDL file "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica5/practica5/miTest.vhd" into library work
 Starting static elaboration
 Completed static elaboration
 Compiling package standard
@@ -19,6 +19,6 @@ Compiling architecture behavior of entity mitest
 Time Resolution for simulation is 1ps.
 Waiting for 1 sub-compilation(s) to finish...
 Compiled 10 VHDL Units
-Built simulation executable C:/hlocal/toc/Practica5/practica5/miTest_isim_beh.exe
-Fuse Memory Usage: 36928 KB
-Fuse CPU Usage: 451 ms
+Built simulation executable C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica5/practica5/miTest_isim_beh.exe
+Fuse Memory Usage: 36752 KB
+Fuse CPU Usage: 748 ms

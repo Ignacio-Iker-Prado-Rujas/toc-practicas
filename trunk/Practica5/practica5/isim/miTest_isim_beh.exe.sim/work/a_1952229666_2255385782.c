@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "C:/hlocal/toc/Practica5/practica5/mem_2.vhd";
+static const char *ng0 = "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica5/practica5/mem_2.vhd";
 extern char *IEEE_P_2592010699;
 extern char *IEEE_P_3620187407;
 
@@ -75,7 +75,7 @@ LAB6:    xsi_set_current_line(45, ng0);
     t3 = *((char **)t1);
     t1 = (t0 + 1352U);
     t4 = *((char **)t1);
-    t1 = (t0 + 6360U);
+    t1 = (t0 + 6948U);
     t9 = ieee_p_3620187407_sub_514432868_3965413181(IEEE_P_3620187407, t4, t1);
     t10 = (t9 - 31);
     t11 = (t10 * -1);
@@ -97,7 +97,7 @@ LAB5:    xsi_set_current_line(43, ng0);
     t7 = *((char **)t3);
     t3 = (t0 + 1352U);
     t8 = *((char **)t3);
-    t3 = (t0 + 6360U);
+    t3 = (t0 + 6948U);
     t9 = ieee_p_3620187407_sub_514432868_3965413181(IEEE_P_3620187407, t8, t3);
     t10 = (t9 - 31);
     t11 = (t10 * -1);
@@ -149,7 +149,7 @@ LAB2:    xsi_set_current_line(52, ng0);
     t4 = *((char **)t3);
     t3 = (t0 + 1512U);
     t5 = *((char **)t3);
-    t3 = (t0 + 6376U);
+    t3 = (t0 + 6964U);
     t6 = ieee_p_3620187407_sub_514432868_3965413181(IEEE_P_3620187407, t5, t3);
     t7 = (t6 - 31);
     t8 = (t7 * -1);

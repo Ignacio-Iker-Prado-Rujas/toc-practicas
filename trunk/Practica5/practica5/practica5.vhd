@@ -56,7 +56,7 @@ component rams_2p is
 );
 end component rams_2p;
 
-type estado is(estado_inicial, bucle_i, bucle_j, comprueba, swap_aux, swap, swap_otro);
+type estado is(estado_inicial, bucle_i, bucle_j, comprueba, swap_aux, swap, swap_otro, swap_2);
 
 signal i, j, aux_i, aux_j: std_logic_vector(5 downto 0);
 signal wenable: std_logic;
@@ -122,26 +122,31 @@ begin
 			end if;
 		
 		when swap_aux =>
-			addr1 <= j(4 downto 0);
-			--addr2 <= std_logic_vector(unsigned(j(4 downto 0) + "0001"));
-			addr2 <= j(4 downto 0) + 1;
+			--Hemos avanzado la j, así que cargamos mem(j-1) y mem(j)
+			addr1 <= j(4 downto 0)-1;
+			addr2 <= j(4 downto 0);
 			estado_siguiente <= comprueba;
 			
 		when comprueba =>
-			if dout1 > dout2 then
-				--REVISAR!!!!!
-				estado_siguiente <= bucle_j;
-			else 
+			--Solo cambiamos si el número es menor que el siguiente
+			if dout1 < dout2 then
 				estado_siguiente <= swap;
+			else 
+				estado_siguiente <= bucle_j;
 			end if; 
 				 
 		when swap => 
+			--Guardamos mem(j) en mem(j-1)
 			din <= dout2;
 			wenable <= '1';
-			addr1 <= j(4 downto 0) + 1;
-			estado_siguiente <= swap_otro;
+			estado_siguiente <= swap_2;
 			
+		when swap_2 =>
+			--Vamos a guardar en mem(j)
+			addr1 <= j(4 downto 0);
+			estado_siguiente <= swap_otro;	
 		when swap_otro =>
+			--Guardamos lo que había en mem(j-1) en mem(j)
 			din <= aux;
 			wenable <= '1';
 			estado_siguiente <= bucle_j;			

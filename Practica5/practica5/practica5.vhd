@@ -85,7 +85,7 @@ end process reloj;
 burbuja: process(estado_actual, inicio, direccion, dout1, dout2, i, j, aux)
 begin
 	
-	dato_debug <= dout1;
+	dato_debug <= "0000";
 -- addr1 <= direccion;
 --	aux_i <= i;
 --	aux_j <= j;
@@ -115,6 +115,7 @@ begin
 			else 
 				fin <= '1';
 				addr1 <= direccion;
+				dato_debug <= dout1;
 				estado_siguiente <= estado_inicial;
 			end if;
 				
@@ -123,6 +124,8 @@ begin
 				estado_siguiente <= swap_dirs;
 				aux_j <= j+1;
 			else 
+				addr1 <= direccion;
+				dato_debug <= dout1;
 				estado_siguiente <= bucle_i;	
 			end if;
 		

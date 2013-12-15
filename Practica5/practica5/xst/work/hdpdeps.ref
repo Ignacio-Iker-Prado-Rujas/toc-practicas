@@ -2,18 +2,18 @@ V3 9
 FL C:/hlocal/toc/Practica5/practica5/mem_2.vhd 2013/12/13.16:16:05 P.15xf
 FL C:/hlocal/toc/Practica5/practica5/practica5.vhd 2013/12/13.20:53:22 P.15xf
 FL "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica5/practica5/mem_2.vhd" 2013/12/15.22:36:44 P.15xf
-EN work/rams_2p 1387143775 \
+EN work/rams_2p 1387146862 \
       FL "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica5/practica5/mem_2.vhd" \
       PB ieee/std_logic_1164 1335251622 PB ieee/STD_LOGIC_UNSIGNED 1335251625 \
       PB ieee/std_logic_arith 1335251623
-AR work/rams_2p/circuito 1387143776 \
+AR work/rams_2p/circuito 1387146863 \
       FL "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica5/practica5/mem_2.vhd" \
-      EN work/rams_2p 1387143775
-FL "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica5/practica5/practica5.vhd" 2013/12/15.22:42:49 P.15xf
-EN work/practica5 1387143777 \
+      EN work/rams_2p 1387146862
+FL "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica5/practica5/practica5.vhd" 2013/12/15.23:34:17 P.15xf
+EN work/practica5 1387146864 \
       FL "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica5/practica5/practica5.vhd" \
       PB ieee/std_logic_1164 1335251622 PB ieee/STD_LOGIC_UNSIGNED 1335251625 \
       PB ieee/NUMERIC_STD 1335251627
-AR work/practica5/Behavioral 1387143778 \
+AR work/practica5/Behavioral 1387146865 \
       FL "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica5/practica5/practica5.vhd" \
-      EN work/practica5 1387143777 CP rams_2p
+      EN work/practica5 1387146864 CP rams_2p

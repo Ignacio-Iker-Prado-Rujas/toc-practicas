@@ -4,13 +4,13 @@ Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.10 secs
+Total CPU time to Xst completion: 0.16 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.10 secs
+Total CPU time to Xst completion: 0.16 secs
  
 --> Reading design: practica5.prj
 
@@ -151,7 +151,6 @@ Unit <rams_2p> synthesized.
 
 Synthesizing Unit <practica5>.
     Related source file is "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica5/practica5/practica5.vhd".
-WARNING:Xst:1780 - Signal <n_n_aux> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
     Found finite state machine <FSM_0> for signal <estado_actual>.
     -----------------------------------------------------------------------
     | States             | 8                                              |
@@ -175,15 +174,15 @@ WARNING:Xst:737 - Found 4-bit latch for signal <din>. Latches may be generated f
 INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
 WARNING:Xst:737 - Found 5-bit latch for signal <addr1>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
-    Found 5-bit subtractor for signal <addr1$addsub0000> created at line 126.
+    Found 5-bit subtractor for signal <addr1$addsub0000> created at line 131.
     Found 4-bit register for signal <aux>.
-    Found 6-bit adder for signal <aux_i$addsub0000> created at line 110.
-    Found 6-bit adder for signal <aux_j$addsub0000> created at line 120.
-    Found 7-bit comparator greatequal for signal <aux_j$cmp_ge0000> created at line 107.
-    Found 7-bit comparator greatequal for signal <aux_j$cmp_ge0001> created at line 118.
-    Found 7-bit comparator less for signal <estado_actual$cmp_lt0000> created at line 107.
-    Found 7-bit comparator less for signal <estado_actual$cmp_lt0001> created at line 118.
-    Found 4-bit comparator less for signal <estado_actual$cmp_lt0002> created at line 131.
+    Found 6-bit adder for signal <aux_i$addsub0000> created at line 114.
+    Found 6-bit adder for signal <aux_j$addsub0000> created at line 124.
+    Found 7-bit comparator greatequal for signal <aux_j$cmp_ge0000> created at line 111.
+    Found 7-bit comparator greatequal for signal <aux_j$cmp_ge0001> created at line 122.
+    Found 7-bit comparator less for signal <estado_actual$cmp_lt0000> created at line 111.
+    Found 7-bit comparator less for signal <estado_actual$cmp_lt0001> created at line 122.
+    Found 4-bit comparator less for signal <estado_actual$cmp_lt0002> created at line 137.
     Found 6-bit register for signal <i>.
     Found 6-bit register for signal <j>.
     Summary:
@@ -229,11 +228,11 @@ Optimizing FSM <estado_actual/FSM> on signal <estado_actual[1:8]> with one-hot e
  estado_inicial | 00000001
  bucle_i        | 00000010
  bucle_j        | 00000100
+ swap_dirs      | 00001000
  comprueba      | 00010000
- swap_aux       | 00001000
- swap           | 00100000
- swap_otro      | 10000000
- swap_2         | 01000000
+ swap_primero   | 00100000
+ swap_aux       | 01000000
+ swap_segundo   | 10000000
 ----------------------------
 
 Synthesizing (advanced) Unit <rams_2p>.
@@ -331,9 +330,9 @@ Design Statistics
 # IOs                              : 13
 
 Cell Usage :
-# BELS                             : 74
+# BELS                             : 70
 #      INV                         : 1
-#      LUT2                        : 8
+#      LUT2                        : 4
 #      LUT2_D                      : 2
 #      LUT3                        : 20
 #      LUT3_L                      : 1
@@ -361,10 +360,10 @@ Device utilization summary:
 
 Selected Device : 3s1000ft256-5 
 
- Number of Slices:                       43  out of   7680     0%  
+ Number of Slices:                       41  out of   7680     0%  
  Number of Slice Flip Flops:             56  out of  15360     0%  
- Number of 4 input LUTs:                 89  out of  15360     0%  
-    Number used as logic:                73
+ Number of 4 input LUTs:                 85  out of  15360     0%  
+    Number used as logic:                69
     Number used as RAMs:                 16
  Number of IOs:                          13
  Number of bonded IOBs:                  13  out of    173     7%  
@@ -417,7 +416,7 @@ Speed Grade: -5
 
    Minimum period: 4.860ns (Maximum Frequency: 205.776MHz)
    Minimum input arrival time before clock: 3.801ns
-   Maximum output required time after clock: 8.083ns
+   Maximum output required time after clock: 8.044ns
    Maximum combinational path delay: No path found
 
 Timing Detail:
@@ -491,9 +490,9 @@ Offset:              3.801ns (Levels of Logic = 3)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 11 / 5
+  Total number of paths / destination ports: 7 / 5
 -------------------------------------------------------------------------
-Offset:              8.083ns (Levels of Logic = 2)
+Offset:              8.044ns (Levels of Logic = 2)
   Source:            estado_actual_FSM_FFd8 (FF)
   Destination:       fin (PAD)
   Source Clock:      clk rising
@@ -502,24 +501,24 @@ Offset:              8.083ns (Levels of Logic = 2)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDP:C->Q             13   0.626   1.290  estado_actual_FSM_FFd8 (estado_actual_FSM_FFd8)
+     FDP:C->Q              9   0.626   1.250  estado_actual_FSM_FFd8 (estado_actual_FSM_FFd8)
      LUT3:I0->O            4   0.479   0.779  fin1 (fin_OBUF)
      OBUF:I->O                 4.909          fin_OBUF (fin)
     ----------------------------------------
-    Total                      8.083ns (6.014ns logic, 2.069ns route)
-                                       (74.4% logic, 25.6% route)
+    Total                      8.044ns (6.014ns logic, 2.030ns route)
+                                       (74.8% logic, 25.2% route)
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 6.00 secs
-Total CPU time to Xst completion: 6.15 secs
+Total REAL time to Xst completion: 7.00 secs
+Total CPU time to Xst completion: 7.08 secs
  
 --> 
 
-Total memory usage is 258596 kilobytes
+Total memory usage is 254588 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   11 (   0 filtered)
+Number of warnings :   10 (   0 filtered)
 Number of infos    :    6 (   0 filtered)
 

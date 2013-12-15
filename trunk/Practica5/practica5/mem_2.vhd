@@ -32,8 +32,7 @@ end rams_2p;
 
 architecture circuito  of rams_2p is
     type ram_type is array (31 downto 0) of std_logic_vector (3 downto 0);
-    signal RAM : ram_type:=(X"A",X"B",X"C",X"D",X"E",X"F",X"1",X"2",X"3",X"A",X"4",X"5",X"A",
-	 X"A",X"6",X"7",X"8",X"9",X"0",X"A",X"A",X"A",X"A",X"A",X"A",X"A",X"A",X"A",X"A",X"A",X"A",X"F");
+    signal RAM : ram_type:=(X"C",X"1",X"0",X"F",X"3",X"2",X"3",X"4",X"4",X"5",X"5",X"6",X"2",X"7",X"6",X"0",X"8",X"7",X"9",X"9",X"F",X"A",X"B",X"B",X"E",X"C",X"D",X"D",X"8",X"E",X"A",X"1");
 begin
 
     puerto1: process (clk)

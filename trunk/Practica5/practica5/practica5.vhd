@@ -85,7 +85,12 @@ end process reloj;
 burbuja: process(estado_actual, inicio, direccion, dout1, dout2, i, j, aux)
 begin
 	
-	dato_debug <= "0000";
+	dato_debug <= dout1;
+-- addr1 <= direccion;
+--	aux_i <= i;
+--	aux_j <= j;
+--	addr1 <= "00000";
+--	addr2 <= "00000";
 	wenable <= '0';
 	fin <= '0';
 	n_aux <= dout1;
@@ -152,7 +157,7 @@ begin
 			--Guardamos lo que hab’a en mem(j-1) en mem(j), que estaba en aux
 			din <= aux;
 			wenable <= '1';
-			estado_siguiente <= bucle_j;	
+			estado_siguiente <= bucle_j;
 					
 	end case;
 

@@ -144,3 +144,6 @@ xst -intstyle ise -ifn "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-pra
 xst -intstyle ise -ifn "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica5/practica5/practica5.xst" -ofn "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica5/practica5/practica5.syr" 
 xst -intstyle ise -ifn "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica5/practica5/practica5.xst" -ofn "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica5/practica5/practica5.syr" 
 xst -intstyle ise -ifn "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica5/practica5/practica5.xst" -ofn "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica5/practica5/practica5.syr" 
+xst -intstyle ise -ifn "C:/hlocal/toc/Practica5/practica5/practica5.xst" -ofn "C:/hlocal/toc/Practica5/practica5/practica5.syr" 
+xst -intstyle ise -ifn "C:/hlocal/toc/Practica5/practica5/practica5.xst" -ofn "C:/hlocal/toc/Practica5/practica5/practica5.syr" 
+xst -intstyle ise -ifn "C:/hlocal/toc/Practica5/practica5/practica5.xst" -ofn "C:/hlocal/toc/Practica5/practica5/practica5.syr" 

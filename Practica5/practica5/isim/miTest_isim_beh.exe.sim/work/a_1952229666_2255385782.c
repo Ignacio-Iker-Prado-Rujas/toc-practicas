@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica5/practica5/mem_2.vhd";
+static const char *ng0 = "C:/hlocal/toc/Practica5/practica5/mem_2.vhd";
 extern char *IEEE_P_2592010699;
 extern char *IEEE_P_3620187407;
 
@@ -50,7 +50,7 @@ static void work_a_1952229666_2255385782_p_0(char *t0)
     char *t17;
     char *t18;
 
-LAB0:    xsi_set_current_line(41, ng0);
+LAB0:    xsi_set_current_line(40, ng0);
     t1 = (t0 + 992U);
     t2 = ieee_p_2592010699_sub_1744673427_503743352(IEEE_P_2592010699, t1, 0U, 0U);
     if (t2 != 0)
@@ -61,7 +61,7 @@ LAB3:    t1 = (t0 + 3880);
     *((int *)t1) = 1;
 
 LAB1:    return;
-LAB2:    xsi_set_current_line(42, ng0);
+LAB2:    xsi_set_current_line(41, ng0);
     t3 = (t0 + 1192U);
     t4 = *((char **)t3);
     t5 = *((unsigned char *)t4);
@@ -70,12 +70,12 @@ LAB2:    xsi_set_current_line(42, ng0);
         goto LAB5;
 
 LAB7:
-LAB6:    xsi_set_current_line(45, ng0);
+LAB6:    xsi_set_current_line(44, ng0);
     t1 = (t0 + 2152U);
     t3 = *((char **)t1);
     t1 = (t0 + 1352U);
     t4 = *((char **)t1);
-    t1 = (t0 + 6948U);
+    t1 = (t0 + 6360U);
     t9 = ieee_p_3620187407_sub_514432868_3965413181(IEEE_P_3620187407, t4, t1);
     t10 = (t9 - 31);
     t11 = (t10 * -1);
@@ -92,12 +92,12 @@ LAB6:    xsi_set_current_line(45, ng0);
     xsi_driver_first_trans_fast_port(t8);
     goto LAB3;
 
-LAB5:    xsi_set_current_line(43, ng0);
+LAB5:    xsi_set_current_line(42, ng0);
     t3 = (t0 + 1672U);
     t7 = *((char **)t3);
     t3 = (t0 + 1352U);
     t8 = *((char **)t3);
-    t3 = (t0 + 6948U);
+    t3 = (t0 + 6360U);
     t9 = ieee_p_3620187407_sub_514432868_3965413181(IEEE_P_3620187407, t8, t3);
     t10 = (t9 - 31);
     t11 = (t10 * -1);
@@ -133,7 +133,7 @@ static void work_a_1952229666_2255385782_p_1(char *t0)
     char *t15;
     char *t16;
 
-LAB0:    xsi_set_current_line(51, ng0);
+LAB0:    xsi_set_current_line(50, ng0);
     t1 = (t0 + 992U);
     t2 = ieee_p_2592010699_sub_1744673427_503743352(IEEE_P_2592010699, t1, 0U, 0U);
     if (t2 != 0)
@@ -144,12 +144,12 @@ LAB3:    t1 = (t0 + 3896);
     *((int *)t1) = 1;
 
 LAB1:    return;
-LAB2:    xsi_set_current_line(52, ng0);
+LAB2:    xsi_set_current_line(51, ng0);
     t3 = (t0 + 2152U);
     t4 = *((char **)t3);
     t3 = (t0 + 1512U);
     t5 = *((char **)t3);
-    t3 = (t0 + 6964U);
+    t3 = (t0 + 6376U);
     t6 = ieee_p_3620187407_sub_514432868_3965413181(IEEE_P_3620187407, t5, t3);
     t7 = (t6 - 31);
     t8 = (t7 * -1);

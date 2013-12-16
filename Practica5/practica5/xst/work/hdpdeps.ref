@@ -1,19 +1,16 @@
 V3 9
-FL C:/hlocal/toc/Practica5/practica5/mem_2.vhd 2013/12/13.16:16:05 P.15xf
-FL C:/hlocal/toc/Practica5/practica5/practica5.vhd 2013/12/13.20:53:22 P.15xf
-FL "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica5/practica5/mem_2.vhd" 2013/12/16.01:49:49 P.15xf
-EN work/rams_2p 1387160168 \
-      FL "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica5/practica5/mem_2.vhd" \
+FL C:/hlocal/toc/Practica5/practica5/mem_2.vhd 2013/12/16.13:31:18 P.15xf
+EN work/rams_2p 1387198062 FL C:/hlocal/toc/Practica5/practica5/mem_2.vhd \
       PB ieee/std_logic_1164 1335251622 PB ieee/STD_LOGIC_UNSIGNED 1335251625 \
       PB ieee/std_logic_arith 1335251623
-AR work/rams_2p/circuito 1387160169 \
-      FL "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica5/practica5/mem_2.vhd" \
-      EN work/rams_2p 1387160168
-FL "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica5/practica5/practica5.vhd" 2013/12/16.03:16:03 P.15xf
-EN work/practica5 1387160170 \
-      FL "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica5/practica5/practica5.vhd" \
+AR work/rams_2p/circuito 1387198063 \
+      FL C:/hlocal/toc/Practica5/practica5/mem_2.vhd EN work/rams_2p 1387198062
+FL C:/hlocal/toc/Practica5/practica5/practica5.vhd 2013/12/16.13:47:30 P.15xf
+EN work/practica5 1387198064 FL C:/hlocal/toc/Practica5/practica5/practica5.vhd \
       PB ieee/std_logic_1164 1335251622 PB ieee/STD_LOGIC_UNSIGNED 1335251625 \
       PB ieee/NUMERIC_STD 1335251627
-AR work/practica5/Behavioral 1387160171 \
-      FL "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica5/practica5/practica5.vhd" \
-      EN work/practica5 1387160170 CP rams_2p
+AR work/practica5/Behavioral 1387198065 \
+      FL C:/hlocal/toc/Practica5/practica5/practica5.vhd EN work/practica5 1387198064 \
+      CP rams_2p
+FL "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica5/practica5/mem_2.vhd" 2013/12/16.01:49:49 P.15xf
+FL "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica5/practica5/practica5.vhd" 2013/12/16.03:16:03 P.15xf

@@ -1,0 +1,3 @@
+vhdl isim_temp "memp5.vhd"
+vhdl isim_temp "practica5c.vhd"
+vhdl isim_temp "tb_p5_2.vhd"

@@ -153,10 +153,10 @@ Synthesizing Unit <practica5>.
     Related source file is "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica5/practica5/practica5.vhd".
     Found finite state machine <FSM_0> for signal <estado_actual>.
     -----------------------------------------------------------------------
-    | States             | 8                                              |
-    | Transitions        | 12                                             |
+    | States             | 6                                              |
+    | Transitions        | 10                                             |
     | Inputs             | 4                                              |
-    | Outputs            | 9                                              |
+    | Outputs            | 7                                              |
     | Clock              | clk                       (rising_edge)        |
     | Reset              | rst                       (positive)           |
     | Reset type         | asynchronous                                   |
@@ -166,30 +166,22 @@ Synthesizing Unit <practica5>.
     | Implementation     | LUT                                            |
     -----------------------------------------------------------------------
 WARNING:Xst:737 - Found 5-bit latch for signal <addr2>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 6-bit latch for signal <aux_j>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
-WARNING:Xst:737 - Found 6-bit latch for signal <aux_i>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
-WARNING:Xst:737 - Found 4-bit latch for signal <din>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
 WARNING:Xst:737 - Found 5-bit latch for signal <addr1>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
 INFO:Xst:2371 - HDL ADVISOR - Logic functions respectively driving the data and gate enable inputs of this latch share common terms. This situation will potentially lead to setup/hold violations and, as a result, to simulation problems. This situation may come from an incomplete case statement (all selector values are not covered). You should carefully review if it was in your intentions to describe such a latch.
-    Found 5-bit subtractor for signal <addr1$addsub0000> created at line 134.
+    Found 5-bit adder for signal <addr2$add0000> created at line 122.
     Found 4-bit register for signal <aux>.
-    Found 6-bit adder for signal <aux_i$addsub0000> created at line 114.
-    Found 6-bit adder for signal <aux_j$addsub0000> created at line 125.
-    Found 7-bit comparator greatequal for signal <aux_j$cmp_ge0000> created at line 111.
-    Found 7-bit comparator greatequal for signal <aux_j$cmp_ge0001> created at line 123.
-    Found 7-bit comparator less for signal <estado_actual$cmp_lt0000> created at line 111.
-    Found 7-bit comparator less for signal <estado_actual$cmp_lt0001> created at line 123.
-    Found 4-bit comparator less for signal <estado_actual$cmp_lt0002> created at line 140.
-    Found 6-bit register for signal <i>.
-    Found 6-bit register for signal <j>.
+    Found 6-bit comparator less for signal <estado_actual$cmp_lt0000> created at line 113.
+    Found 6-bit comparator less for signal <estado_actual$cmp_lt0001> created at line 123.
+    Found 4-bit comparator less for signal <estado_actual$cmp_lt0002> created at line 131.
+    Found 5-bit register for signal <i>.
+    Found 5-bit adder for signal <i$addsub0000> created at line 110.
+    Found 5-bit register for signal <j>.
     Summary:
 	inferred   1 Finite State Machine(s).
-	inferred  16 D-type flip-flop(s).
-	inferred   3 Adder/Subtractor(s).
-	inferred   5 Comparator(s).
+	inferred  14 D-type flip-flop(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred   3 Comparator(s).
 Unit <practica5> synthesized.
 
 
@@ -199,20 +191,16 @@ HDL Synthesis Report
 Macro Statistics
 # RAMs                                                 : 1
  32x4-bit dual-port RAM                                : 1
-# Adders/Subtractors                                   : 3
- 5-bit subtractor                                      : 1
- 6-bit adder                                           : 2
+# Adders/Subtractors                                   : 2
+ 5-bit adder                                           : 2
 # Registers                                            : 5
  4-bit register                                        : 3
- 6-bit register                                        : 2
-# Latches                                              : 5
- 4-bit latch                                           : 1
+ 5-bit register                                        : 2
+# Latches                                              : 2
  5-bit latch                                           : 2
- 6-bit latch                                           : 2
-# Comparators                                          : 5
+# Comparators                                          : 3
  4-bit comparator less                                 : 1
- 7-bit comparator greatequal                           : 2
- 7-bit comparator less                                 : 2
+ 6-bit comparator less                                 : 2
 
 =========================================================================
 
@@ -221,18 +209,16 @@ Macro Statistics
 =========================================================================
 
 Analyzing FSM <FSM_0> for best encoding.
-Optimizing FSM <estado_actual/FSM> on signal <estado_actual[1:8]> with one-hot encoding.
+Optimizing FSM <estado_actual/FSM> on signal <estado_actual[1:6]> with one-hot encoding.
 ----------------------------
  State          | Encoding
 ----------------------------
- estado_inicial | 00000001
- bucle_i        | 00000010
- bucle_j        | 00000100
- swap_dirs      | 00001000
- comprueba      | 00010000
- swap_primero   | 00100000
- swap_aux       | 01000000
- swap_segundo   | 10000000
+ estado_inicial | 000001
+ bucle_i        | 000010
+ bucle_j        | 000100
+ comprueba      | 001000
+ swap_primero   | 010000
+ swap_segundo   | 100000
 ----------------------------
 
 Synthesizing (advanced) Unit <rams_2p>.
@@ -262,19 +248,15 @@ Macro Statistics
 # FSMs                                                 : 1
 # RAMs                                                 : 1
  32x4-bit dual-port distributed RAM                    : 1
-# Adders/Subtractors                                   : 3
- 5-bit subtractor                                      : 1
- 6-bit adder                                           : 2
-# Registers                                            : 24
- Flip-Flops                                            : 24
-# Latches                                              : 5
- 4-bit latch                                           : 1
+# Adders/Subtractors                                   : 2
+ 5-bit adder                                           : 2
+# Registers                                            : 22
+ Flip-Flops                                            : 22
+# Latches                                              : 2
  5-bit latch                                           : 2
- 6-bit latch                                           : 2
-# Comparators                                          : 5
+# Comparators                                          : 3
  4-bit comparator less                                 : 1
- 7-bit comparator greatequal                           : 2
- 7-bit comparator less                                 : 2
+ 6-bit comparator less                                 : 2
 
 =========================================================================
 
@@ -283,10 +265,6 @@ Macro Statistics
 =========================================================================
 
 Optimizing unit <practica5> ...
-WARNING:Xst:1710 - FF/Latch <aux_j_5> (without init value) has a constant value of 0 in block <practica5>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <j_5> (without init value) has a constant value of 0 in block <practica5>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1710 - FF/Latch <aux_j_5> (without init value) has a constant value of 0 in block <practica5>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <j_5> (without init value) has a constant value of 0 in block <practica5>. This FF/Latch will be trimmed during the optimization process.
 
 Optimizing unit <rams_2p> ...
 
@@ -300,8 +278,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 32
- Flip-Flops                                            : 32
+# Registers                                            : 28
+ Flip-Flops                                            : 28
 
 =========================================================================
 
@@ -330,23 +308,22 @@ Design Statistics
 # IOs                              : 13
 
 Cell Usage :
-# BELS                             : 81
+# BELS                             : 63
 #      INV                         : 1
-#      LUT2                        : 7
-#      LUT2_D                      : 1
-#      LUT3                        : 26
-#      LUT3_D                      : 1
-#      LUT4                        : 38
-#      LUT4_D                      : 1
-#      LUT4_L                      : 2
-#      MUXF5                       : 4
-# FlipFlops/Latches                : 58
+#      LUT2                        : 5
+#      LUT2_L                      : 3
+#      LUT3                        : 15
+#      LUT3_D                      : 2
+#      LUT3_L                      : 1
+#      LUT4                        : 29
+#      LUT4_D                      : 3
+#      LUT4_L                      : 4
+# FlipFlops/Latches                : 38
 #      FD                          : 8
-#      FDC                         : 7
-#      FDE                         : 16
+#      FDC                         : 5
+#      FDE                         : 14
 #      FDP                         : 1
-#      LD                          : 22
-#      LD_1                        : 4
+#      LD_1                        : 10
 # RAMS                             : 8
 #      RAM16X1D                    : 8
 # Clock Buffers                    : 1
@@ -361,10 +338,10 @@ Device utilization summary:
 
 Selected Device : 3s1000ft256-5 
 
- Number of Slices:                       45  out of   7680     0%  
- Number of Slice Flip Flops:             58  out of  15360     0%  
- Number of 4 input LUTs:                 93  out of  15360     0%  
-    Number used as logic:                77
+ Number of Slices:                       36  out of   7680     0%  
+ Number of Slice Flip Flops:             38  out of  15360     0%  
+ Number of 4 input LUTs:                 79  out of  15360     0%  
+    Number used as logic:                63
     Number used as RAMs:                 16
  Number of IOs:                          13
  Number of bonded IOBs:                  13  out of    173     7%  
@@ -391,14 +368,11 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 40    |
-din_or0000(din_or0000:O)           | NONE(*)(din_0)         | 4     |
-aux_i_not0001(aux_i_not00012:O)    | NONE(*)(aux_i_0)       | 6     |
-aux_j_not0001(aux_j_not00011:O)    | NONE(*)(aux_j_0)       | 6     |
-addr1_not0001(addr1_not00013:O)    | NONE(*)(addr1_0)       | 5     |
-estado_actual_FSM_FFd5             | NONE(addr2_0)          | 5     |
+clk                                | BUFGP                  | 36    |
+addr1_or0000(addr1_or00001:O)      | NONE(*)(addr1_0)       | 5     |
+estado_actual_FSM_FFd3             | NONE(addr2_0)          | 5     |
 -----------------------------------+------------------------+-------+
-(*) These 4 clock signal(s) are generated by combinatorial logic,
+(*) This 1 clock signal(s) are generated by combinatorial logic,
 and XST is not able to identify which are the primary clock signals.
 Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
@@ -408,16 +382,16 @@ Asynchronous Control Signals Information:
 -----------------------------------+------------------------+-------+
 Control Signal                     | Buffer(FF name)        | Load  |
 -----------------------------------+------------------------+-------+
-rst                                | IBUF                   | 8     |
+rst                                | IBUF                   | 6     |
 -----------------------------------+------------------------+-------+
 
 Timing Summary:
 ---------------
 Speed Grade: -5
 
-   Minimum period: 4.142ns (Maximum Frequency: 241.412MHz)
-   Minimum input arrival time before clock: 3.945ns
-   Maximum output required time after clock: 12.127ns
+   Minimum period: 4.176ns (Maximum Frequency: 239.446MHz)
+   Minimum input arrival time before clock: 3.633ns
+   Maximum output required time after clock: 6.388ns
    Maximum combinational path delay: No path found
 
 Timing Detail:
@@ -426,105 +400,98 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 4.142ns (frequency: 241.412MHz)
-  Total number of paths / destination ports: 90 / 28
+  Clock period: 4.176ns (frequency: 239.446MHz)
+  Total number of paths / destination ports: 202 / 44
 -------------------------------------------------------------------------
-Delay:               4.142ns (Levels of Logic = 3)
-  Source:            memoria/do2_1 (FF)
-  Destination:       estado_actual_FSM_FFd6 (FF)
+Delay:               4.176ns (Levels of Logic = 3)
+  Source:            i_2 (FF)
+  Destination:       estado_actual_FSM_FFd4 (FF)
   Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: memoria/do2_1 to estado_actual_FSM_FFd6
+  Data Path: i_2 to estado_actual_FSM_FFd4
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               2   0.626   1.040  memoria/do2_1 (memoria/do2_1)
-     LUT4_D:I0->LO         1   0.479   0.159  estado_actual_cmp_lt00022 (N56)
-     LUT3:I2->O            1   0.479   0.704  estado_actual_cmp_lt00021_SW0 (N31)
-     LUT4:I3->O            1   0.479   0.000  estado_actual_FSM_FFd6-In1 (estado_actual_FSM_FFd6-In)
-     FDC:D                     0.176          estado_actual_FSM_FFd6
+     FDE:C->Q              4   0.626   1.074  i_2 (i_2)
+     LUT3_D:I0->O          1   0.479   0.704  Madd_i_addsub0000_cy<2>11 (Madd_i_addsub0000_cy<2>)
+     LUT4_L:I3->LO         1   0.479   0.159  estado_actual_FSM_FFd4-In_SW0 (N12)
+     LUT4:I2->O            1   0.479   0.000  estado_actual_FSM_FFd4-In (estado_actual_FSM_FFd4-In)
+     FDC:D                     0.176          estado_actual_FSM_FFd4
     ----------------------------------------
-    Total                      4.142ns (2.239ns logic, 1.903ns route)
-                                       (54.1% logic, 45.9% route)
+    Total                      4.176ns (2.239ns logic, 1.937ns route)
+                                       (53.6% logic, 46.4% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 20 / 18
+  Total number of paths / destination ports: 16 / 16
 -------------------------------------------------------------------------
-Offset:              3.945ns (Levels of Logic = 4)
-  Source:            inicio (PAD)
-  Destination:       estado_actual_FSM_FFd7 (FF)
+Offset:              3.633ns (Levels of Logic = 2)
+  Source:            rst (PAD)
+  Destination:       i_0 (FF)
   Destination Clock: clk rising
 
-  Data Path: inicio to estado_actual_FSM_FFd7
+  Data Path: rst to i_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             5   0.715   1.078  inicio_IBUF (inicio_IBUF)
-     LUT2:I0->O            1   0.479   0.000  estado_actual_cmp_lt00011_SW2_F (N44)
-     MUXF5:I0->O           1   0.314   0.704  estado_actual_cmp_lt00011_SW2 (N40)
-     LUT4:I3->O            1   0.479   0.000  estado_actual_FSM_FFd7-In1 (estado_actual_FSM_FFd7-In)
-     FDC:D                     0.176          estado_actual_FSM_FFd7
+     IBUF:I->O             7   0.715   0.906  rst_IBUF (rst_IBUF)
+     INV:I->O             14   0.479   1.009  rst_inv1_INV_0 (rst_inv)
+     FDE:CE                    0.524          i_0
     ----------------------------------------
-    Total                      3.945ns (2.163ns logic, 1.782ns route)
-                                       (54.8% logic, 45.2% route)
+    Total                      3.633ns (1.718ns logic, 1.915ns route)
+                                       (47.3% logic, 52.7% route)
 
 =========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'addr1_not0001'
+Timing constraint: Default OFFSET IN BEFORE for Clock 'addr1_or0000'
   Total number of paths / destination ports: 5 / 5
 -------------------------------------------------------------------------
-Offset:              2.424ns (Levels of Logic = 3)
+Offset:              2.346ns (Levels of Logic = 2)
   Source:            direccion<0> (PAD)
   Destination:       addr1_0 (LATCH)
-  Destination Clock: addr1_not0001 falling
+  Destination Clock: addr1_or0000 rising
 
   Data Path: direccion<0> to addr1_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             1   0.715   0.740  direccion_0_IBUF (direccion_0_IBUF)
-     LUT4:I2->O            1   0.479   0.000  addr1_mux0000<0>1 (addr1_mux0000<0>1)
-     MUXF5:I1->O           1   0.314   0.000  addr1_mux0000<0>_f5 (addr1_mux0000<0>)
-     LD:D                      0.176          addr1_0
+     IBUF:I->O             1   0.715   0.976  direccion_0_IBUF (direccion_0_IBUF)
+     LUT4:I0->O            1   0.479   0.000  addr1_mux0000<0>1 (addr1_mux0000<0>)
+     LD_1:D                    0.176          addr1_0
     ----------------------------------------
-    Total                      2.424ns (1.684ns logic, 0.740ns route)
-                                       (69.5% logic, 30.5% route)
+    Total                      2.346ns (1.370ns logic, 0.976ns route)
+                                       (58.4% logic, 41.6% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 47 / 5
+  Total number of paths / destination ports: 5 / 5
 -------------------------------------------------------------------------
-Offset:              12.127ns (Levels of Logic = 5)
-  Source:            j_4 (FF)
+Offset:              6.388ns (Levels of Logic = 1)
+  Source:            memoria/do1_3 (FF)
   Destination:       dato_debug<3> (PAD)
   Source Clock:      clk rising
 
-  Data Path: j_4 to dato_debug<3>
+  Data Path: memoria/do1_3 to dato_debug<3>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDE:C->Q              7   0.626   1.201  j_4 (j_4)
-     LUT3_D:I0->O          1   0.479   0.704  estado_actual_cmp_lt00011_SW0 (N29)
-     LUT4:I3->O            7   0.479   0.965  estado_actual_cmp_lt00011 (estado_actual_cmp_lt0001)
-     LUT4:I2->O            9   0.479   1.125  addr1_mux0000<1>11 (N01)
-     LUT2:I1->O            1   0.479   0.681  dato_debug<3>1 (dato_debug_3_OBUF)
+     FD:C->Q               6   0.626   0.853  memoria/do1_3 (memoria/do1_3)
      OBUF:I->O                 4.909          dato_debug_3_OBUF (dato_debug<3>)
     ----------------------------------------
-    Total                     12.127ns (7.451ns logic, 4.676ns route)
-                                       (61.4% logic, 38.6% route)
+    Total                      6.388ns (5.535ns logic, 0.853ns route)
+                                       (86.7% logic, 13.3% route)
 
 =========================================================================
 
 
 Total REAL time to Xst completion: 6.00 secs
-Total CPU time to Xst completion: 5.87 secs
+Total CPU time to Xst completion: 5.82 secs
  
 --> 
 
-Total memory usage is 253692 kilobytes
+Total memory usage is 252924 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   10 (   0 filtered)
-Number of infos    :    6 (   0 filtered)
+Number of warnings :    3 (   0 filtered)
+Number of infos    :    4 (   0 filtered)
 

@@ -1,0 +1,3 @@
+vhdl work "memp5.vhd"
+vhdl work "practica5c.vhd"
+vhdl work "tb_p5_2.vhd"

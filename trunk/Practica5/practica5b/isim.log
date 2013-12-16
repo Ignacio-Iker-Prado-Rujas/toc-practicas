@@ -1,0 +1,82 @@
+ISim log file
+Running: C:\hlocal\toc\Practica5\practica5b\tb_practica5_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb C:/hlocal/toc/Practica5/practica5b/tb_practica5_isim_beh.wdb 
+ISim P.15xf (signature 0xc3576ebc)
+----------------------------------------------------------------------
+INFO:Security:50 - The XILINXD_LICENSE_FILE environment variable is set to 'C:\software\electronica\xilinx\14.1\ISE_DS\common\licenses\xilinx.lic'.
+INFO:Security:52 - The LM_LICENSE_FILE environment variable is set to '1717@licencias.fdi.ucm.es;2100@licencias.fdi.ucm.es'.
+WARNING:Security:43 - No license file was found in the standard Xilinx license directory.
+WARNING:Security:44 - Since no license file was found,
+       please run the Xilinx License Configuration Manager
+       (xlcm or "Manage Xilinx Licenses")
+       to assist in obtaining a license.
+WARNING:Security:42 - Your software subscription period has lapsed. Your current version of Xilinx tools will continue to function, but you no longer qualify for Xilinx software updates or new releases.
+
+
+----------------------------------------------------------------------
+This is a Full version of ISim.
+Time resolution is 1 ps
+# onerror resume
+# wave add /
+# run 1000 ns
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+# run 50 us
+at 19975 ns: Error: Error en la ordenacion
+at 19985 ns: Error: Error en la ordenacion
+at 19995 ns: Error: Error en la ordenacion
+at 20005 ns: Error: Error en la ordenacion
+at 20015 ns: Error: Error en la ordenacion
+at 20025 ns: Error: Error en la ordenacion
+at 20035 ns: Error: Error en la ordenacion
+at 20045 ns: Error: Error en la ordenacion
+at 20055 ns: Error: Error en la ordenacion
+at 20065 ns: Error: Error en la ordenacion
+at 20075 ns: Error: Error en la ordenacion
+at 20085 ns: Error: Error en la ordenacion
+at 20095 ns: Error: Error en la ordenacion
+at 20105 ns: Error: Error en la ordenacion
+at 20115 ns: Error: Error en la ordenacion
+at 20125 ns: Error: Error en la ordenacion
+at 20135 ns: Error: Error en la ordenacion
+at 20145 ns: Error: Error en la ordenacion
+at 20155 ns: Error: Error en la ordenacion
+at 20165 ns: Error: Error en la ordenacion
+at 20175 ns: Error: Error en la ordenacion
+at 20185 ns: Error: Error en la ordenacion
+at 20195 ns: Error: Error en la ordenacion
+at 20205 ns: Error: Error en la ordenacion
+at 20215 ns: Error: Error en la ordenacion
+at 20225 ns: Error: Error en la ordenacion
+at 20235 ns: Error: Error en la ordenacion
+at 20245 ns: Error: Error en la ordenacion
+at 20255 ns: Error: Error en la ordenacion
+at 40155 ns: Error: Error en la ordenacion
+at 40165 ns: Error: Error en la ordenacion
+at 40175 ns: Error: Error en la ordenacion
+at 40185 ns: Error: Error en la ordenacion
+at 40195 ns: Error: Error en la ordenacion
+at 40205 ns: Error: Error en la ordenacion
+at 40215 ns: Error: Error en la ordenacion
+at 40225 ns: Error: Error en la ordenacion
+at 40235 ns: Error: Error en la ordenacion
+at 40245 ns: Error: Error en la ordenacion
+at 40255 ns: Error: Error en la ordenacion
+at 40265 ns: Error: Error en la ordenacion
+at 40275 ns: Error: Error en la ordenacion
+at 40285 ns: Error: Error en la ordenacion
+at 40295 ns: Error: Error en la ordenacion
+at 40305 ns: Error: Error en la ordenacion
+at 40315 ns: Error: Error en la ordenacion
+at 40325 ns: Error: Error en la ordenacion
+at 40335 ns: Error: Error en la ordenacion
+at 40345 ns: Error: Error en la ordenacion
+at 40355 ns: Error: Error en la ordenacion
+at 40365 ns: Error: Error en la ordenacion
+at 40375 ns: Error: Error en la ordenacion
+at 40385 ns: Error: Error en la ordenacion
+at 40395 ns: Error: Error en la ordenacion
+at 40405 ns: Error: Error en la ordenacion
+at 40415 ns: Error: Error en la ordenacion
+at 40425 ns: Error: Error en la ordenacion
+at 40435 ns: Error: Error en la ordenacion
+# run 10us

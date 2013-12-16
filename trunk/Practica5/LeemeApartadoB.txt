@@ -1,0 +1,6 @@
+Práctica 5 parte b:
+
+-Hemos eliminado dos estados:
+	Haciendo las dos escrituras a la vez
+	y además en el mismo ciclo que se comprueba si
+	debe hacerse el swap.

@@ -1,24 +1,23 @@
-Running: C:\Xilinx\14.1\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -o C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica5/practica5/tb_practica5_isim_beh.exe -prj C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica5/practica5/tb_practica5_beh.prj work.tb_practica5 
+Running: C:\software\electronica\xilinx\14.1\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -o C:/hlocal/toc/Practica5/practica5/miTest_isim_beh.exe -prj C:/hlocal/toc/Practica5/practica5/miTest_beh.prj work.miTest 
 ISim P.15xf (signature 0xc3576ebc)
-Number of CPUs detected in this system: 4
-Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Number of CPUs detected in this system: 8
+Turning on mult-threading, number of parallel sub-compilation jobs: 16 
 Determining compilation order of HDL files
-Parsing VHDL file "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica5/practica5/mem_2.vhd" into library work
-Parsing VHDL file "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica5/practica5/practica5.vhd" into library work
-Parsing VHDL file "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica5/practica5/../tb_p5.vhd" into library work
+Parsing VHDL file "C:/hlocal/toc/Practica5/practica5/mem_2.vhd" into library work
+Parsing VHDL file "C:/hlocal/toc/Practica5/practica5/practica5.vhd" into library work
+Parsing VHDL file "C:/hlocal/toc/Practica5/practica5/miTest.vhd" into library work
 Starting static elaboration
 Completed static elaboration
 Compiling package standard
 Compiling package std_logic_1164
-Compiling package numeric_std
 Compiling package std_logic_arith
 Compiling package std_logic_unsigned
+Compiling package numeric_std
 Compiling architecture circuito of entity rams_2p [rams_2p_default]
 Compiling architecture behavioral of entity practica5 [\practica5(32)\]
-Compiling architecture beh of entity tb_practica5
+Compiling architecture behavior of entity mitest
 Time Resolution for simulation is 1ps.
-Waiting for 1 sub-compilation(s) to finish...
 Compiled 10 VHDL Units
-Built simulation executable C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica5/practica5/tb_practica5_isim_beh.exe
-Fuse Memory Usage: 35540 KB
-Fuse CPU Usage: 655 ms
+Built simulation executable C:/hlocal/toc/Practica5/practica5/miTest_isim_beh.exe
+Fuse Memory Usage: 36864 KB
+Fuse CPU Usage: 436 ms

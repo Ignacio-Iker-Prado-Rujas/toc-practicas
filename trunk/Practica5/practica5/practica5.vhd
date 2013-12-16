@@ -56,9 +56,9 @@ component rams_2p is
 );
 end component rams_2p;
 
-type estado is(estado_inicial, bucle_i, bucle_j, swap_dirs, comprueba, swap_primero, swap_aux, swap_segundo);
+type estado is(estado_inicial, bucle_i, bucle_j, comprueba, swap_primero, swap_segundo);
 
-signal i, j, aux_i, aux_j: std_logic_vector(5 downto 0);
+signal i, j, aux_i, aux_j: std_logic_vector(4 downto 0);
 signal wenable: std_logic;
 signal addr1, addr2: std_logic_vector(4 downto 0);
 signal din, dout1, dout2, aux, n_aux: std_logic_vector(3 downto 0);
@@ -84,83 +84,76 @@ end process reloj;
 
 burbuja: process(estado_actual, inicio, direccion, dout1, dout2, i, j, aux)
 begin
-	
-	dato_debug <= "0000";
--- addr1 <= direccion;
---	aux_i <= i;
---	aux_j <= j;
---	addr1 <= "00000";
---	addr2 <= "00000";
+	dato_debug <= dout1;
+	aux_i <= i;
+	aux_j <= j;
 	wenable <= '0';
 	fin <= '0';
 	n_aux <= dout1;
+	din <= "0000";
+	
 	case estado_actual is
 	
 		when estado_inicial => 
 			fin <= '1';
 			addr1 <= direccion;
-			dato_debug <= dout1;
+			addr2 <= "00000";
+			aux_i <= "00000";
 			if inicio = '1' then
-				aux_i <= "000000";
 				estado_siguiente <= bucle_i;		
 			else 
 				estado_siguiente <= estado_inicial;
 			end if;			
 			
 		when bucle_i => 
-			if i < N then 
-				aux_j <= "000000";
-				estado_siguiente <= bucle_j;
-				aux_i <= i+1;			
-			else 
-				fin <= '1';
-				addr1 <= direccion;
-				dato_debug <= dout1;
+			aux_j <= "00000";
+			aux_i <= i+1;
+			addr1 <= direccion;	
+			addr2 <= "00000";
+			if i < N-1 then 							
+				estado_siguiente <= bucle_j;						
+			else 		
 				estado_siguiente <= estado_inicial;
 			end if;
 				
-		when bucle_j => 
+		when bucle_j =>
+			aux_j <= j+1;
+			addr1 <= j;
+			addr2 <= j + 1;
 			if j < N-1 then 
-				estado_siguiente <= swap_dirs;
-				aux_j <= j+1;
+				estado_siguiente <= comprueba;			
 			else 
-				addr1 <= direccion;
-				dato_debug <= dout1;
 				estado_siguiente <= bucle_i;	
 			end if;
-		
-		when swap_dirs =>
-			-- Hemos avanzado la j, as’ que cargamos mem(j-1) y mem(j)
-			addr1 <= j(4 downto 0) - 1;
-			addr2 <= j(4 downto 0);
-			estado_siguiente <= comprueba;
-			
+				
 		when comprueba =>
-			-- Solo cambiamos si el nœmero es menor que el siguiente
+			-- Solo cambiamos si el número es menor que el siguiente
 			if dout1 < dout2 then
 				estado_siguiente <= swap_primero;
 			else 
 				estado_siguiente <= bucle_j;
 			end if; 
-				 
+			--Para quitar los latches:
+			--addr1<="00000";
+			--addr2<=j;
 		when swap_primero => 
 			-- En n_aux ahora tenemos el contenido de addr1
-			-- Guardamos mem(j) en mem(j-1)
+			-- Guardamos mem(j+1) en mem(j)
+			--Para quitar los latches: addr1<=j-1;
 			din <= dout2;
 			wenable <= '1';
-			estado_siguiente <= swap_aux;
-			
-		when swap_aux =>
-			-- Lo que hab’a en n_aux (el contenido de addr1) pasa a aux
-			--Vamos a guardar en mem(j)
-			addr1 <= j(4 downto 0);
-			estado_siguiente <= swap_segundo;	
-			
+			estado_siguiente <= swap_segundo;
+			addr2 <= "00000";
+					
 		when swap_segundo =>
-			--Guardamos lo que hab’a en mem(j-1) en mem(j), que estaba en aux
+			--Guardamos lo que había en mem(j) en mem(j+1), que estaba en aux
+			--No olvidar que hemos avanzado la j.
+			addr1 <= j;
 			din <= aux;
 			wenable <= '1';
 			estado_siguiente <= bucle_j;
+			addr2 <= "00000";
+			
 					
 	end case;
 

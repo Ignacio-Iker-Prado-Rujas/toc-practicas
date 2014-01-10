@@ -1,0 +1,1 @@
+xst -intstyle ise -ifn "C:/hlocal/toc/Practica6/practica6kike/rams_2p.xst" -ofn "C:/hlocal/toc/Practica6/practica6kike/rams_2p.syr" 

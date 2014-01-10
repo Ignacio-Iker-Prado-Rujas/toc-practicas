@@ -39,19 +39,19 @@ Data Sheet report:
 -----------------
 All values displayed in nanoseconds (ns)
 
-Setup/Hold to clock read_enable
+Setup/Hold to clock clk
 ------------+------------+------------+------------------+--------+
             |Max Setup to|Max Hold to |                  | Clock  |
 Source      | clk (edge) | clk (edge) |Internal Clock(s) | Phase  |
 ------------+------------+------------+------------------+--------+
-key<0>      |    3.432(F)|    0.241(F)|read_enable_IBUF  |   0.000|
-key<1>      |    2.919(F)|    0.185(F)|read_enable_IBUF  |   0.000|
-key<2>      |    3.126(F)|    0.007(F)|read_enable_IBUF  |   0.000|
-key<3>      |    3.065(F)|    0.102(F)|read_enable_IBUF  |   0.000|
-key<4>      |    3.763(F)|   -0.040(F)|read_enable_IBUF  |   0.000|
-key<5>      |    3.337(F)|   -0.202(F)|read_enable_IBUF  |   0.000|
-key<6>      |    3.559(F)|   -0.348(F)|read_enable_IBUF  |   0.000|
-key<7>      |    3.288(F)|   -0.200(F)|read_enable_IBUF  |   0.000|
+key<0>      |    4.948(R)|   -1.272(R)|clk_BUFGP         |   0.000|
+key<1>      |    4.510(R)|   -0.882(R)|clk_BUFGP         |   0.000|
+key<2>      |    5.118(R)|   -1.118(R)|clk_BUFGP         |   0.000|
+key<3>      |    5.221(R)|   -1.450(R)|clk_BUFGP         |   0.000|
+key<4>      |    4.269(R)|   -0.910(R)|clk_BUFGP         |   0.000|
+key<5>      |    5.564(R)|   -1.785(R)|clk_BUFGP         |   0.000|
+key<6>      |    5.580(R)|   -1.798(R)|clk_BUFGP         |   0.000|
+key<7>      |    5.126(R)|   -1.435(R)|clk_BUFGP         |   0.000|
 ------------+------------+------------+------------------+--------+
 
 Clock clk to Pad
@@ -59,65 +59,63 @@ Clock clk to Pad
             | clk (edge) |                  | Clock  |
 Destination |   to PAD   |Internal Clock(s) | Phase  |
 ------------+------------+------------------+--------+
-data_out<0> |    8.692(R)|clk_BUFGP         |   0.000|
-data_out<1> |    8.802(R)|clk_BUFGP         |   0.000|
-data_out<2> |    8.120(R)|clk_BUFGP         |   0.000|
-data_out<3> |    8.222(R)|clk_BUFGP         |   0.000|
-data_out<4> |    7.845(R)|clk_BUFGP         |   0.000|
-data_out<5> |    7.218(R)|clk_BUFGP         |   0.000|
-data_out<6> |    8.108(R)|clk_BUFGP         |   0.000|
-data_out<7> |    7.218(R)|clk_BUFGP         |   0.000|
-data_out<8> |    7.849(R)|clk_BUFGP         |   0.000|
-data_out<9> |    7.222(R)|clk_BUFGP         |   0.000|
-data_out<10>|    7.502(R)|clk_BUFGP         |   0.000|
-data_out<11>|    7.506(R)|clk_BUFGP         |   0.000|
-data_out<12>|    7.499(R)|clk_BUFGP         |   0.000|
-data_out<13>|    7.503(R)|clk_BUFGP         |   0.000|
-data_out<14>|    7.219(R)|clk_BUFGP         |   0.000|
-data_out<15>|    7.212(R)|clk_BUFGP         |   0.000|
+data_out<0> |    9.685(R)|clk_BUFGP         |   0.000|
+data_out<1> |    8.456(R)|clk_BUFGP         |   0.000|
+data_out<2> |    9.037(R)|clk_BUFGP         |   0.000|
+data_out<3> |    8.906(R)|clk_BUFGP         |   0.000|
+data_out<4> |    8.366(R)|clk_BUFGP         |   0.000|
+data_out<5> |    8.753(R)|clk_BUFGP         |   0.000|
+data_out<6> |    8.502(R)|clk_BUFGP         |   0.000|
+data_out<7> |    8.829(R)|clk_BUFGP         |   0.000|
+data_out<8> |    8.659(R)|clk_BUFGP         |   0.000|
+data_out<9> |    8.617(R)|clk_BUFGP         |   0.000|
+data_out<10>|    8.631(R)|clk_BUFGP         |   0.000|
+data_out<11>|    8.235(R)|clk_BUFGP         |   0.000|
+data_out<12>|    8.768(R)|clk_BUFGP         |   0.000|
+data_out<13>|    8.663(R)|clk_BUFGP         |   0.000|
+data_out<14>|    8.478(R)|clk_BUFGP         |   0.000|
+data_out<15>|    8.605(R)|clk_BUFGP         |   0.000|
 ------------+------------+------------------+--------+
-
-Clock to Setup on destination clock clk
----------------+---------+---------+---------+---------+
-               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
----------------+---------+---------+---------+---------+
-clk            |    1.437|         |         |         |
-read_enable    |         |    4.464|         |         |
----------------+---------+---------+---------+---------+
-
-Clock to Setup on destination clock read_enable
----------------+---------+---------+---------+---------+
-               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
----------------+---------+---------+---------+---------+
-read_enable    |         |         |         |    2.625|
----------------+---------+---------+---------+---------+
 
 Pad to Pad
 ---------------+---------------+---------+
 Source Pad     |Destination Pad|  Delay  |
 ---------------+---------------+---------+
-key<0>         |error          |    8.747|
-key<1>         |error          |    8.531|
-key<2>         |error          |    8.802|
-key<3>         |error          |    8.364|
-key<4>         |error          |    9.051|
-key<5>         |error          |    7.828|
-key<6>         |error          |    7.673|
-key<7>         |error          |    7.551|
-read_enable    |error          |    7.604|
+key<0>         |error          |    8.262|
+key<1>         |error          |    8.117|
+key<2>         |error          |    8.429|
+key<3>         |error          |    8.252|
+key<4>         |error          |    8.179|
+key<5>         |error          |    7.617|
+key<6>         |error          |    7.554|
+key<7>         |error          |    7.113|
+read_enable    |data_out<0>    |    9.311|
+read_enable    |data_out<1>    |    8.540|
+read_enable    |data_out<2>    |    8.587|
+read_enable    |data_out<3>    |    8.248|
+read_enable    |data_out<4>    |    9.040|
+read_enable    |data_out<5>    |    8.852|
+read_enable    |data_out<6>    |    8.862|
+read_enable    |data_out<7>    |    9.403|
+read_enable    |data_out<8>    |    9.328|
+read_enable    |data_out<9>    |    8.710|
+read_enable    |data_out<10>   |    8.371|
+read_enable    |data_out<11>   |    9.104|
+read_enable    |data_out<12>   |    9.316|
+read_enable    |data_out<13>   |    9.408|
+read_enable    |data_out<14>   |    9.210|
+read_enable    |data_out<15>   |    8.692|
 ---------------+---------------+---------+
 
 
-Analysis completed Fri Jan 10 19:29:02 2014 
+Analysis completed Fri Jan 10 20:24:53 2014 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 154 MB
+Peak Memory Usage: 153 MB
 
 
 

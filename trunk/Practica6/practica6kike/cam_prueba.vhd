@@ -27,7 +27,7 @@ use IEEE.std_logic_unsigned.all;
 entity cam is
   port     (clk              : in   std_logic;                   	--		Clock
             read_enable      : in   std_logic;                   	--		Read enable
-            key	           : in   std_logic_vector(7 downto 0);	--		Key
+            key	           : in   std_logic_vector(4 downto 0);	--		Key
 				error            : out  std_logic;                	-- 	Error 
             data_out         : out  std_logic_vector(15 downto 0)	--		Data out        
            );
@@ -43,8 +43,8 @@ component ram is
 	);
 end component ram;
 	
-type ram_array is array (31 downto 0 ) of std_logic_vector(15 downto 0);
-type key_array is array	(19 downto 0 ) of std_logic_vector(4 downto 0);
+type ram_array is array (0 to 31 ) of std_logic_vector(15 downto 0);
+type key_array is array	(0 to 19 ) of std_logic_vector(4 downto 0);
 signal keys	: key_array :=(	"00100","01000","10111","11100","01110","10100","11010",
 										"01111","11110","11001","10110","00001","10001","10010",
 										"10011","00101","11011","11000","10000","00111");
@@ -62,28 +62,27 @@ signal dir_ram: std_logic_vector(4 downto 0);
 begin
  
 data_ram: ram port map(clk, dir_ram, ram_out);
-lectura: process(keys, read_enable, clk, key, ram_out) 
+
+combinacional: process(keys, read_enable, clk, key, ram_out) 
 begin
 	dir_ram <= "00000";
 	error <= '1';
-  if read_enable = '1' then
-      for i in 0 to 19 loop             --   Check for key
-        if key = keys(conv_integer (i)) then
-          error <= '0';                    --   Found Match
-          dir_ram <= conv_std_logic_vector(i, 5);
-			 exit;
-        else
-          error <= '1';                    --   No match found
-        end if;
-      end loop;
+	for i in 0 to 19 loop             --   Check for key
+	  if key = keys(conv_integer (i)) then
+		 error <= '0';                    --   Found Match
+		 dir_ram <= conv_std_logic_vector(i, 5);
+		 exit;                  --   No match found
+	  end if;
+	end loop;
+	
+end process combinacional; 
+
+salida: process (clk, read_enable, ram_out)
+begin
+	if read_enable = '1' then
 		data_out <= ram_out;
 	else data_out <= X"0000";
    end if;
-end process lectura; 
-
---combinational: process (clk)
---begin
---	
---end process;
+end process;
  
 end architecture;

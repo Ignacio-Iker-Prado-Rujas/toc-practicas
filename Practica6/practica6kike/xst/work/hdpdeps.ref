@@ -1,10 +1,10 @@
 V3 13
-FL C:/hlocal/toc/Practica6/practica6kike/cam_prueba.vhd 2014/01/10.20:35:51 P.15xf
-EN work/cam 1389382558 FL C:/hlocal/toc/Practica6/practica6kike/cam_prueba.vhd \
+FL C:/hlocal/toc/Practica6/practica6kike/cam_prueba.vhd 2014/01/10.20:45:14 P.15xf
+EN work/cam 1389383120 FL C:/hlocal/toc/Practica6/practica6kike/cam_prueba.vhd \
       PB ieee/std_logic_1164 1335251622 PB ieee/std_logic_arith 1335251623 \
-      PB ieee/std_logic_misc 1335251624 PB ieee/STD_LOGIC_UNSIGNED 1335251625
-AR work/cam/circuito_cam 1389382559 \
-      FL C:/hlocal/toc/Practica6/practica6kike/cam_prueba.vhd EN work/cam 1389382558 \
+      PB ieee/STD_LOGIC_UNSIGNED 1335251625
+AR work/cam/circuito_cam 1389383121 \
+      FL C:/hlocal/toc/Practica6/practica6kike/cam_prueba.vhd EN work/cam 1389383120 \
       CP ram
 FL C:/hlocal/toc/Practica6/practica6kike/mem_2.vhd 2014/01/10.17:20:17 P.15xf
 EN work/ram_block 1389370950 FL C:/hlocal/toc/Practica6/practica6kike/mem_2.vhd \
@@ -20,8 +20,8 @@ AR work/practica6/Behavioral 1389376566 \
       FL C:/hlocal/toc/Practica6/practica6kike/practica6.vhd EN work/practica6 1389376565 \
       CP ram
 FL C:/hlocal/toc/Practica6/practica6kike/ram.vhd 2014/01/10.20:15:48 P.15xf
-EN work/ram 1389382556 FL C:/hlocal/toc/Practica6/practica6kike/ram.vhd \
+EN work/ram 1389383118 FL C:/hlocal/toc/Practica6/practica6kike/ram.vhd \
       PB ieee/std_logic_1164 1335251622 PB ieee/STD_LOGIC_UNSIGNED 1335251625 \
       PB ieee/std_logic_arith 1335251623
-AR work/ram/circuito 1389382557 \
-      FL C:/hlocal/toc/Practica6/practica6kike/ram.vhd EN work/ram 1389382556
+AR work/ram/circuito 1389383119 \
+      FL C:/hlocal/toc/Practica6/practica6kike/ram.vhd EN work/ram 1389383118

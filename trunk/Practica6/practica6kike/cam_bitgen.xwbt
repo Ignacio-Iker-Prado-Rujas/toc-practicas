@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\hlocal\toc\Practica6\practica6kike\cam.ncd
+OUTFILE=C:\hlocal\toc\Practica6\practica6kike\cam.bit
+FAMILY=Spartan3
+PART=xc3s1000-5ft256
+WORKINGDIR=C:\hlocal\toc\Practica6\practica6kike
+LICENSE=WebPack
+USER_INFO=210699396_1777489394_210552810_807

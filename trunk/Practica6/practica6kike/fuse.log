@@ -1,0 +1,25 @@
+Running: C:\software\electronica\xilinx\14.1\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -o C:/hlocal/toc/Practica6/practica6kike/test_isim_beh.exe -prj C:/hlocal/toc/Practica6/practica6kike/test_beh.prj work.test 
+ISim P.15xf (signature 0xc3576ebc)
+Number of CPUs detected in this system: 8
+Turning on mult-threading, number of parallel sub-compilation jobs: 16 
+Determining compilation order of HDL files
+Parsing VHDL file "C:/hlocal/toc/Practica6/practica6kike/ram.vhd" into library work
+Parsing VHDL file "C:/hlocal/toc/Practica6/practica6kike/cam_prueba.vhd" into library work
+Parsing VHDL file "C:/hlocal/toc/Practica6/practica6kike/test.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package std_logic_arith
+Compiling package attributes
+Compiling package std_logic_misc
+Compiling package std_logic_unsigned
+Compiling architecture circuito of entity ram [ram_default]
+Compiling architecture circuito_cam of entity cam [cam_default]
+Compiling architecture behavior of entity test
+Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 11 VHDL Units
+Built simulation executable C:/hlocal/toc/Practica6/practica6kike/test_isim_beh.exe
+Fuse Memory Usage: 34028 KB
+Fuse CPU Usage: 421 ms

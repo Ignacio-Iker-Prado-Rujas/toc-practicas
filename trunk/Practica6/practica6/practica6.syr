@@ -129,7 +129,6 @@ Performing bidirectional port resolution...
 
 Synthesizing Unit <practica6>.
     Related source file is "C:/hlocal/TOC/Practica6/practica6/practica6.vhd".
-WARNING:Xst:646 - Signal <array_keys<0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:1781 - Signal <RAM> is used but never assigned. Tied to default value.
     Using one-hot encoding for signal <address>.
     Found 16-bit register for signal <data_out>.
@@ -213,16 +212,15 @@ Design Statistics
 # IOs                              : 24
 
 Cell Usage :
-# BELS                             : 19
-#      GND                         : 1
+# BELS                             : 21
 #      INV                         : 1
-#      LUT2                        : 1
-#      LUT3                        : 5
-#      LUT4                        : 8
-#      MUXF5                       : 3
+#      LUT2                        : 5
+#      LUT3                        : 2
+#      LUT4                        : 12
+#      MUXF5                       : 1
 # FlipFlops/Latches                : 16
-#      FDR                         : 3
-#      FDRS                        : 13
+#      FDR                         : 12
+#      FDRS                        : 4
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
 # IO Buffers                       : 23
@@ -235,8 +233,8 @@ Device utilization summary:
 
 Selected Device : 3s1000ft256-5 
 
- Number of Slices:                        9  out of   7680     0%  
- Number of 4 input LUTs:                 15  out of  15360     0%  
+ Number of Slices:                       11  out of   7680     0%  
+ Number of 4 input LUTs:                 20  out of  15360     0%  
  Number of IOs:                          24
  Number of bonded IOBs:                  24  out of    173    13%  
     IOB Flip Flops:                      16
@@ -275,9 +273,9 @@ Timing Summary:
 Speed Grade: -5
 
    Minimum period: No path found
-   Minimum input arrival time before clock: 5.573ns
+   Minimum input arrival time before clock: 4.140ns
    Maximum output required time after clock: 6.216ns
-   Maximum combinational path delay: 10.883ns
+   Maximum combinational path delay: 8.319ns
 
 Timing Detail:
 --------------
@@ -285,24 +283,23 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 244 / 45
+  Total number of paths / destination ports: 128 / 36
 -------------------------------------------------------------------------
-Offset:              5.573ns (Levels of Logic = 3)
-  Source:            key<0> (PAD)
-  Destination:       data_out_14 (FF)
+Offset:              4.140ns (Levels of Logic = 2)
+  Source:            key<1> (PAD)
+  Destination:       data_out_4 (FF)
   Destination Clock: clk rising
 
-  Data Path: key<0> to data_out_14
+  Data Path: key<1> to data_out_4
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             5   0.715   1.078  key_0_IBUF (key_0_IBUF)
-     LUT3:I0->O            6   0.479   1.148  error_cmp_eq000011 (N2)
-     LUT3:I0->O            5   0.479   0.783  error_cmp_eq00031 (address<4>)
-     FDRS:S                    0.892          data_out_14
+     IBUF:I->O             7   0.715   1.201  key_1_IBUF (key_1_IBUF)
+     LUT3:I0->O            6   0.479   0.853  _varindex0000<12>31 (_varindex0000<12>_bdd3)
+     FDRS:S                    0.892          data_out_4
     ----------------------------------------
-    Total                      5.573ns (2.565ns logic, 3.008ns route)
-                                       (46.0% logic, 54.0% route)
+    Total                      4.140ns (2.086ns logic, 2.054ns route)
+                                       (50.4% logic, 49.6% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
@@ -317,7 +314,7 @@ Offset:              6.216ns (Levels of Logic = 1)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDRS:C->Q             1   0.626   0.681  data_out_14_1 (data_out_14_1)
+     FDR:C->Q              1   0.626   0.681  data_out_14_1 (data_out_14_1)
      OBUF:I->O                 4.909          data_out_15_OBUF (data_out<15>)
     ----------------------------------------
     Total                      6.216ns (5.535ns logic, 0.681ns route)
@@ -325,36 +322,35 @@ Offset:              6.216ns (Levels of Logic = 1)
 
 =========================================================================
 Timing constraint: Default path analysis
-  Total number of paths / destination ports: 20 / 1
+  Total number of paths / destination ports: 9 / 1
 -------------------------------------------------------------------------
-Delay:               10.883ns (Levels of Logic = 5)
-  Source:            key<0> (PAD)
+Delay:               8.319ns (Levels of Logic = 4)
+  Source:            key<2> (PAD)
   Destination:       error (PAD)
 
-  Data Path: key<0> to error
+  Data Path: key<2> to error
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             5   0.715   1.078  key_0_IBUF (key_0_IBUF)
-     LUT3:I0->O            6   0.479   1.148  error_cmp_eq000011 (N2)
-     LUT3:I0->O            2   0.479   0.915  error_cmp_eq00001 (address<3>)
-     LUT4:I1->O            1   0.479   0.681  error1 (error_OBUF)
+     IBUF:I->O            16   0.715   1.221  key_2_IBUF (key_2_IBUF)
+     LUT4:I1->O            1   0.479   0.000  error_F (N3)
+     MUXF5:I0->O           1   0.314   0.681  error (error_OBUF)
      OBUF:I->O                 4.909          error_OBUF (error)
     ----------------------------------------
-    Total                     10.883ns (7.061ns logic, 3.822ns route)
-                                       (64.9% logic, 35.1% route)
+    Total                      8.319ns (6.417ns logic, 1.902ns route)
+                                       (77.1% logic, 22.9% route)
 
 =========================================================================
 
 
 Total REAL time to Xst completion: 4.00 secs
-Total CPU time to Xst completion: 3.95 secs
+Total CPU time to Xst completion: 4.07 secs
  
 --> 
 
-Total memory usage is 253656 kilobytes
+Total memory usage is 253720 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    2 (   0 filtered)
+Number of warnings :    1 (   0 filtered)
 Number of infos    :    3 (   0 filtered)
 

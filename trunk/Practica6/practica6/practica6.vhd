@@ -107,7 +107,7 @@ process(read_enable, key, RAM)
 begin
 	error <= '1';
 	address <= (others => '0');
-	for i in 1 to num_keys-1 loop
+	for i in 0 to num_keys-1 loop
 		if key = array_keys(i) then
 			address <= conv_std_logic_vector(i, 5);
 			error <= '0';

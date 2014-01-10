@@ -19,6 +19,8 @@
 ----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
+--Para usar el conv_std_logic_vector
+use IEEE.STD_LOGIC_ARITH.ALL;
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -41,7 +43,7 @@ end practica6;
 architecture Behavioral of practica6 is
 
 --Tipo para los arrays de keys y definicion de una señal vector de keys
-type keys_type is array (31 downto 0) of std_logic_vector (4 downto 0);
+type keys_type is array (4 downto 0) of std_logic_vector (4 downto 0);
 signal array_keys: keys_type;
 --Tipo para un RAM y definicion de una señal de ese tipo
 type ram_type is array (31 downto 0) of std_logic_vector (15 downto 0);
@@ -50,7 +52,10 @@ signal RAM : ram_type := ( X"12AC",X"1411",X"0FE1",X"1234",X"312B",X"BAD2",X"FE0
 									X"A358",X"7124",X"91AD",X"2469",X"F235",X"253A",X"261B",X"744B",
 									X"E362",X"123C",X"257D",X"D953",X"0135",X"263E",X"124A",X"F3F3"
 									);
---numero de keys
+--Constante: numero de keys
+constant num_keys: integer:= 5;
+--Direccion a leer de la RAM
+signal address: std_logic_vector(4 downto 0);
 	 
 begin
 --Definicion de valores para las keys
@@ -87,13 +92,28 @@ array_keys(4) 	<= "11111";
 --array_keys(30) <= "00000";
 --array_keys(31) <= "00000";
 
---process hola (read_enable, clk)
--- error <= '1';
---	for(int i = 0; i < num_keys; i++)
---		if (key == array_keys[i] && read_enable == 1)
---		 	data_out <= ram(array_keys(i));
---			error <= '0';
---end process hola;
+reloj: process(clk, read_enable)
+begin
+	if clk'event and clk = '1' then
+		if read_enable = '1' then
+			data_out <= RAM(conv_integer(unsigned(address)));
+		else 
+			data_out <= (others => '0');
+		end if;
+	end if;
+end process reloj;
+
+process(read_enable, key, RAM)
+begin
+	error <= '1';
+	address <= (others => '0');
+	for i in 1 to num_keys-1 loop
+		if key = array_keys(i) then
+			address <= conv_std_logic_vector(i, 5);
+			error <= '0';
+		end if;
+	end loop;
+end process;
 
 end Behavioral;
 

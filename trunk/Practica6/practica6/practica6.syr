@@ -129,28 +129,22 @@ Performing bidirectional port resolution...
 
 Synthesizing Unit <practica6>.
     Related source file is "C:/hlocal/TOC/Practica6/practica6/practica6.vhd".
-WARNING:Xst:647 - Input <clk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:1306 - Output <data_out> is never assigned.
-WARNING:Xst:647 - Input <read_enable> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:1306 - Output <error> is never assigned.
-WARNING:Xst:647 - Input <key> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:646 - Signal <array_keys<31>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:1780 - Signal <array_keys<30:27>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:646 - Signal <array_keys<26>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:1780 - Signal <array_keys<25:22>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:646 - Signal <array_keys<21>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:1780 - Signal <array_keys<20:14>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:646 - Signal <array_keys<13>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:1780 - Signal <array_keys<12:1>> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
 WARNING:Xst:646 - Signal <array_keys<0>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
-WARNING:Xst:1780 - Signal <RAM> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1781 - Signal <RAM> is used but never assigned. Tied to default value.
+    Using one-hot encoding for signal <address>.
+    Found 16-bit register for signal <data_out>.
+    Summary:
+	inferred  16 D-type flip-flop(s).
 Unit <practica6> synthesized.
 
 
 =========================================================================
 HDL Synthesis Report
 
-Found no macro
+Macro Statistics
+# Registers                                            : 1
+ 16-bit register                                       : 1
+
 =========================================================================
 
 =========================================================================
@@ -161,25 +155,37 @@ Found no macro
 =========================================================================
 Advanced HDL Synthesis Report
 
-Found no macro
+Macro Statistics
+# Registers                                            : 16
+ Flip-Flops                                            : 16
+
 =========================================================================
 
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
+INFO:Xst:2261 - The FF/Latch <data_out_14> in Unit <practica6> is equivalent to the following FF/Latch, which will be removed : <data_out_15> 
+INFO:Xst:2261 - The FF/Latch <data_out_6> in Unit <practica6> is equivalent to the following FF/Latch, which will be removed : <data_out_12> 
+INFO:Xst:2261 - The FF/Latch <data_out_0> in Unit <practica6> is equivalent to the following FF/Latch, which will be removed : <data_out_8> 
 
 Optimizing unit <practica6> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
 Found area constraint ratio of 100 (+ 5) on block practica6, actual ratio is 0.
+FlipFlop data_out_14 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop data_out_6 has been replicated 1 time(s) to handle iob=true attribute.
+FlipFlop data_out_0 has been replicated 1 time(s) to handle iob=true attribute.
 
 Final Macro Processing ...
 
 =========================================================================
 Final Register Report
 
-Found no macro
+Macro Statistics
+# Registers                                            : 16
+ Flip-Flops                                            : 16
+
 =========================================================================
 
 =========================================================================
@@ -207,6 +213,21 @@ Design Statistics
 # IOs                              : 24
 
 Cell Usage :
+# BELS                             : 19
+#      GND                         : 1
+#      INV                         : 1
+#      LUT2                        : 1
+#      LUT3                        : 5
+#      LUT4                        : 8
+#      MUXF5                       : 3
+# FlipFlops/Latches                : 16
+#      FDR                         : 3
+#      FDRS                        : 13
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 23
+#      IBUF                        : 6
+#      OBUF                        : 17
 =========================================================================
 
 Device utilization summary:
@@ -214,9 +235,12 @@ Device utilization summary:
 
 Selected Device : 3s1000ft256-5 
 
- Number of Slices:                        0  out of   7680     0%  
+ Number of Slices:                        9  out of   7680     0%  
+ Number of 4 input LUTs:                 15  out of  15360     0%  
  Number of IOs:                          24
- Number of bonded IOBs:                   0  out of    173     0%  
+ Number of bonded IOBs:                  24  out of    173    13%  
+    IOB Flip Flops:                      16
+ Number of GCLKs:                         1  out of      8    12%  
 
 ---------------------------
 Partition Resource Summary:
@@ -236,7 +260,11 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
-No clock signals found in this design
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 16    |
+-----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
 ----------------------------------------
@@ -247,25 +275,86 @@ Timing Summary:
 Speed Grade: -5
 
    Minimum period: No path found
-   Minimum input arrival time before clock: No path found
-   Maximum output required time after clock: No path found
-   Maximum combinational path delay: No path found
+   Minimum input arrival time before clock: 5.573ns
+   Maximum output required time after clock: 6.216ns
+   Maximum combinational path delay: 10.883ns
 
 Timing Detail:
 --------------
 All values displayed in nanoseconds (ns)
 
 =========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 244 / 45
+-------------------------------------------------------------------------
+Offset:              5.573ns (Levels of Logic = 3)
+  Source:            key<0> (PAD)
+  Destination:       data_out_14 (FF)
+  Destination Clock: clk rising
+
+  Data Path: key<0> to data_out_14
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             5   0.715   1.078  key_0_IBUF (key_0_IBUF)
+     LUT3:I0->O            6   0.479   1.148  error_cmp_eq000011 (N2)
+     LUT3:I0->O            5   0.479   0.783  error_cmp_eq00031 (address<4>)
+     FDRS:S                    0.892          data_out_14
+    ----------------------------------------
+    Total                      5.573ns (2.565ns logic, 3.008ns route)
+                                       (46.0% logic, 54.0% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 16 / 16
+-------------------------------------------------------------------------
+Offset:              6.216ns (Levels of Logic = 1)
+  Source:            data_out_14_1 (FF)
+  Destination:       data_out<15> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: data_out_14_1 to data_out<15>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRS:C->Q             1   0.626   0.681  data_out_14_1 (data_out_14_1)
+     OBUF:I->O                 4.909          data_out_15_OBUF (data_out<15>)
+    ----------------------------------------
+    Total                      6.216ns (5.535ns logic, 0.681ns route)
+                                       (89.0% logic, 11.0% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 20 / 1
+-------------------------------------------------------------------------
+Delay:               10.883ns (Levels of Logic = 5)
+  Source:            key<0> (PAD)
+  Destination:       error (PAD)
+
+  Data Path: key<0> to error
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             5   0.715   1.078  key_0_IBUF (key_0_IBUF)
+     LUT3:I0->O            6   0.479   1.148  error_cmp_eq000011 (N2)
+     LUT3:I0->O            2   0.479   0.915  error_cmp_eq00001 (address<3>)
+     LUT4:I1->O            1   0.479   0.681  error1 (error_OBUF)
+     OBUF:I->O                 4.909          error_OBUF (error)
+    ----------------------------------------
+    Total                     10.883ns (7.061ns logic, 3.822ns route)
+                                       (64.9% logic, 35.1% route)
+
+=========================================================================
 
 
 Total REAL time to Xst completion: 4.00 secs
-Total CPU time to Xst completion: 3.78 secs
+Total CPU time to Xst completion: 3.95 secs
  
 --> 
 
-Total memory usage is 251800 kilobytes
+Total memory usage is 253656 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   15 (   0 filtered)
-Number of infos    :    0 (   0 filtered)
+Number of warnings :    2 (   0 filtered)
+Number of infos    :    3 (   0 filtered)
 

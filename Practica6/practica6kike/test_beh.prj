@@ -1,0 +1,3 @@
+vhdl work "ram.vhd"
+vhdl work "cam_prueba.vhd"
+vhdl work "test.vhd"

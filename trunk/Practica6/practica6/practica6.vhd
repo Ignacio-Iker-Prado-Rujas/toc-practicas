@@ -1,14 +1,14 @@
 ----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
+-- Company: Universidad Complutense
+-- Engineer: Iker Prado
 -- 
--- Create Date:    15:05:05 01/05/2014 
+-- Create Date:    15:05:05 01/03/2014 
 -- Design Name: 
 -- Module Name:    practica6 - Behavioral 
--- Project Name: 
+-- Project Name: Practica 6
 -- Target Devices: 
 -- Tool versions: 
--- Description: 
+-- Description: CAM (Content Addressable Memory)
 --
 -- Dependencies: 
 --
@@ -32,30 +32,40 @@ use IEEE.STD_LOGIC_ARITH.ALL;
 --use UNISIM.VComponents.all;
 
 entity practica6 is 
-port( clk: in std_logic;
-		read_enable: in std_logic;
-		key: in std_logic_vector(4 downto 0);
-		error: out std_logic;
-		data_out: out std_logic_vector(15 downto 0)
-		); 
+port( 	clk: 			in std_logic;
+		read_enable: 	in std_logic;
+		key: 			in std_logic_vector(4 downto 0);
+		error: 			out std_logic;
+		data_out: 		out std_logic_vector(15 downto 0)
+);
 end practica6;
 
 architecture Behavioral of practica6 is
 
---Tipo para los arrays de keys y definicion de una señal vector de keys
-type keys_type is array (4 downto 0) of std_logic_vector (4 downto 0);
+--Tipo para los arrays de keys y definicion de una se–al vector de keys, cada key es de 5 posiciones (2^5 = 32)
+type keys_type is array (7 downto 0) of std_logic_vector (4 downto 0);
 signal array_keys: keys_type;
 --Tipo para un RAM y definicion de una señal de ese tipo
-type ram_type is array (31 downto 0) of std_logic_vector (15 downto 0);
-signal RAM : ram_type := ( X"12AC",X"1411",X"0FE1",X"1234",X"312B",X"BAD2",X"FE03",X"AD34",
-									X"1244",X"8425",X"5413",X"1566",X"2222",X"6123",X"1257",X"4628",
-									X"A358",X"7124",X"91AD",X"2469",X"F235",X"253A",X"261B",X"744B",
-									X"E362",X"123C",X"257D",X"D953",X"0135",X"263E",X"124A",X"F3F3"
-									);
+--type ram_type is array (31 downto 0) of std_logic_vector (15 downto 0);
+
+--signal RAM : ram_type := (X"12AC",X"1411",X"0FE1",X"1234",X"312B",X"BAD2",X"FE03",X"AD34",
+--							X"1244",X"8425",X"5413",X"1566",X"2222",X"6123",X"1257",X"4628",
+--							X"A358",X"7124",X"91AD",X"2469",X"F235",X"253A",X"261B",X"744B",
+--							X"E362",X"123C",X"257D",X"D953",X"0135",X"263E",X"124A",X"F3F3"
+--);
 --Constante: numero de keys
-constant num_keys: integer:= 5;
---Direccion a leer de la RAM
-signal address: std_logic_vector(4 downto 0);
+constant num_keys: integer:= 8;
+--Se–al que se conectara al ram_component -> addr
+signal ram_addr: std_logic_vector(4 downto 0);
+--Se–al que se conectara al ram_component -> dout
+signal ram_out: std_logic_vector(15 downto 0);
+--
+component ram_component is
+port (  clk : in std_logic;
+    	addr : in std_logic_vector(4 downto 0);
+        dout : out std_logic_vector(15 downto 0)
+);
+end component ram_component;
 	 
 begin
 --Definicion de valores para las keys
@@ -63,10 +73,10 @@ array_keys(0) 	<= "00000";
 array_keys(1) 	<= "11001";
 array_keys(2) 	<= "01010";
 array_keys(3) 	<= "10101";
-array_keys(4) 	<= "11111";
---array_keys(5) 	<= "00000";
---array_keys(6) 	<= "00000";
---array_keys(7) 	<= "00000";
+array_keys(4) 	<= "10011";
+array_keys(5) 	<= "01010";
+array_keys(6) 	<= "00011";
+array_keys(7) 	<= "11111";
 --array_keys(8) 	<= "00000";
 --array_keys(9) 	<= "00000";
 --array_keys(10) <= "00000";
@@ -92,28 +102,46 @@ array_keys(4) 	<= "11111";
 --array_keys(30) <= "00000";
 --array_keys(31) <= "00000";
 
-reloj: process(clk, read_enable)
-begin
-	if clk'event and clk = '1' then
-		if read_enable = '1' then
-			data_out <= RAM(conv_integer(unsigned(address)));
-		else 
-			data_out <= (others => '0');
-		end if;
-	end if;
-end process reloj;
+--reloj: process(clk, read_enable)
 
-process(read_enable, key, RAM)
+--begin
+	
+--if clk'event and clk = '1' then
+--	if read_enable = '1' then
+			
+--		data_out <= RAM(conv_integer(unsigned(address)));
+--	else 
+--		data_out <= (others => '0');
+--	end if;
+	
+--end if;
+
+--end process reloj;
+
+ram_component: RAM port map(clk, ram_addr, ram_out);
+
+salida_CAM: process (read_enable)
+begin
+if read_enable = '1' then
+			
+	data_out <= ram_out;
+else 
+	data_out <= (others => '0');
+end if;
+	
+end process salida_CAM;
+
+buscar_key: process(key, array_keys)
 begin
 	error <= '1';
 	address <= (others => '0');
 	for i in 0 to num_keys-1 loop
 		if key = array_keys(i) then
-			address <= conv_std_logic_vector(i, 5);
+			ram_addr <= conv_std_logic_vector(i, 5);
 			error <= '0';
 		end if;
 	end loop;
-end process;
+end process buscar_key;
 
 end Behavioral;
 

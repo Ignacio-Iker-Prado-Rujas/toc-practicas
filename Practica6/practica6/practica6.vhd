@@ -118,9 +118,9 @@ array_keys(7) 	<= "11111";
 
 --end process reloj;
 
-ram_component: RAM port map(clk, ram_addr, ram_out);
+RAM: ram_component port map(clk, ram_addr, ram_out);
 
-salida_CAM: process (read_enable)
+salida_CAM: process (read_enable, ram_out)
 begin
 if read_enable = '1' then
 			
@@ -134,7 +134,7 @@ end process salida_CAM;
 buscar_key: process(key, array_keys)
 begin
 	error <= '1';
-	address <= (others => '0');
+	ram_addr <= (others => '0');
 	for i in 0 to num_keys-1 loop
 		if key = array_keys(i) then
 			ram_addr <= conv_std_logic_vector(i, 5);

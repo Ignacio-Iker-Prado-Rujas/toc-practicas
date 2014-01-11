@@ -48,6 +48,7 @@ signal keys	: key_array :=(	"00100","01000","10111","11100","01110","10100","110
 
 signal ram_out: std_logic_vector(15 downto 0);
 signal dir_ram: std_logic_vector(4 downto 0);
+
 begin
  
 data_ram: ram port map(clk, dir_ram, ram_out);

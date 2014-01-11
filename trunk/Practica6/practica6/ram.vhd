@@ -22,7 +22,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 use ieee.std_logic_unsigned.all;
 use ieee.std_logic_arith.all;
 
-entity ram is
+entity ram_component is
     
 port (	clk : 	in std_logic;
           
@@ -32,8 +32,9 @@ port (	clk : 	in std_logic;
 	
 );
 
-end ram;
+end ram_component;
 
+architecture circuito  of ram_component is
 type ram_type is array (31 downto 0) of std_logic_vector (15 downto 0);
 
 signal data : ram_type := (  X"12AC",X"1411",X"0FE1",X"1234",X"312B",X"BAD2",X"FE03",X"AD34",

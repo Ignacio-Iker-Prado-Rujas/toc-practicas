@@ -91,9 +91,11 @@ BEGIN
 
       wait for clk_period;
 		read_enable <= '1';
-      key <= "11110";
+      key <= "11100";
 		wait for clk_period;
+		key <= "01000";
 		wait for clk_period;
+		key <= "00100";
 		wait for clk_period;
       -- insert stimulus here 
 

@@ -2,7 +2,7 @@ AR practica6 behavioral C:/hlocal/toc/Practica6/practica6kike/practica6.vhd sub0
 EN ram_block NULL C:/hlocal/toc/Practica6/practica6kike/mem_2.vhd sub00/vhpl03 1389370950
 AR ram_block circuito C:/hlocal/toc/Practica6/practica6kike/mem_2.vhd sub00/vhpl04 1389370951
 EN practica6 NULL C:/hlocal/toc/Practica6/practica6kike/practica6.vhd sub00/vhpl01 1389376565
-AR ram circuito C:/hlocal/toc/Practica6/practica6kike/ram.vhd sub00/vhpl05 1389383119
-EN ram NULL C:/hlocal/toc/Practica6/practica6kike/ram.vhd sub00/vhpl00 1389383118
-AR cam circuito_cam C:/hlocal/toc/Practica6/practica6kike/cam_prueba.vhd sub00/vhpl07 1389383121
-EN cam NULL C:/hlocal/toc/Practica6/practica6kike/cam_prueba.vhd sub00/vhpl06 1389383120
+AR ram circuito "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica6/practica6kike/ram.vhd" sub00/vhpl05 1389462861
+EN ram NULL "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica6/practica6kike/ram.vhd" sub00/vhpl00 1389462860
+AR cam circuito_cam "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica6/practica6kike/cam_prueba.vhd" sub00/vhpl07 1389462863
+EN cam NULL "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica6/practica6kike/cam_prueba.vhd" sub00/vhpl06 1389462862

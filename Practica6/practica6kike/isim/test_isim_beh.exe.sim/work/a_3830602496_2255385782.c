@@ -21,7 +21,7 @@
 #include <malloc.h>
 #define alloca _alloca
 #endif
-static const char *ng0 = "C:/hlocal/toc/Practica6/practica6kike/ram.vhd";
+static const char *ng0 = "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica6/practica6kike/ram.vhd";
 extern char *IEEE_P_2592010699;
 extern char *IEEE_P_3620187407;
 
@@ -64,7 +64,7 @@ LAB2:    xsi_set_current_line(41, ng0);
     t4 = *((char **)t3);
     t3 = (t0 + 1192U);
     t5 = *((char **)t3);
-    t3 = (t0 + 5068U);
+    t3 = (t0 + 5412U);
     t6 = ieee_p_3620187407_sub_514432868_3965413181(IEEE_P_3620187407, t5, t3);
     t7 = (t6 - 31);
     t8 = (t7 * -1);

@@ -1,22 +1,12 @@
 ----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
+-- Company: Kikest S.L.
+-- Engineer: Enrique Ballesteros Horcajo
 -- 
--- Create Date:    18:18:13 01/10/2014 
--- Design Name: 
--- Module Name:    cam_prueba - Behavioral 
--- Project Name: 
--- Target Devices: 
--- Tool versions: 
--- Description: 
---
--- Dependencies: 
---
--- Revision: 
--- Revision 0.01 - File Created
--- Additional Comments: 
---
-----------------------------------------------------------------------------------
+-- Create Date: Top Secret
+-- Module Name:    cam - circuito_cam
+-- Project Name: 	practica6
+-- Target Devices:	Spartan 3
+------------------------------------------------------------------
 
 library IEEE;
 use IEEE.std_logic_1164.all;
@@ -24,11 +14,11 @@ use IEEE.std_logic_arith.all;
 use IEEE.std_logic_unsigned.all;
  
 entity cam is
-  port     (clk              : in   std_logic;                   	--		Clock
-            read_enable      : in   std_logic;                   	--		Read enable
-            key	           : in   std_logic_vector(4 downto 0);	--		Key
-				error            : out  std_logic;                	-- 	Error 
-            data_out         : out  std_logic_vector(15 downto 0)	--		Data out        
+  port     (clk              : in   std_logic;
+            read_enable      : in   std_logic;
+            key	           : in   std_logic_vector(4 downto 0);
+				error            : out  std_logic;
+            data_out         : out  std_logic_vector(15 downto 0)       
            );
 end cam;
  
@@ -62,21 +52,21 @@ begin
  
 data_ram: ram port map(clk, dir_ram, ram_out);
 
-combinacional: process(keys, read_enable, clk, key, ram_out) 
+combinacional: process(keys, key) 
 begin
 	dir_ram <= "00000";
 	error <= '1';
-	for i in 0 to 19 loop             --   Check for key
+	for i in 0 to 19 loop
 	  if key = keys(conv_integer (i)) then
-		 error <= '0';                    --   Found Match
+		 error <= '0';
 		 dir_ram <= conv_std_logic_vector(i, 5);
-		 exit;                  --   No match found
+		 exit;
 	  end if;
 	end loop;
-	
+
 end process combinacional; 
 
-salida: process (clk, read_enable, ram_out)
+salida: process (read_enable, ram_out)
 begin
 	if read_enable = '1' then
 		data_out <= ram_out;

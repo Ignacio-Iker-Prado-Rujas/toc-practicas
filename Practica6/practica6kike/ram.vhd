@@ -1,9 +1,9 @@
 ----------------------------------------------------------------------------------
 -- Company: Universidad Complutense de Madrid
--- Engineer: Marcos Sanchez-Elez
+-- Engineer: Marcos Sanchez-Elez y Enrique Ballesteros Horcajo
 -- 
 -- Create Date:    15:52:19 12/04/2013 
--- Module Name:    rams_2p - circuito 
+-- Module Name:    rams - circuito 
 -- Target Devices:	Spartan 3 
 -- Tool versions: 
 -- Description: 
@@ -27,7 +27,7 @@ entity ram is
 end ram;
 
 architecture circuito  of ram is
-    type ram_type is array (31 downto 0) of std_logic_vector (15 downto 0);
+    type ram_type is array (0 to 31) of std_logic_vector (15 downto 0);
     signal RAM : ram_type:=(	X"CA54",X"1654",X"0123",X"F875",X"3864",X"8752",X"4563",
 										X"4875",X"6454",X"8755",X"5147",X"6CB8",X"25AB",X"A9C7",
 										X"6254",X"0321",X"8954",X"7654",X"9215",X"9AF6",X"FADB",

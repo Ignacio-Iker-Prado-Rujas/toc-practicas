@@ -4,7 +4,7 @@ Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.07 secs
+Total CPU time to Xst completion: 0.08 secs
  
 --> Parameter xsthdpdir set to xst
 
@@ -104,17 +104,22 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Compilation                              *
 =========================================================================
-Compiling vhdl file "C:/hlocal/TOC/toc-practicas/Practica6/practica6/ram.vhd" in Library work.
+Compiling vhdl file "C:/hlocal/toc-practicas/Practica6/practica6/key.vhd" in Library work.
+Entity <key_component> compiled.
+Entity <key_component> (Architecture <circuito>) compiled.
+Compiling vhdl file "C:/hlocal/toc-practicas/Practica6/practica6/ram.vhd" in Library work.
 Entity <ram_component> compiled.
 Entity <ram_component> (Architecture <circuito>) compiled.
-Compiling vhdl file "C:/hlocal/TOC/toc-practicas/Practica6/practica6/practica6.vhd" in Library work.
+Compiling vhdl file "C:/hlocal/toc-practicas/Practica6/practica6/practica6.vhd" in Library work.
 Entity <practica6> compiled.
-Entity <practica6> (Architecture <Behavioral>) compiled.
+Entity <practica6> (Architecture <behavioral>) compiled.
 
 =========================================================================
 *                     Design Hierarchy Analysis                         *
 =========================================================================
-Analyzing hierarchy for entity <practica6> in library <work> (architecture <Behavioral>).
+Analyzing hierarchy for entity <practica6> in library <work> (architecture <behavioral>).
+
+Analyzing hierarchy for entity <key_component> in library <work> (architecture <circuito>).
 
 Analyzing hierarchy for entity <ram_component> in library <work> (architecture <circuito>).
 
@@ -122,10 +127,19 @@ Analyzing hierarchy for entity <ram_component> in library <work> (architecture <
 =========================================================================
 *                            HDL Analysis                               *
 =========================================================================
-Analyzing Entity <practica6> in library <work> (Architecture <Behavioral>).
+Analyzing Entity <practica6> in library <work> (Architecture <behavioral>).
 Entity <practica6> analyzed. Unit <practica6> generated.
 
+Analyzing Entity <key_component> in library <work> (Architecture <circuito>).
+WARNING:Xst:790 - "C:/hlocal/toc-practicas/Practica6/practica6/key.vhd" line 52: Index value(s) does not match array range, simulation mismatch.
+INFO:Xst:1433 - Contents of array <array_keys> may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
+WARNING:Xst:819 - "C:/hlocal/toc-practicas/Practica6/practica6/key.vhd" line 45: One or more signals are missing in the process sensitivity list. To enable synthesis of FPGA/CPLD hardware, XST will assume that all necessary signals are present in the sensitivity list. Please note that the result of the synthesis may differ from the initial design specification. The missing signals are:
+   <array_keys>
+Entity <key_component> analyzed. Unit <key_component> generated.
+
 Analyzing Entity <ram_component> in library <work> (Architecture <circuito>).
+WARNING:Xst:790 - "C:/hlocal/toc-practicas/Practica6/practica6/ram.vhd" line 54: Index value(s) does not match array range, simulation mismatch.
+INFO:Xst:1433 - Contents of array <data> may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
 Entity <ram_component> analyzed. Unit <ram_component> generated.
 
 
@@ -135,19 +149,33 @@ Entity <ram_component> analyzed. Unit <ram_component> generated.
 
 Performing bidirectional port resolution...
 
+Synthesizing Unit <key_component>.
+    Related source file is "C:/hlocal/toc-practicas/Practica6/practica6/key.vhd".
+WARNING:Xst:647 - Input <dir<7:5>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 32x8-bit dual-port RAM <Mram_array_keys> for signal <array_keys>.
+    Summary:
+	inferred   1 RAM(s).
+Unit <key_component> synthesized.
+
+
 Synthesizing Unit <ram_component>.
-    Related source file is "C:/hlocal/TOC/toc-practicas/Practica6/practica6/ram.vhd".
-WARNING:Xst:1781 - Signal <data> is used but never assigned. Tied to default value.
-    Found 32x16-bit ROM for signal <$varindex0000> created at line 56.
+    Related source file is "C:/hlocal/toc-practicas/Practica6/practica6/ram.vhd".
+WARNING:Xst:647 - Input <dir<7:5>> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 32x16-bit dual-port RAM <Mram_data> for signal <data>.
     Found 16-bit register for signal <dout>.
     Summary:
-	inferred   1 ROM(s).
+	inferred   1 RAM(s).
 	inferred  16 D-type flip-flop(s).
 Unit <ram_component> synthesized.
 
 
 Synthesizing Unit <practica6>.
-    Related source file is "C:/hlocal/TOC/toc-practicas/Practica6/practica6/practica6.vhd".
+    Related source file is "C:/hlocal/toc-practicas/Practica6/practica6/practica6.vhd".
+    Found 5-bit up counter for signal <addr_aux>.
+    Found 8-bit comparator equal for signal <error$cmp_eq0000> created at line 161.
+    Summary:
+	inferred   1 Counter(s).
+	inferred   1 Comparator(s).
 Unit <practica6> synthesized.
 
 
@@ -155,10 +183,15 @@ Unit <practica6> synthesized.
 HDL Synthesis Report
 
 Macro Statistics
-# ROMs                                                 : 1
- 32x16-bit ROM                                         : 1
+# RAMs                                                 : 2
+ 32x16-bit dual-port RAM                               : 1
+ 32x8-bit dual-port RAM                                : 1
+# Counters                                             : 1
+ 5-bit up counter                                      : 1
 # Registers                                            : 1
  16-bit register                                       : 1
+# Comparators                                          : 1
+ 8-bit comparator equal                                : 1
 
 =========================================================================
 
@@ -167,25 +200,64 @@ Macro Statistics
 =========================================================================
 
 
+Synthesizing (advanced) Unit <key_component>.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_array_keys> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 32-word x 8-bit                     |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <we>            | high     |
+    |     addrA          | connected to signal <addr>          |          |
+    |     diA            | connected to signal <din>           |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 32-word x 8-bit                     |          |
+    |     addrB          | connected to signal <dir>           |          |
+    |     doB            | connected to signal <dout>          |          |
+    -----------------------------------------------------------------------
+Unit <key_component> synthesized (advanced).
+
 Synthesizing (advanced) Unit <ram_component>.
-INFO:Xst:3034 - In order to maximize performance and save block RAM resources, the small ROM <Mrom__varindex0000> will be implemented on LUT. If you want to force its implementation on block, use option/constraint rom_style.
+INFO:Xst:3231 - The small RAM <Mram_data> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 32-word x 16-bit                    |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <we>            | high     |
+    |     addrA          | connected to signal <addr>          |          |
+    |     diA            | connected to signal <din>           |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 32-word x 16-bit                    |          |
+    |     addrB          | connected to signal <dir>           |          |
+    |     doB            | connected to internal node          |          |
+    -----------------------------------------------------------------------
 Unit <ram_component> synthesized (advanced).
 
 =========================================================================
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# ROMs                                                 : 1
- 32x16-bit ROM                                         : 1
+# RAMs                                                 : 2
+ 32x16-bit dual-port distributed RAM                   : 1
+ 32x8-bit dual-port distributed RAM                    : 1
+# Counters                                             : 1
+ 5-bit up counter                                      : 1
 # Registers                                            : 16
  Flip-Flops                                            : 16
+# Comparators                                          : 1
+ 8-bit comparator equal                                : 1
 
 =========================================================================
 
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
-INFO:Xst:2261 - The FF/Latch <dout_14> in Unit <ram_component> is equivalent to the following FF/Latch, which will be removed : <dout_15> 
+WARNING:Xst:2170 - Unit practica6 : the following signal(s) form a combinatorial loop: key_aux<0>, ram_addr<0>1, ram_addr<0>, error.
 
 Optimizing unit <practica6> ...
 
@@ -201,8 +273,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 15
- Flip-Flops                                            : 15
+# Registers                                            : 21
+ Flip-Flops                                            : 21
 
 =========================================================================
 
@@ -228,22 +300,24 @@ Optimization Goal                  : Speed
 Keep Hierarchy                     : No
 
 Design Statistics
-# IOs                              : 24
+# IOs                              : 53
 
 Cell Usage :
-# BELS                             : 39
-#      LUT2                        : 17
-#      LUT3                        : 3
-#      LUT4                        : 17
-#      MUXF5                       : 2
-# FlipFlops/Latches                : 15
-#      FD                          : 12
-#      FDR                         : 2
-#      FDS                         : 1
+# BELS                             : 56
+#      INV                         : 2
+#      LUT2                        : 20
+#      LUT3                        : 17
+#      LUT4                        : 12
+#      MUXF5                       : 5
+# FlipFlops/Latches                : 21
+#      FD                          : 16
+#      FDRE                        : 5
+# RAMS                             : 48
+#      RAM16X1D                    : 48
 # Clock Buffers                    : 1
 #      BUFGP                       : 1
-# IO Buffers                       : 23
-#      IBUF                        : 6
+# IO Buffers                       : 52
+#      IBUF                        : 35
 #      OBUF                        : 17
 =========================================================================
 
@@ -252,11 +326,13 @@ Device utilization summary:
 
 Selected Device : 3s1000ft256-5 
 
- Number of Slices:                       21  out of   7680     0%  
- Number of Slice Flip Flops:             15  out of  15360     0%  
- Number of 4 input LUTs:                 37  out of  15360     0%  
- Number of IOs:                          24
- Number of bonded IOBs:                  24  out of    173    13%  
+ Number of Slices:                       53  out of   7680     0%  
+ Number of Slice Flip Flops:             21  out of  15360     0%  
+ Number of 4 input LUTs:                147  out of  15360     0%  
+    Number used as logic:                51
+    Number used as RAMs:                 96
+ Number of IOs:                          53
+ Number of bonded IOBs:                  53  out of    173    30%  
  Number of GCLKs:                         1  out of      8    12%  
 
 ---------------------------
@@ -280,7 +356,7 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | BUFGP                  | 15    |
+clk                                | BUFGP                  | 69    |
 -----------------------------------+------------------------+-------+
 
 Asynchronous Control Signals Information:
@@ -291,61 +367,93 @@ Timing Summary:
 ---------------
 Speed Grade: -5
 
-   Minimum period: No path found
-   Minimum input arrival time before clock: 5.634ns
-   Maximum output required time after clock: 7.610ns
-   Maximum combinational path delay: 8.319ns
+   Minimum period: 9.092ns (Maximum Frequency: 109.987MHz)
+   Minimum input arrival time before clock: 8.445ns
+   Maximum output required time after clock: 13.176ns
+   Maximum combinational path delay: 12.529ns
 
 Timing Detail:
 --------------
 All values displayed in nanoseconds (ns)
 
 =========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 275 / 18
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 9.092ns (frequency: 109.987MHz)
+  Total number of paths / destination ports: 4643 / 389
 -------------------------------------------------------------------------
-Offset:              5.634ns (Levels of Logic = 3)
-  Source:            key<4> (PAD)
-  Destination:       RAM/dout_7 (FF)
+Delay:               9.092ns (Levels of Logic = 5)
+  Source:            KEYS/Mram_array_keys1 (RAM)
+  Destination:       RAM/dout_15 (FF)
+  Source Clock:      clk rising
   Destination Clock: clk rising
 
-  Data Path: key<4> to RAM/dout_7
+  Data Path: KEYS/Mram_array_keys1 to RAM/dout_15
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O             6   0.715   1.148  key_4_IBUF (key_4_IBUF)
-     LUT4:I0->O           11   0.479   1.142  ram_addr<1>_SW0 (N11)
-     LUT2:I1->O            4   0.479   0.779  ram_addr<1> (ram_addr<1>)
-     FDR:R                     0.892          RAM/dout_7
+     RAM16X1D:WCLK->DPO    1   1.552   0.851  KEYS/Mram_array_keys1 (N5)
+     LUT4:I1->O            1   0.479   0.000  ram_addr<0>8262 (ram_addr<0>8262)
+     MUXF5:I0->O           1   0.314   0.976  ram_addr<0>826_f5 (ram_addr<0>826)
+     LUT4:I0->O          213   0.479   2.456  ram_addr<0>8136 (ram_addr<0>)
+     RAM16X1D:DPRA0->DPO    1   0.479   0.851  RAM/Mram_data1 (RAM/N5)
+     LUT3:I1->O            1   0.479   0.000  RAM/inst_LPM_MUX11 (RAM/_varindex0000<0>)
+     FD:D                      0.176          RAM/dout_0
     ----------------------------------------
-    Total                      5.634ns (2.565ns logic, 3.069ns route)
-                                       (45.5% logic, 54.5% route)
+    Total                      9.092ns (3.958ns logic, 5.134ns route)
+                                       (43.5% logic, 56.5% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 4463 / 250
+-------------------------------------------------------------------------
+Offset:              8.445ns (Levels of Logic = 6)
+  Source:            key<0> (PAD)
+  Destination:       RAM/dout_15 (FF)
+  Destination Clock: clk rising
+
+  Data Path: key<0> to RAM/dout_15
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             2   0.715   1.040  key_0_IBUF (key_0_IBUF)
+     LUT4:I0->O            1   0.479   0.000  ram_addr<0>8261 (ram_addr<0>8261)
+     MUXF5:I1->O           1   0.314   0.976  ram_addr<0>826_f5 (ram_addr<0>826)
+     LUT4:I0->O          213   0.479   2.456  ram_addr<0>8136 (ram_addr<0>)
+     RAM16X1D:DPRA0->DPO    1   0.479   0.851  RAM/Mram_data1 (RAM/N5)
+     LUT3:I1->O            1   0.479   0.000  RAM/inst_LPM_MUX11 (RAM/_varindex0000<0>)
+     FD:D                      0.176          RAM/dout_0
+    ----------------------------------------
+    Total                      8.445ns (3.121ns logic, 5.324ns route)
+                                       (37.0% logic, 63.0% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 16 / 16
+  Total number of paths / destination ports: 32 / 17
 -------------------------------------------------------------------------
-Offset:              7.610ns (Levels of Logic = 2)
-  Source:            RAM/dout_14 (FF)
-  Destination:       data_out<15> (PAD)
+Offset:              13.176ns (Levels of Logic = 5)
+  Source:            KEYS/Mram_array_keys1 (RAM)
+  Destination:       error (PAD)
   Source Clock:      clk rising
 
-  Data Path: RAM/dout_14 to data_out<15>
+  Data Path: KEYS/Mram_array_keys1 to error
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               1   0.626   0.851  RAM/dout_14 (RAM/dout_14)
-     LUT2:I1->O            2   0.479   0.745  data_out<15>1 (data_out_14_OBUF)
-     OBUF:I->O                 4.909          data_out_14_OBUF (data_out<14>)
+     RAM16X1D:WCLK->DPO    1   1.552   0.851  KEYS/Mram_array_keys1 (N5)
+     LUT4:I1->O            1   0.479   0.000  ram_addr<0>8262 (ram_addr<0>8262)
+     MUXF5:I0->O           1   0.314   0.976  ram_addr<0>826_f5 (ram_addr<0>826)
+     LUT4:I0->O          213   0.479   2.456  ram_addr<0>8136 (ram_addr<0>)
+     INV:I->O              1   0.479   0.681  error1_INV_0 (error_OBUF)
+     OBUF:I->O                 4.909          error_OBUF (error)
     ----------------------------------------
-    Total                      7.610ns (6.014ns logic, 1.596ns route)
-                                       (79.0% logic, 21.0% route)
+    Total                     13.176ns (8.212ns logic, 4.964ns route)
+                                       (62.3% logic, 37.7% route)
 
 =========================================================================
 Timing constraint: Default path analysis
-  Total number of paths / destination ports: 25 / 17
+  Total number of paths / destination ports: 32 / 17
 -------------------------------------------------------------------------
-Delay:               8.319ns (Levels of Logic = 4)
+Delay:               12.529ns (Levels of Logic = 6)
   Source:            key<0> (PAD)
   Destination:       error (PAD)
 
@@ -353,25 +461,27 @@ Delay:               8.319ns (Levels of Logic = 4)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            16   0.715   1.221  key_0_IBUF (key_0_IBUF)
-     LUT4:I1->O            1   0.479   0.000  error_F (N18)
-     MUXF5:I0->O           1   0.314   0.681  error (error_OBUF)
+     IBUF:I->O             2   0.715   1.040  key_0_IBUF (key_0_IBUF)
+     LUT4:I0->O            1   0.479   0.000  ram_addr<0>8261 (ram_addr<0>8261)
+     MUXF5:I1->O           1   0.314   0.976  ram_addr<0>826_f5 (ram_addr<0>826)
+     LUT4:I0->O          213   0.479   2.456  ram_addr<0>8136 (ram_addr<0>)
+     INV:I->O              1   0.479   0.681  error1_INV_0 (error_OBUF)
      OBUF:I->O                 4.909          error_OBUF (error)
     ----------------------------------------
-    Total                      8.319ns (6.417ns logic, 1.902ns route)
-                                       (77.1% logic, 22.9% route)
+    Total                     12.529ns (7.375ns logic, 5.154ns route)
+                                       (58.9% logic, 41.1% route)
 
 =========================================================================
 
 
 Total REAL time to Xst completion: 4.00 secs
-Total CPU time to Xst completion: 3.93 secs
+Total CPU time to Xst completion: 4.15 secs
  
 --> 
 
-Total memory usage is 253592 kilobytes
+Total memory usage is 258456 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    1 (   0 filtered)
-Number of infos    :    2 (   0 filtered)
+Number of warnings :    6 (   0 filtered)
+Number of infos    :    4 (   0 filtered)
 

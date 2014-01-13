@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2014-01-13T13:16:41</DateModified>
+  <DateModified>2014-01-13T16:23:26</DateModified>
   <ModuleName>practica6</ModuleName>
-  <SummaryTimeStamp>2014-01-13T13:03:17</SummaryTimeStamp>
-  <SavedFilePath>C:/hlocal/TOC/toc-practicas/Practica6/practica6/iseconfig/practica6.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>C:/hlocal/TOC/toc-practicas/Practica6/practica6\</ImplementationReportsDirectory>
+  <SummaryTimeStamp>2014-01-13T16:18:17</SummaryTimeStamp>
+  <SavedFilePath>C:/hlocal/toc-practicas/Practica6/practica6/iseconfig/practica6.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>C:/hlocal/toc-practicas/Practica6/practica6\</ImplementationReportsDirectory>
   <DateInitialized>2014-01-05T15:05:06</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

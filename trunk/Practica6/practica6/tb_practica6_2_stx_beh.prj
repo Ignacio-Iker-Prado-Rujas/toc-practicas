@@ -1,0 +1,4 @@
+vhdl isim_temp "ram.vhd"
+vhdl isim_temp "key.vhd"
+vhdl isim_temp "practica6.vhd"
+vhdl isim_temp "p6_m2.vhd"

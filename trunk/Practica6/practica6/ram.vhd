@@ -24,41 +24,36 @@ use ieee.std_logic_arith.all;
 
 entity ram_component is
     
-port (	clk : 	in std_logic;
-          
-		addr : 	in std_logic_vector(4 downto 0);
-          
-		dout : 	out std_logic_vector(15 downto 0)
-	
+port (clk : in std_logic;
+      we : in std_logic;
+		addr : in std_logic_vector(4 downto 0);
+      dir : in std_logic_vector(7 downto 0);
+      din : in std_logic_vector(15 downto 0);
+      dout : out std_logic_vector(15 downto 0)
 );
 
 end ram_component;
 
 architecture circuito  of ram_component is
-type ram_type is array (31 downto 0) of std_logic_vector (15 downto 0);
+type ram_type is array (0 to 31) of std_logic_vector (15 downto 0);
 
-signal data : ram_type := (  X"12AC",X"1411",X"0FE1",X"1234",X"312B",X"BAD2",X"FE03",X"AD34",
-							X"1244",X"8425",X"5413",X"1566",X"2222",X"6123",X"1257",X"4628",
-							X"A358",X"7124",X"91AD",X"2469",X"F235",X"253A",X"261B",X"744B",
-							X"E362",X"123C",X"257D",X"D953",X"0135",X"263E",X"124A",X"F3F3"
+signal data : ram_type := ( X"0000", X"1110", X"2356", X"4569", X"8961", X"1235", X"A125", X"D125", 
+									 X"256E", X"AA65", X"1234", X"0000", X"1235", X"AADF", X"EFDA", X"CBAA", 
+									 X"A1A2", X"F0F0", X"0F0F", X"EE11", X"5566", X"4455", X"EFDC", X"AAC1", 
+									 X"4569", X"8961", X"1235", X"A125", X"0000", X"1110", X"2356", X"FFFF"
 );
 
 begin
 
-	
-
 process (clk)
-	
-begin
-	  
-if rising_edge(clk) then
-			
-	dout <= data(conv_integer(addr));
-	  
-end if;
-	
+	begin
+	  if rising_edge(clk) then
+            if we = '1' then
+                data(conv_integer(addr)) <= din;
+            end if;
+            dout <= data(conv_integer(dir));
+      end if;
 end process;
-
 
 end circuito;
 

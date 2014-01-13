@@ -21,6 +21,8 @@ library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 --Para usar el conv_std_logic_vector
 use IEEE.STD_LOGIC_ARITH.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
+
 
 -- Uncomment the following library declaration if using
 -- arithmetic functions with Signed or Unsigned values
@@ -32,10 +34,14 @@ use IEEE.STD_LOGIC_ARITH.ALL;
 --use UNISIM.VComponents.all;
 
 entity practica6 is 
-port( 	clk: 			in std_logic;
+port( clk: 				in std_logic;
 		read_enable: 	in std_logic;
-		key: 			in std_logic_vector(4 downto 0);
+		we:				in std_logic;
+		rst:				in std_logic;
+		key: 				in std_logic_vector(7 downto 0);
+		key_w: 			in std_logic_vector(7 downto 0);
 		error: 			out std_logic;
+		data_w:			in std_logic_vector(15 downto 0);
 		data_out: 		out std_logic_vector(15 downto 0)
 );
 end practica6;
@@ -43,87 +49,103 @@ end practica6;
 architecture Behavioral of practica6 is
 
 --Tipo para los arrays de keys y definicion de una se–al vector de keys, cada key es de 5 posiciones (2^5 = 32)
-type keys_type is array (7 downto 0) of std_logic_vector (4 downto 0);
-signal array_keys: keys_type;
---Tipo para un RAM y definicion de una señal de ese tipo
---type ram_type is array (31 downto 0) of std_logic_vector (15 downto 0);
-
---signal RAM : ram_type := (X"12AC",X"1411",X"0FE1",X"1234",X"312B",X"BAD2",X"FE03",X"AD34",
---							X"1244",X"8425",X"5413",X"1566",X"2222",X"6123",X"1257",X"4628",
---							X"A358",X"7124",X"91AD",X"2469",X"F235",X"253A",X"261B",X"744B",
---							X"E362",X"123C",X"257D",X"D953",X"0135",X"263E",X"124A",X"F3F3"
---);
+--type keys_type is array (0 to 31) of std_logic_vector (7 downto 0);
+--signal array_keys: keys_type;
+signal key_aux: std_logic_vector(7 downto 0);
 --Constante: numero de keys
-constant num_keys: integer:= 8;
---Se–al que se conectara al ram_component -> addr
-signal ram_addr: std_logic_vector(4 downto 0);
---Se–al que se conectara al ram_component -> dout
+constant num_keys: integer:= 32;
+--Señal que se conectara al ram_component -> addr
+signal ram_addr: std_logic_vector(7 downto 0);
+--Señal que se conectara al ram_component -> dout
 signal ram_out: std_logic_vector(15 downto 0);
+--Puntero que señala la posición de memoria a escribir
+signal addr, addr_aux: std_logic_vector(4 downto 0) := "00000";
 --
 component ram_component is
-port (  clk : in std_logic;
-    	addr : in std_logic_vector(4 downto 0);
-        dout : out std_logic_vector(15 downto 0)
+port (clk: 	in std_logic;
+      we: 		in std_logic;
+		addr: in std_logic_vector(4 downto 0);
+      dir: 	in std_logic_vector(7 downto 0);
+      din:		in std_logic_vector(15 downto 0);
+      dout:	out std_logic_vector(15 downto 0)
 );
 end component ram_component;
-	 
+--	 
+component key_component is
+port (clk: 	in std_logic;
+      we: 		in std_logic;
+		addr: 	in std_logic_vector(4 downto 0);
+      dir: 	in std_logic_vector(7 downto 0);
+      din:		in std_logic_vector(7 downto 0);
+		dout:   out std_logic_vector(7 downto 0)
+);
+end component key_component;
+
 begin
 --Definicion de valores para las keys
-array_keys(0) 	<= "00000";
-array_keys(1) 	<= "11001";
-array_keys(2) 	<= "01010";
-array_keys(3) 	<= "10101";
-array_keys(4) 	<= "10011";
-array_keys(5) 	<= "01010";
-array_keys(6) 	<= "00011";
-array_keys(7) 	<= "11111";
---array_keys(8) 	<= "00000";
---array_keys(9) 	<= "00000";
---array_keys(10) <= "00000";
---array_keys(11) <= "00000";
---array_keys(12) <= "00000";
---array_keys(13) <= "00000";
---array_keys(14) <= "00000";
---array_keys(15) <= "00000";
---array_keys(16) <= "00000";
---array_keys(17) <= "00000";
---array_keys(18) <= "00000";
---array_keys(19) <= "00000";
---array_keys(20) <= "00000";
---array_keys(21) <= "00000";
---array_keys(22) <= "00000";
---array_keys(23) <= "00000";
---array_keys(24) <= "00000";
---array_keys(25) <= "00000";
---array_keys(26) <= "00000";
---array_keys(27) <= "00000";
---array_keys(28) <= "00000";
---array_keys(29) <= "00000";
---array_keys(30) <= "00000";
---array_keys(31) <= "00000";
+--key := X"01", X"23", X"24", X"25", X"46", X"78", X"A3", X"A5", X"B7", X"13", X"45", X"46", X"4B", X"34", X"A4", X"F1", X"90", X"77", X"E7", X"F2", X"E5", X"94", X"E0", X"EA", X"F3", X"97", X"95", X"F4", X"00", X"F5", X"0C", X"FF"
 
---reloj: process(clk, read_enable)
+--array_keys(0) 	<= X"01";
+--array_keys(1) 	<= X"23";
+--array_keys(2) 	<= X"24";
+--array_keys(3) 	<= X"25";
+--array_keys(4) 	<= X"46";
+--array_keys(5) 	<= X"78";
+--array_keys(6) 	<= X"A3";
+--array_keys(7) 	<= X"A5";
+--array_keys(8) 	<= X"B7";
+--array_keys(9) 	<= X"13";
+--array_keys(10) <= X"45";
+--array_keys(11) <= X"B6";
+--array_keys(12) <= X"4B";
+--array_keys(13) <= X"34";
+--array_keys(14) <= X"A4";
+--array_keys(15) <= X"F1";
+--array_keys(16) <= X"90";
+--array_keys(17) <= X"77";
+--array_keys(18) <= X"E7";
+--array_keys(19) <= X"F2";
+--array_keys(20) <= X"E5";
+--array_keys(21) <= X"94";
+--array_keys(22) <= X"E0";
+--array_keys(23) <= X"EA";
+--array_keys(24) <= X"F3";
+--array_keys(25) <= X"97";
+--array_keys(26) <= X"95";
+--array_keys(27) <= X"F4";
+--array_keys(28) <= X"00";
+--array_keys(29) <= X"F5";
+--array_keys(30) <= X"0C";
+--array_keys(31) <= X"FF";
 
+process(clk, we, rst, addr_aux)
+begin
+if clk'event and clk = '1' then
+	if we = '1' then
+		if rst = '1' then	
+			addr_aux <= (others => '0');
+		else 
+			addr_aux <= addr_aux + 1;
+		end if;
+	end if;
+end if;
+end process;
+addr <= addr_aux;
+
+--actualiza_keys: process(addr, key_w, we)
 --begin
-	
---if clk'event and clk = '1' then
---	if read_enable = '1' then
-			
---		data_out <= RAM(conv_integer(unsigned(address)));
---	else 
---		data_out <= (others => '0');
---	end if;
-	
+--if we = '1' then 
+--	array_keys(conv_integer(addr)) <= key_w; 
 --end if;
+--end process actualiza_keys;
 
---end process reloj;
+KEYS: key_component port map(clk, we, addr, ram_addr, key_w, key_aux);
 
-RAM: ram_component port map(clk, ram_addr, ram_out);
+RAM: ram_component port map(clk, we, addr, ram_addr, data_w, ram_out);
 
 salida_CAM: process (read_enable, ram_out)
 begin
 if read_enable = '1' then
-			
 	data_out <= ram_out;
 else 
 	data_out <= (others => '0');
@@ -131,13 +153,13 @@ end if;
 	
 end process salida_CAM;
 
-buscar_key: process(key, array_keys)
+buscar_key: process(key, key_aux)
 begin
 	error <= '1';
 	ram_addr <= (others => '0');
 	for i in 0 to num_keys-1 loop
-		if key = array_keys(i) then
-			ram_addr <= conv_std_logic_vector(i, 5);
+		if key = key_aux then
+			ram_addr <= conv_std_logic_vector(i, 8);
 			error <= '0';
 		end if;
 	end loop;

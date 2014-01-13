@@ -1,2 +1,3 @@
 vhdl work "ram.vhd"
+vhdl work "key.vhd"
 vhdl work "practica6.vhd"

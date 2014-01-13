@@ -1,0 +1,25 @@
+Running: fuse.exe -relaunch -intstyle "ise" -incremental -o "C:/hlocal/toc-practicas/Practica6/practica6/tb_practica6_2_isim_beh.exe" -prj "C:/hlocal/toc-practicas/Practica6/practica6/tb_practica6_2_beh.prj" "work.tb_practica6_2" 
+ISim P.15xf (signature 0xc3576ebc)
+Number of CPUs detected in this system: 8
+Turning on mult-threading, number of parallel sub-compilation jobs: 16 
+Determining compilation order of HDL files
+Parsing VHDL file "C:/hlocal/toc-practicas/Practica6/practica6/ram.vhd" into library work
+Parsing VHDL file "C:/hlocal/toc-practicas/Practica6/practica6/key.vhd" into library work
+Parsing VHDL file "C:/hlocal/toc-practicas/Practica6/practica6/practica6.vhd" into library work
+Parsing VHDL file "C:/hlocal/toc-practicas/Practica6/practica6/p6_m2.vhd" into library work
+Starting static elaboration
+Completed static elaboration
+Compiling package standard
+Compiling package std_logic_1164
+Compiling package numeric_std
+Compiling package std_logic_arith
+Compiling package std_logic_unsigned
+Compiling architecture circuito of entity key_component [key_component_default]
+Compiling architecture circuito of entity ram_component [ram_component_default]
+Compiling architecture behavioral of entity practica6 [practica6_default]
+Compiling architecture beh of entity tb_practica6_2
+Time Resolution for simulation is 1ps.
+Compiled 12 VHDL Units
+Built simulation executable C:/hlocal/toc-practicas/Practica6/practica6/tb_practica6_2_isim_beh.exe
+Fuse Memory Usage: 36736 KB
+Fuse CPU Usage: 483 ms

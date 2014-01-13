@@ -4,13 +4,13 @@ Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.23 secs
+Total CPU time to Xst completion: 0.07 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.24 secs
+Total CPU time to Xst completion: 0.08 secs
  
 --> Reading design: practica6.prj
 
@@ -104,16 +104,17 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Compilation                              *
 =========================================================================
-Compiling vhdl file "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica6/practica6/ram.vhd" in Library work.
+Compiling vhdl file "C:/hlocal/TOC/toc-practicas/Practica6/practica6/ram.vhd" in Library work.
 Entity <ram_component> compiled.
 Entity <ram_component> (Architecture <circuito>) compiled.
-Compiling vhdl file "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica6/practica6/practica6.vhd" in Library work.
-Architecture behavioral of Entity practica6 is up to date.
+Compiling vhdl file "C:/hlocal/TOC/toc-practicas/Practica6/practica6/practica6.vhd" in Library work.
+Entity <practica6> compiled.
+Entity <practica6> (Architecture <Behavioral>) compiled.
 
 =========================================================================
 *                     Design Hierarchy Analysis                         *
 =========================================================================
-Analyzing hierarchy for entity <practica6> in library <work> (architecture <behavioral>).
+Analyzing hierarchy for entity <practica6> in library <work> (architecture <Behavioral>).
 
 Analyzing hierarchy for entity <ram_component> in library <work> (architecture <circuito>).
 
@@ -121,7 +122,7 @@ Analyzing hierarchy for entity <ram_component> in library <work> (architecture <
 =========================================================================
 *                            HDL Analysis                               *
 =========================================================================
-Analyzing Entity <practica6> in library <work> (Architecture <behavioral>).
+Analyzing Entity <practica6> in library <work> (Architecture <Behavioral>).
 Entity <practica6> analyzed. Unit <practica6> generated.
 
 Analyzing Entity <ram_component> in library <work> (Architecture <circuito>).
@@ -135,7 +136,7 @@ Entity <ram_component> analyzed. Unit <ram_component> generated.
 Performing bidirectional port resolution...
 
 Synthesizing Unit <ram_component>.
-    Related source file is "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica6/practica6/ram.vhd".
+    Related source file is "C:/hlocal/TOC/toc-practicas/Practica6/practica6/ram.vhd".
 WARNING:Xst:1781 - Signal <data> is used but never assigned. Tied to default value.
     Found 32x16-bit ROM for signal <$varindex0000> created at line 56.
     Found 16-bit register for signal <dout>.
@@ -146,7 +147,7 @@ Unit <ram_component> synthesized.
 
 
 Synthesizing Unit <practica6>.
-    Related source file is "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica6/practica6/practica6.vhd".
+    Related source file is "C:/hlocal/TOC/toc-practicas/Practica6/practica6/practica6.vhd".
 Unit <practica6> synthesized.
 
 
@@ -363,12 +364,12 @@ Delay:               8.319ns (Levels of Logic = 4)
 =========================================================================
 
 
-Total REAL time to Xst completion: 9.00 secs
-Total CPU time to Xst completion: 8.59 secs
+Total REAL time to Xst completion: 4.00 secs
+Total CPU time to Xst completion: 3.93 secs
  
 --> 
 
-Total memory usage is 254392 kilobytes
+Total memory usage is 253592 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    1 (   0 filtered)

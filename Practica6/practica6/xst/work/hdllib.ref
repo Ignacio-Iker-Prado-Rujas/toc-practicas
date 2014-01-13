@@ -1,4 +1,4 @@
-AR practica6 behavioral "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica6/practica6/practica6.vhd" sub00/vhpl01 1389466008
-EN practica6 NULL "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica6/practica6/practica6.vhd" sub00/vhpl00 1389466007
-EN ram_component NULL "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica6/practica6/ram.vhd" sub00/vhpl02 1389466005
-AR ram_component circuito "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica6/practica6/ram.vhd" sub00/vhpl03 1389466006
+AR practica6 behavioral C:/hlocal/TOC/toc-practicas/Practica6/practica6/practica6.vhd sub00/vhpl03 1389615255
+EN practica6 NULL C:/hlocal/TOC/toc-practicas/Practica6/practica6/practica6.vhd sub00/vhpl02 1389615254
+EN ram_component NULL C:/hlocal/TOC/toc-practicas/Practica6/practica6/ram.vhd sub00/vhpl00 1389615252
+AR ram_component circuito C:/hlocal/TOC/toc-practicas/Practica6/practica6/ram.vhd sub00/vhpl01 1389615253

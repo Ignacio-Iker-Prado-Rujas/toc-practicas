@@ -22,16 +22,16 @@ use IEEE.STD_LOGIC_1164.ALL;
 use ieee.std_logic_unsigned.all;
 use ieee.std_logic_arith.all;
 
-entity ram is
+entity ram_component is
     port (clk : in std_logic;
           we : in std_logic;
           addr : in std_logic_vector(4 downto 0);
           din : in std_logic_vector(15 downto 0);
           dout : out std_logic_vector(15 downto 0)
 	);
-end ram;
+end ram_component;
 
-architecture circuito  of ram is
+architecture circuito  of ram_component is
     type ram_type is array (0 to 31) of std_logic_vector (15 downto 0);
     signal RAM : ram_type:=(	X"12AC",X"1411",X"0FE1",X"1234",X"312B",X"BAD2",X"FE03",X"AD34",
 							X"1244",X"8425",X"5413",X"1566",X"2222",X"6123",X"1257",X"4628",
@@ -41,13 +41,13 @@ begin
 
 	process (clk)
 	begin
-	  if falling_edge(clk) then
+	  if rising_edge(clk) then
             if we = '1' then
                 RAM(conv_integer(addr)) <= din;
             end if;
             dout <= RAM(conv_integer(addr));
         end if;
-    end process puerto;
+    end process;
 end circuito;
 
 

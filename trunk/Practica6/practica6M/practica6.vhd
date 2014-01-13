@@ -67,11 +67,11 @@ signal ram_out: std_logic_vector(15 downto 0);
 --signal estado_actual: estados := read; 
 --signal estado_siguiente: estados;
 component ram_component is
-    port (clk: 				in std_logic;
-          write_enable: 	in std_logic;
-          addr: 			in std_logic_vector(4 downto 0);
-          data_in:			in std_logic_vector(15 downto 0);
-          data_out:			out std_logic_vector(15 downto 0)
+    port (clk: 	in std_logic;
+          we: 		in std_logic;
+          addr: 	in std_logic_vector(4 downto 0);
+          din:		in std_logic_vector(15 downto 0);
+          dout:	out std_logic_vector(15 downto 0)
 	);
 end component ram_component;
 	 
@@ -148,7 +148,7 @@ RAM: ram_component port map(clk, not(read_enable), ram_addr, data_in, ram_out);
 --end process estados;
 
 --Process que actualiza la salida de la CAM
-salida_CAM: process (read_enable, ram_out)
+salida_CAM: process (read_enable, ram_out, data_in)
 begin
 if read_enable = '1' then
 			

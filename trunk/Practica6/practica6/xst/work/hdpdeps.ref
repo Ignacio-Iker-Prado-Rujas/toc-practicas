@@ -1,17 +1,16 @@
-V3 8
-FL C:/hlocal/TOC/Practica6/practica6/practica6.vhd 2014/01/10.20:57:18 P.15xf
-FL "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica6/practica6/practica6.vhd" 2014/01/11.19:42:31 P.15xf
-EN work/practica6 1389466007 \
-      FL "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica6/practica6/practica6.vhd" \
+V3 7
+FL C:/hlocal/TOC/toc-practicas/Practica6/practica6/practica6.vhd 2014/01/13.12:52:10 P.15xf
+EN work/practica6 1389615254 \
+      FL C:/hlocal/TOC/toc-practicas/Practica6/practica6/practica6.vhd \
       PB ieee/std_logic_1164 1335251622 PB ieee/std_logic_arith 1335251623
-AR work/practica6/Behavioral 1389466008 \
-      FL "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica6/practica6/practica6.vhd" \
-      EN work/practica6 1389466007 CP ram_component
-FL "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica6/practica6/ram.vhd" 2014/01/11.19:46:34 P.15xf
-EN work/ram_component 1389466005 \
-      FL "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica6/practica6/ram.vhd" \
+AR work/practica6/Behavioral 1389615255 \
+      FL C:/hlocal/TOC/toc-practicas/Practica6/practica6/practica6.vhd \
+      EN work/practica6 1389615254 CP ram_component
+FL C:/hlocal/TOC/toc-practicas/Practica6/practica6/ram.vhd 2014/01/13.12:52:10 P.15xf
+EN work/ram_component 1389615252 \
+      FL C:/hlocal/TOC/toc-practicas/Practica6/practica6/ram.vhd \
       PB ieee/std_logic_1164 1335251622 PB ieee/STD_LOGIC_UNSIGNED 1335251625 \
       PB ieee/std_logic_arith 1335251623
-AR work/ram_component/circuito 1389466006 \
-      FL "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica6/practica6/ram.vhd" \
-      EN work/ram_component 1389466005
+AR work/ram_component/circuito 1389615253 \
+      FL C:/hlocal/TOC/toc-practicas/Practica6/practica6/ram.vhd \
+      EN work/ram_component 1389615252

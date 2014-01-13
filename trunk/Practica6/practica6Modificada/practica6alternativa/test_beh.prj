@@ -1,3 +1,0 @@
-vhdl work "../ram.vhd"
-vhdl work "../practica6.vhd"
-vhdl work "../test.vhd"

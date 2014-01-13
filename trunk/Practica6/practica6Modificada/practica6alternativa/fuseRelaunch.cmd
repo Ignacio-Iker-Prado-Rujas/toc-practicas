@@ -1,1 +1,0 @@
--intstyle "ise" -incremental -o "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica6/Nueva carpeta/practica6alternativa/test_isim_beh.exe" -prj "C:/Users/enrique ballesteros/Desktop/Tercero/TOC/toc-practicas/Practica6/Nueva carpeta/practica6alternativa/test_beh.prj" "work.test" 
